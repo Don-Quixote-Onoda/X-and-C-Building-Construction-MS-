@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/dashboard', 'DashboardController');
+Route::resource('/users', 'UserController');
+Route::resource('/user-type', 'UserTypeController');
