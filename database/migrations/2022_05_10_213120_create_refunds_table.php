@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('refunds', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('datetime');
             $table->double('amount', 10, 2);
             $table->integer('employee_id');
             $table->integer('project_id');

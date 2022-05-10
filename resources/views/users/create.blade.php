@@ -13,8 +13,7 @@
   @include('includes.messages')
 
   <div class="container my-5">
-    {!!Form::open(['action' => 'UserController@store', 'method' => 'POST', 'class' => 'row g-3  needs-validation', 'novalidate'])!!}
-    {{-- <form action="{{route('user-type.store')}}" method="POST" class="row g-3  needs-validation" novalidate> --}}
+    {!!Form::open(['action' => 'UserController@store', 'method' => 'POST', 'class' => 'row g-3  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
         <div class="col-6 my-3">
           <label for="inputNanme1" class="form-label">Employee ID</label>
           <input type="text" name="employee_id" class="form-control" id="inputNanme1" required>
@@ -44,7 +43,7 @@
             </div>
         </div>
         <div class="col-6 my-3">
-            <div class="row mb-3">
+            <div class="row ">
                 <div class="col-sm-12">
                   <select name="status" class="form-select" aria-label="Default select example" required>
                     <option selected="" disabled value="">Select Employee Status</option>
@@ -58,7 +57,7 @@
             </div>
         </div>
         <div class="col-6 my-3">
-            <div class="row mb-3">
+            <div class="row">
                 <div class="col-sm-12">
                   <select name="usertype" class="form-select" aria-label="Default select example" required>
                     <option selected="" disabled value="">Select User Type</option>
@@ -72,6 +71,13 @@
                 </div>
             </div>
         </div>
+        <div class="col-6 my-3">
+            <label for="inputNumber" class="col-sm-10 col-form-label">Upload Profile Picture</label>
+            <div class="col-sm-9">
+              <input name="image_profile" class="form-control" type="file" id="formFile">
+            </div>
+        </div>
+        
         <div class="text-center">
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="reset" class="btn btn-secondary">Reset</button>

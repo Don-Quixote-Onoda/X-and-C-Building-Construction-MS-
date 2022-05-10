@@ -23,3 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/dashboard', 'DashboardController');
 Route::resource('/users', 'UserController');
 Route::resource('/user-type', 'UserTypeController');
+Route::resource('/client', 'ClientController');
+Route::resource('/projects', 'ProjectController');
+Route::resource('/refunds', 'RefundController');
+Route::resource('/purchases', 'PurchaseController');
+Route::post('/change-password', 'UserController@changePassword');

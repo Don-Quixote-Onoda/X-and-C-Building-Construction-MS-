@@ -21,7 +21,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('users.index') }}"  class="{{ (request()->is('users')) ? ' active ' : ' ' }}">
+            <a href="{{ route('users.index') }}"  class="{{ (request()->is('users') || request()->is('users/*')) ? ' active ' : ' ' }}">
               <i class="bi bi-circle"></i><span>User's Lists</span>
             </a>
           </li>
@@ -32,6 +32,29 @@
           </li>
         </ul>
       <!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link {{(Request::is('projects') || Request::is('client') || Request::is('client/*') || Request::is('projects/*')) ? '' : 'collapsed'}} " data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Projects</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="users-nav" class="nav-content collapse {{(Request::is('projects') || Request::is('client') || Request::is('client/*') || Request::is('projects/*')) ? 'show' : ''}} " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('projects.create') }}" class="{{ (request()->is('projects/create')) ? ' active ' : ' ' }}">
+              <i class="bi bi-circle"></i><span>Add Project</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('projects.index') }}"  class="{{ (request()->is('projects') || request()->is('projects/*')) ? ' active ' : ' ' }}">
+              <i class="bi bi-circle"></i><span>Project's Lists</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('client.index') }}"  class="{{ (request()->is('client')) ? ' active ' : ' ' }}">
+              <i class="bi bi-circle"></i><span>Client</span>
+            </a>
+          </li>
+        </ul>
+      <!-- End Product Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

@@ -23,6 +23,16 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $table = 'users';
+
+    public $primaryKey = 'id';
+
+    public $timestamp = true;
+
+    public function usertype() {
+        return $this->belongsTo('App\Models\UserType');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
