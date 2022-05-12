@@ -134,16 +134,42 @@
                   <div class="row mb-3">
                     <label for="company" class="col-md-4 col-lg-3 col-form-label">Amount</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="amount" type="text" class="form-control" id="amount">
+                      <input name="amount" type="number" class="form-control" id="amount">
                     </div>
                   </div>
+                  <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0 fw-bold fs-5">Employee</legend>
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-2"><div class="form-check">
+                            <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="existing"  value="isExisting" checked="">
+                            <label class="form-check-label" for="gridRadios1">
+                              Existing Fund
+                            </label>
+                          </div>
+                          
+                        </div>
+                          <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="new" value="isAdd">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Add New Fund
+                                </label>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                    
+                    
+                  <div id="employeeExist" style="display: block">
                     <div class="row mb-3">
-                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Client Name</label>
+                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Employee Name</label>
                         <div class="col-md-8 col-lg-9">
-                          <select name="usertype" class="form-select" aria-label="Default select example" required>
-                            <option selected="" disabled value="">Select Client</option>
-                            @foreach ($usertypes as $usertype)
-                            <option value="{{$usertype->id}}">{{$usertype->usertype}}</option>
+                          <select name="employee_id" class="form-select" aria-label="Default select example" required>
+                            <option selected="" disabled value="">Select Employee</option>
+                            @foreach ($clients as $client)
+                            <option value="{{$client->id}}">{{$client->client_name}}</option>
                             @endforeach
                           </select>
                           <div class="invalid-feedback">
@@ -151,13 +177,40 @@
                           </div>
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="{{$project->id}}">
-                  {{Form::hidden('_method', 'PUT')}}
-
+                  </div>
+                  <div id="employeeAdd" style="display: none">
+                    <div class="row mb-3">
+                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Add Employee Name</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="employee_name" type="text" class="form-control" id="Job">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Position</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="position" type="text" class="form-control" id="Job">
+                        </div>
+                      </div>
+                  </div>
+                  <input type="hidden" name="id" value="{{$project->id}}">
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
                   </div>
                 {!! Form::close() !!}
+
+                  <script>
+                      function showHideEmployee() {
+                          if(document.getElementById("existingEmployee").checked) {
+                              document.getElementById("employeeAdd").style.display = "none";
+                              document.getElementById("employeeExist").style.display = "block";
+                          }
+                          else {
+                            document.getElementById("employeeAdd").style.display = "block";
+                              document.getElementById("employeeExist").style.display = "none";
+                          }
+                      }
+                  </script>
+
                   <!-- End Profile Edit Form -->
 
               {{-- </div> --}}

@@ -77,7 +77,7 @@ class ProjectController extends Controller
         $clients = Client::all();
         $project_infos = Project::all();
 
-        return view('project.show')->with('project', $project)->with('clients', $client)->with('project_infos', $project_infos);
+        return view('project.show')->with('project', $project)->with('clients', $clients)->with('project_infos', $project_infos);
     }
 
     /**
