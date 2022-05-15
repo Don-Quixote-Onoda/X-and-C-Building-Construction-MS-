@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\EmployeeName;
 use App\Models\Client;
 use App\Models\Project;
+use App\Models\Refund;
+use App\Models\Cheque;
 
 class ProjectController extends Controller
 {
@@ -15,7 +18,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::orderbyDesc("id")->get();
         return view('project.index')->with('projects', $projects);
     }
 
@@ -74,10 +77,12 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
-        $clients = Client::all();
+        $employee_names = EmployeeName::all();
         $project_infos = Project::all();
+        $refunds = Refund::orderByDesc('id')->get();
+        $cheques = Cheque::orderByDesc('id')->get();
 
-        return view('project.show')->with('project', $project)->with('clients', $clients)->with('project_infos', $project_infos);
+        return view('project.show')->with('cheques', $cheques)->with('refunds', $refunds)->with('project', $project)->with('employee_names', $employee_names)->with('project_infos', $project_infos);
     }
 
     /**

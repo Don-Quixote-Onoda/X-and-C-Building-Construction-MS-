@@ -118,7 +118,7 @@
                                    <div class="col-lg-9 col-md-8">{{$project->client->contact_details}}</div>
                                  </div>
                             </div>
-                        </div>
+                        </div>  
                       </div>
                   </div>
                
@@ -142,18 +142,18 @@
                     <div class="col-sm-12">
                       <div class="row">
                           <div class="col-2"><div class="form-check">
-                            <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="existing"  value="isExisting" checked="">
+                            <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="existing"  value="exist" checked="">
                             <label class="form-check-label" for="gridRadios1">
-                              Existing Fund
+                              Existing Employee
                             </label>
                           </div>
                           
                         </div>
                           <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="new" value="isAdd">
+                                <input class="form-check-input" type="radio" name="isEmployee" onclick="showHideEmployee()" id="new" value="add">
                                 <label class="form-check-label" for="gridRadios2">
-                                  Add New Fund
+                                  Add New Employee
                                 </label>
                               </div>
                           </div>
@@ -166,10 +166,10 @@
                     <div class="row mb-3">
                         <label for="Job" class="col-md-4 col-lg-3 col-form-label">Employee Name</label>
                         <div class="col-md-8 col-lg-9">
-                          <select name="employee_id" class="form-select" aria-label="Default select example" required>
+                          <select name="employee_id" class="form-select" aria-label="Default select example" >
                             <option selected="" disabled value="">Select Employee</option>
-                            @foreach ($clients as $client)
-                            <option value="{{$client->id}}">{{$client->client_name}}</option>
+                            @foreach ($employee_names as $employee_name)
+                            <option value="{{$employee_name->id}}">{{$employee_name->employee_name}}</option>
                             @endforeach
                           </select>
                           <div class="invalid-feedback">
@@ -192,15 +192,140 @@
                         </div>
                       </div>
                   </div>
-                  <input type="hidden" name="id" value="{{$project->id}}">
+                  <input type="hidden" name="project_id" value="{{$project->id}}">
                   <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                   </div>
                 {!! Form::close() !!}
+              </div>
+
+              <div class="tab-pane fade add-refunds pt-3" id="refunds-summary">
+                <div class="card-body">
+                  <h5 class="card-title">Refunds Summary</h5>
+    
+                  <!-- Table with hoverable rows -->
+                  @if (count($refunds) > 0) 
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Added At</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($refunds as $refund)
+                      <tr>
+                        <td>{{$refund->amount}}</td>
+                        <td>{{$refund->employee_id}}</td>
+                        <td>{{$refund->created_at}}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                  @else
+                      <h5>No Refunds Information Available.</h5>
+                  @endif
+                  <!-- End Table with hoverable rows -->
+    
+                </div>
+                <!-- Refund Show Summary -->
+
+                
+              </div>
+
+              <div class="tab-pane fade add-refunds pt-3" id="add-purchase">
+
+                <!-- Profile Edit Form -->
+                {!! Form::open(['action' => 'PurchaseController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
+
+                  <div class="row mb-3">
+                    <label for="company" class="col-md-4 col-lg-3 col-form-label">OR Number</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="OR_Number" type="number" class="form-control" id="amount">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputNanme4" class="col-md-4 col-lg-3 form-label">Trasaction Date</label>
+                    <input type="date" name="transaction_date" class="col-md-8 col-lg-9 form-control " id="inputNanme4" required>
+                    <div class="invalid-feedback">
+                      Please provide a project's start date.
+                    </div>
+                  </div>
+                    <div class="row mb-3">
+                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Select Cheque</label>
+                        <div class="col-md-8 col-lg-9">
+                          <select name="employee_id" class="form-select" aria-label="Default select example" >
+                            <option selected="" disabled value="">Select Cheque</option>
+                            @foreach ($cheques as $cheque)
+                            <option value="{{$cheque->id}}">{{$cheque->cheque_number}}</option>
+                            @endforeach
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide employee.
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Amount</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="amount" type="text" class="form-control" id="Job">
+                        </div>
+                      </div>
+                        <div class="row mb-3">
+                          <label for="inputPassword" class="col-sm-12 col-form-label">Purchase's Description</label>
+                          <div class="col-sm-12">
+                            <textarea name="project_description" class="form-control" style="height: 100px" required></textarea>
+                            <div class="invalid-feedback">
+                              Please provide a description.
+                            </div>
+                          </div>
+                      </div>
+                  <input type="hidden" name="project_id" value="{{$project->id}}">
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </div>
+                {!! Form::close() !!}
+              </div>
+
+              <div class="tab-pane fade add-refunds pt-3" id="purchases-summary">
+                <div class="card-body">
+                  <h5 class="card-title">Refunds Summary</h5>
+    
+                  <!-- Table with hoverable rows -->
+                  @if (count($refunds) > 0) 
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Added At</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($refunds as $refund)
+                      <tr>
+                        <td>{{$refund->amount}}</td>
+                        <td>{{$refund->employee_id}}</td>
+                        <td>{{$refund->created_at}}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                  @else
+                      <h5>No Refunds Information Available.</h5>
+                  @endif
+                  <!-- End Table with hoverable rows -->
+    
+                </div>
+                <!-- Refund Show Summary -->
+
+                
+              </div>
 
                   <script>
                       function showHideEmployee() {
-                          if(document.getElementById("existingEmployee").checked) {
+                          if(document.getElementById("existing").checked) {
                               document.getElementById("employeeAdd").style.display = "none";
                               document.getElementById("employeeExist").style.display = "block";
                           }
