@@ -27,4 +27,16 @@ Route::resource('/client', 'ClientController');
 Route::resource('/projects', 'ProjectController');
 Route::resource('/refunds', 'RefundController');
 Route::resource('/purchases', 'PurchaseController');
+Route::resource('/cheques', 'ChequeController');
 Route::post('/change-password', 'UserController@changePassword');
+Route::resource('/employee_names', 'EmployeeNameController');
+
+Route::group(['middleware' => ['auth']], function() {
+    /**
+    * Logout Route
+    */
+    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+ });
+  
+ 
+ 

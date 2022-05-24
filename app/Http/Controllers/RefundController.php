@@ -15,6 +15,12 @@ class RefundController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         //
@@ -41,47 +47,17 @@ class RefundController extends Controller
 
         $this->validate($request, [
             'amount' => 'required',
+            'employee_id' => 'required',
+            'project_id' => 'required'
         ]);
 
-        if($request->input('isEmployee') == 'exist') {
-            $this->validate($request, [
-                'employee_id'=> 'required'
-            ]);
+        $refund = new Refund;
+        $refund->amount = $request->input('amount');
+        $refund->employee_id = $request->input('employee_id');
+        $refund->project_id = $request->input('project_id');
+        $refund->save();
 
-            // add data to refund db
-            $refund = new Refund;
-            $refund->amount = $request->input('amount');
-            $refund->employee_id = $request->input('employee_id');
-            $refund->project_id = $request->input('project_id');
-            $refund->save();
-
-            return redirect('/projects/'.$request->input('project_id'))->with('success', 'Refund Inserted Successfully!');
-        }
-        else {
-            $this->validate($request, [
-                'employee_name'=> 'required',
-                'position'=> 'required'
-            ]);
-
-            // add  new data to employee table
-            $employee = new EmployeeName;
-            $employee->employee_name = $request->input('employee_name');
-            $employee->position = $request->input('position');
-            $employee->save();
-
-            // get last id of employee table
-            $employees = EmployeeName::orderByDesc('id')->get();
-            $employee_id = $employees[0]->id;
-
-            // insert data to refund table
-
-            $refund = new Refund;
-            $refund->amount = $request->input('amount');
-            $refund->employee_id = $employee_id;
-            $refund->project_id = $request->input('project_id');
-            $refund->save();
-            return redirect('/projects/'.$request->input('project_id'))->with('success', 'Refund Inserted Successfully!');
-        }
+        return redirect('/projects/'.$request->input('project_id'))->with('success', 'Fund Inserted Successfully!');
     }
 
     /**

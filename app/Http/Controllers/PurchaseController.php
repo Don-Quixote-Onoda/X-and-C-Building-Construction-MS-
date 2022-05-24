@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Cheque;
+use App\Models\Project;
 
 class PurchaseController extends Controller
 {
@@ -13,9 +14,16 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        //
+        $purchases = Purchase::all();
+        return view('purchases.index')->with('purchases', $purchases);
     }
 
     /**
@@ -25,7 +33,9 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        //
+        $cheques = Cheque::all();
+        $projects = Project::all();
+        return view('purchases.create')->with('cheques', $cheques)->with('projects', $projects);
     }
 
     /**
@@ -36,7 +46,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
         $this->validate($request, [
             'OR_Number' => 'required',
             'transaction_date' => 'required',
@@ -44,7 +54,8 @@ class PurchaseController extends Controller
             'project_description' => 'required',
             'cheque_id' => 'required',
             'project_id' => 'required'
-        ]);
+        ]); 
+
 
         $purchase = new Purchase;
         $purchase->OR_Number = $request->input('OR_Number');
@@ -52,11 +63,11 @@ class PurchaseController extends Controller
         $purchase->cheque_id = $request->input('cheque_id');
         $purchase->project_id = $request->input('project_id');
         $purchase->amount = $request->input('amount');
-        $purchase->description = $request->input('description');
+        $purchase->description = $request->input('project_description');
         $purchase->save();
 
 
-        return redirect('/projects/'.$request->input('project_id'))->with('success', 'Purchase Inserted Successfully!');
+        return redirect('/purchases')->with('success', 'Purchase Inserted Successfully!');
     }
 
     /**

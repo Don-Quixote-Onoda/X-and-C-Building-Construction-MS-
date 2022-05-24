@@ -1,277 +1,221 @@
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link  {{(Request::is('dashboard') || Request::is('dashboard/*')) ? '' : 'collapsed'}} " href="{{ route('dashboard.index') }}">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{(Request::is('users') || Request::is('user-type') || Request::is('user-type/*') || Request::is('users/*')) ? '' : 'collapsed'}} " data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="users-nav" class="nav-content collapse {{(Request::is('users') || Request::is('user-type') || Request::is('user-type/*') || Request::is('users/*')) ? 'show' : ''}} " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('users.create') }}" class="{{ (request()->is('users/create')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>Add User</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('users.index') }}"  class="{{ (request()->is('users') || request()->is('users/*')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>User's Lists</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('user-type.index') }}"  class="{{ (request()->is('user-type')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>User Type</span>
-            </a>
-          </li>
-        </ul>
-      <!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link {{(Request::is('projects') || Request::is('client') || Request::is('client/*') || Request::is('projects/*')) ? '' : 'collapsed'}} " data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Projects</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="users-nav" class="nav-content collapse {{(Request::is('projects') || Request::is('client') || Request::is('client/*') || Request::is('projects/*')) ? 'show' : ''}} " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('projects.create') }}" class="{{ (request()->is('projects/create')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>Add Project</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('projects.index') }}"  class="{{ (request()->is('projects') || request()->is('projects/*')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>Project's Lists</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('client.index') }}"  class="{{ (request()->is('client')) ? ' active ' : ' ' }}">
-              <i class="bi bi-circle"></i><span>Client</span>
-            </a>
-          </li>
-        </ul>
-      <!-- End Product Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
+<!-- BOF ASIDE-LEFT -->
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-content">
+      <!-- sidebar-menu  -->
+      <div class="sidebar-menu">
+          <ul>
+              <li class="header-menu">
+                  Categories
+              </li>
+              <li class="active">
+                  <a href="index.html">
+                      <i class="ti-dashboard"></i>
+                      <span class="menu-text">Dashboard</span>
+                  </a>
+              </li>
+              <li class="maincat">
+                <a href="#">
+                    <i class="fa fa-user-o"></i>
+                    <span class="menu-text">Users</span>
+                </a>
+                <div class="subcat">
+                    <ul>
+                        <li>
+                            <a href="{{route('users.create')}}">Add User</a>
+                        </li>
+                        <li>
+                            <a href="/users">User's Lists</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-plug"></i>
+                      <span class="menu-text">Components</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="cp_datetime.html">Date & Time</a>
+                          </li>
+                          <li >
+                              <a href="cp_bstoggle.html">Bootstrap Toggle</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-palette"></i>
+                      <span class="menu-text">UI Elements</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="ui_typography.html">Typography</a>
+                          </li>
+                          <li >
+                              <a href="ui_colors.html">Colors</a>
+                          </li>
+                          <li >
+                              <a href="ui_fontawesome.html">Fontawesome Icons</a>
+                          </li>
+                          <li >
+                              <a href="ui_themify.html">Themify Icons</a>
+                          </li>
+                          <li >
+                              <a href="ui_buttons.html">Buttons</a>
+                          </li>
+                          <li >
+                              <a href="ui_cards.html">Cards</a>
+                          </li>
+                          <li >
+                              <a href="ui_modals.html">Modals</a>
+                          </li>
+                          <li >
+                              <a href="ui_toastr.html">Toastr Notifications</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-layout-grid2"></i>
+                      <span class="menu-text">Tables</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="tb_basic.html">Basic Tables</a>
+                          </li>
+                          <li >
+                              <a href="tb_datatables.html">Datatables</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-write"></i>
+                      <span class="menu-text">Forms</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="fm_control.html">Form Control</a>
+                          </li>
+                          <li class="tier1 ">
+                              <a href="#"><span class="menu-text">CKEditor</span></a>
+                              <div class="subcat">
+                                  <ul>
+                                      <li >
+                                          <a href="fm_ckeditor_inline.html">Inline</a>
+                                      </li>
+                                      <li >
+                                          <a href="fm_ckeditor_classic.html">Classic</a>
+                                      </li>
+                                      <li >
+                                          <a href="fm_ckeditor_balloon.html">Balloon</a>
+                                      </li>
+                                      <li >
+                                          <a href="fm_ckeditor_block.html">Balloon Block</a>
+                                      </li>
+                                      <li >
+                                          <a href="fm_ckeditor_document.html">Document</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-bar-chart"></i>
+                      <span class="menu-text">Charts</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="ch_apexcharts.html">Apex Charts</a>
+                          </li>
+                          <li >
+                              <a href="javascript:;">amCharts</a>
+                          </li>
+                          <li >
+                              <a href="javascript:;">Morris Charts</a>
+                          </li>
+                          <li >
+                              <a href="javascript:;">Flot Charts</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="header-menu">
+                  Extra
+              </li>
+              <li class="maincat ">
+                  <a href="#">
+                      <i class="ti-file"></i>
+                      <span class="menu-text">Pages</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li >
+                              <a href="pg_login.html" target="_blank">Login</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="maincat">
+                  <a href="#">
+                      <i class="ti-layers-alt"></i>
+                      <span class="menu-text">Multi-Levels Menu</span>
+                  </a>
+                  <div class="subcat">
+                      <ul>
+                          <li class="tier1">
+                              <a href="javascript:;">Tier 1</a>
+                              <div class="subcat">
+                                  <ul>
+                                      <li><a href="javascript:;">Level 2</a></li>
+                                      <li><a href="javascript:;">Level 2</a></li>
+                                  </ul>
+                              </div>
+                          </li>
+                          <li>
+                              <a href="javascript:;">Submenu</a>
+                          </li>
+                          <li>
+                              <a href="javascript:;">Submenu</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="">
+                  <a href="documentation.html">
+                      <i class="ti-agenda"></i>
+                      <span class="menu-text">Documentation</span>
+                      <span class="badge badge-pill badge-primary">New</span>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="ex_calendar.html">
+                      <i class="ti-calendar"></i>
+                      <span class="menu-text">Calendar</span>
+                      <span class="badge badge-pill badge-primary">New</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://github.com/siQuang/siqtheme" target="_blank">
+                      <i class="ti-github"></i>
+                      <span class="menu-text">Github/siQtheme</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <!-- sidebar-menu  -->
+  </div>
+</div>
+<!-- EOF ASIDE-LEFT -->

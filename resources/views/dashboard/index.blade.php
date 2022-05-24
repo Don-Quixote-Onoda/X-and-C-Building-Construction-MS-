@@ -1,648 +1,457 @@
 @extends('layouts.app')
 @section('content')
-    
-<div class="pagetitle">
-  <h1>Dashboard</h1>
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}"><i class="bi bi-house-door"></i></a></li>
-      <li class="breadcrumb-item active">Dashboard</li>
-    </ol>
-  </nav>
-</div><!-- End Page Title -->
 
-    <section class="section dashboard">
-      <div class="row">
 
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
+    <!-- BOF Breadcrumb -->
+    <div class="row">
+        <div class="col">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:;"><i class="ti-home"></i> Dashboard</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- EOF Breadcrumb -->
 
-            <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+    <!-- BOF MAIN-BODY -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
                 <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                    <div class="icon-left text-secondary"><i class="ti-bar-chart"></i></div>
+                    <div class="number-right text-right">
+                        <h6 class="bold text-secondary">Monthly Goal</h6>
+                        <h3 class="card-title text-warning bold">$74,502</h3>
                     </div>
-                    <div class="ps-3">
-                      <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                    <div class="progress progress-bar-sm">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                  </div>
+                    <div class="progress-text text-secondary">
+                        <span class="float-left"><small>$0</small></span>
+                        <span class="float-right"><small>$100,000</small></span>
+                    </div>
                 </div>
-
-              </div>
-            </div><!-- End Sales Card -->
-
-            <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
                 <div class="card-body">
-                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                    <div class="icon-left text-secondary"><i class="ti-receipt"></i></div>
+                    <div class="number-right text-right">
+                        <h6 class="bold text-secondary">Monthly Orders</h6>
+                        <h3 class="card-title text-primary bold">9,432</h3>
                     </div>
-                    <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                    <div class="progress progress-bar-sm">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                  </div>
+                    <div class="progress-text text-secondary">
+                        <span class="float-left"><small>Total Monthly Orders</small></span>
+                    </div>
                 </div>
-
-              </div>
-            </div><!-- End Revenue Card -->
-
-            <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
                 <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                    <div class="icon-left text-secondary"><i class="ti-wallet"></i></div>
+                    <div class="number-right text-right">
+                        <h6 class="bold text-secondary">Monthly Expenses</h6>
+                        <h3 class="card-title text-bubblegum bold">$2,942</h3>
                     </div>
-                    <div class="ps-3">
-                      <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
+                    <div class="progress progress-bar-sm">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-bubblegum" role="progressbar" style="width: 30%" aria-valuenow="30"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                  </div>
-
+                    <div class="progress-text text-secondary">
+                        <span class="float-left"><small>0%</small></span>
+                        <span class="float-right"><small>100%</small></span>
+                    </div>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
 
-            </div><!-- End Customers Card -->
+    <!-- Year Comparison Chart -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="card-body" id="year-comparison-chart"></div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Reports -->
-            <div class="col-12">
-              <div class="card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
+    <div class="row">
+        <!-- Employees Sales -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="caption">
+                        <i class="ti-user"></i> Employees Sales
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="btn btn-round btn-sm btn-outline-secondary">Today</a>
+                        <a href="javascript:;" class="btn btn-round btn-sm btn-outline-secondary">Week</a>
+                        <a href="javascript:;" class="btn btn-round btn-sm btn-outline-secondary">Month</a>
+                    </div>
                 </div>
-
                 <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 text-right">
+                                            <h6 class="bold text-secondary">Daily</h6>
+                                            <h5 class="card-title text-tuscany bold">$7,524</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="sparkline-chart1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 text-right">
+                                            <h6 class="bold text-secondary">Weekly</h6>
+                                            <h5 class="card-title text-info bold">$18,852</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="sparkline-chart2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                  <!-- Line Chart -->
-                  <div id="reportsChart"></div>
-
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      new ApexCharts(document.querySelector("#reportsChart"), {
-                        series: [{
-                          name: 'Sales',
-                          data: [31, 40, 28, 51, 42, 82, 56],
-                        }, {
-                          name: 'Revenue',
-                          data: [11, 32, 45, 32, 34, 52, 41]
-                        }, {
-                          name: 'Customers',
-                          data: [15, 11, 32, 18, 9, 24, 11]
-                        }],
-                        chart: {
-                          height: 350,
-                          type: 'area',
-                          toolbar: {
-                            show: false
-                          },
-                        },
-                        markers: {
-                          size: 4
-                        },
-                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                        fill: {
-                          type: "gradient",
-                          gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.3,
-                            opacityTo: 0.4,
-                            stops: [0, 90, 100]
-                          }
-                        },
-                        dataLabels: {
-                          enabled: false
-                        },
-                        stroke: {
-                          curve: 'smooth',
-                          width: 2
-                        },
-                        xaxis: {
-                          type: 'datetime',
-                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                        },
-                        tooltip: {
-                          x: {
-                            format: 'dd/MM/yy HH:mm'
-                          },
-                        }
-                      }).render();
-                    });
-                  </script>
-                  <!-- End Line Chart -->
-
+                    <div class="row">
+                        <div class="col-md-12 scrollbox-md" data-simplebar>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Employee</th>
+                                            <th class="text-right">Daily</th>
+                                            <th class="text-right">Totals</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-07.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">siQuang Humbleman</a></td>
+                                            <td class="text-right">$2,546</td>
+                                            <td class="text-right">$14,587</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-02.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Bob OfHope</a></td>
+                                            <td class="text-right">$2,338</td>
+                                            <td class="text-right">$8,321</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-03.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Dana Squash</a></td>
+                                            <td class="text-right">$1,478</td>
+                                            <td class="text-right">$6,720</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-04.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Pear Appleton</a></td>
+                                            <td class="text-right">$2,338</td>
+                                            <td class="text-right">$8,321</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-06.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Lemony Tang</a></td>
+                                            <td class="text-right">$1,478</td>
+                                            <td class="text-right">$6,720</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-01.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Duke Turnbull</a></td>
+                                            <td class="text-right">$1,338</td>
+                                            <td class="text-right">$4,321</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><img src="assets/img/profile/profile-05.jpg" class="rounded-circle mr-2" width="30" alt=""> <a href="javascript:;">Berry Cherry</a></td>
+                                            <td class="text-right">$978</td>
+                                            <td class="text-right">$3,720</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-              </div>
-            </div><!-- End Reports -->
-
-            <!-- Recent Sales -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
+        <!-- My Tasks -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="caption">
+                        <i class="ti-pencil-alt"></i> My Tasks
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add New Task"><i class="ti-plus"></i></a>
+                        <a href="javascript:;" class="btn btn-sm btn-outline-secondary" data-toggle="dropdown" aria-expanded="false">
+                            <i class="ti-settings"></i> Settings <i class="ti-arrow-circle-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="javascript:;" class="dropdown-item">Action</a>
+                            <a href="javascript:;" class="dropdown-item">Another Action</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="javascript:;" class="dropdown-item">Some Setting</a>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="card-body">
-                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                    <div class="row py-3">
+                        <div class="col-md-3 col-6 d-flex flex-column align-items-center">
+                            <h2 class="text-primary bold">10</h2>
+                            Active
+                        </div>
+                        <div class="col-md-3 col-6 d-flex flex-column align-items-center">
+                            <h2 class="text-success bold">2</h2>
+                            In-Progress
+                        </div>
+                        <div class="col-md-3 col-6 d-flex flex-column align-items-center">
+                            <h2 class="text-warning bold">3</h2>
+                            On-Hold
+                        </div>
+                        <div class="col-md-3 col-6 d-flex flex-column align-items-center">
+                            <h2 class="text-secondary bold">4</h2>
+                            Completed
+                        </div>
+                    </div>
 
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-
+                    <div class="row">
+                        <div class="col-md-12 scrollbox-md" data-simplebar>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox1" name="checkbox1">
+                                            <label class="custom-control-label" for="checkbox1">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Doctor Appointment <i class="ti-hand-open text-warning"></i></strong><br>Annual checkup with doctor
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox2" name="checkbox2">
+                                            <label class="custom-control-label" for="checkbox2">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Write Unit Test <i class="ti-timer text-success"></i></strong><br>Unit test for dashboard widgets
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox3" name="checkbox3">
+                                            <label class="custom-control-label" for="checkbox3">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Annual Report <i class="ti-notepad text-primary"></i></strong><br>Design annual report cover
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox4" name="checkbox4">
+                                            <label class="custom-control-label" for="checkbox4">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Management Meeting <i class="ti-notepad text-primary"></i></strong><br>Coming up meeting with staffs
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox5" name="checkbox5">
+                                            <label class="custom-control-label" for="checkbox5">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Merge Development <i class="ti-timer text-success"></i></strong><br>Merge development branch with master
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox6" name="checkbox6">
+                                            <label class="custom-control-label" for="checkbox6">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Build Report <i class="ti-hand-open text-warning"></i></strong><br>Build report graph for dashboard
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-baseline">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox7" name="checkbox7">
+                                            <label class="custom-control-label" for="checkbox7">&nbsp;</label>
+                                        </div>
+                                        <div class="pl-4">
+                                            <strong>Add New Vendor <i class="ti-hand-open text-warning"></i></strong><br>Add new third-party vendor
+                                        </div>
+                                        <div class="ml-auto text-right">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
+                                                <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-              </div>
-            </div><!-- End Recent Sales -->
+    <!-- Articles -->
+    <div class="row" id="articles"></div>
 
-            <!-- Top Selling -->
-            <div class="col-12">
-              <div class="card top-selling overflow-auto">
+    <div class="row">
+        <!-- Product Sales Chart -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body" id="product-sales-chart"></div>
+            </div>
+        </div>
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
+        <!-- Expenses Chart -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body" id="expenses-chart"></div>
+            </div>
+        </div>
+    </div>
 
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
+    <div class="row">
+        <!-- Company Timeline -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="caption text-primary">
+                        <i class="ti-panel"></i> Company Timeline
+                    </div>
                 </div>
-
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Preview</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Revenue</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{{asset('img/product-1.jpg')}}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{{asset('img/product-2.jpg')}}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{{asset('img/product-3.jpg')}}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{{asset('img/product-4.jpg')}}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{{asset('img/product-5.jpg')}}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
+                <div class="card-body scrollbox-md" data-simplebar>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item" data-date="04-22-2020">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quam nisi distinctio dolorum est tempora.</p>
+                            <a href="javascript:;" class="btn btn-sm btn-primary">More Info</a>
+                        </div>
+                        <div class="timeline-item" data-date="04-16-2020">
+                            <p>Completed dashboard layout and add all required widgets.</p>
+                        </div>
+                        <div class="timeline-item" data-date="04-14-2020">
+                            <p>Added new page to UI Element category. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit officiis ut natus et minima expedita.</p>
+                            <a href="javascript:;" class="btn btn-sm btn-primary">Read More</a>
+                        </div>
+                    </div>
                 </div>
-
-              </div>
-            </div><!-- End Top Selling -->
-
-          </div>
-        </div><!-- End Left side columns -->
-
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-          <!-- Recent Activity -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
             </div>
+        </div>
 
-            <div class="card-body">
-              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
-
-              <div class="activity">
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">32 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                  <div class="activity-content">
-                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">56 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                  <div class="activity-content">
-                    Voluptatem blanditiis blanditiis eveniet
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 hrs</div>
-                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                  <div class="activity-content">
-                    Voluptates corrupti molestias voluptatem
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">1 day</div>
-                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                  <div class="activity-content">
-                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 days</div>
-                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                  <div class="activity-content">
-                    Est sit eum reiciendis exercitationem
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">4 weeks</div>
-                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                  <div class="activity-content">
-                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                  </div>
-                </div><!-- End activity item-->
-
-              </div>
-
-            </div>
-          </div><!-- End Recent Activity -->
-
-          <!-- Budget Report -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
-
-              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
-                    legend: {
-                      data: ['Allocated Budget', 'Actual Spending']
-                    },
-                    radar: {
-                      // shape: 'circle',
-                      indicator: [{
-                          name: 'Sales',
-                          max: 6500
-                        },
-                        {
-                          name: 'Administration',
-                          max: 16000
-                        },
-                        {
-                          name: 'Information Technology',
-                          max: 30000
-                        },
-                        {
-                          name: 'Customer Support',
-                          max: 38000
-                        },
-                        {
-                          name: 'Development',
-                          max: 52000
-                        },
-                        {
-                          name: 'Marketing',
-                          max: 25000
-                        }
-                      ]
-                    },
-                    series: [{
-                      name: 'Budget vs spending',
-                      type: 'radar',
-                      data: [{
-                          value: [4200, 3000, 20000, 35000, 50000, 18000],
-                          name: 'Allocated Budget'
-                        },
-                        {
-                          value: [5000, 14000, 28000, 26000, 42000, 21000],
-                          name: 'Actual Spending'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
-            </div>
-          </div><!-- End Budget Report -->
-
-          <!-- Website Traffic -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
-              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#trafficChart")).setOption({
-                    tooltip: {
-                      trigger: 'item'
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Access From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
-            </div>
-          </div><!-- End Website Traffic -->
-
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="{{asset('img/news-1.jpg')}}" alt="">
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+        <!-- Recent Memebers -->
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="caption text-primary">
+                        <i class="ti-user"></i> Recent Members
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="btn btn-sm btn-outline-primary"><i class="ti-import" data-toggle="tooltip" title="Download List"></i></a>
+                    </div>
                 </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('img/news-2.jpg')}}" alt="">
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <img src="assets/img/profile/profile-01.jpg" alt="" class="card-img-top">
+                                <div class="card-body p-2 text-center">
+                                    <h5 class="card-title">Jason Crispy</h5>
+                                    <p class="card-text font-size-12">Lorem Ipsum text placeholder.</p>
+                                    <a href="javascript:;" class="card-link"><i class="ti-twitter"></i> 3.5k</a>
+                                    <a href="javascript:;" class="card-link"><i class="ti-facebook"></i> 2.4k</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <img src="assets/img/profile/profile-02.jpg" alt="" class="card-img-top">
+                                <div class="card-body p-2 text-center">
+                                    <h5 class="card-title">Bob OfHope</h5>
+                                    <p class="card-text font-size-12">Lorem Ipsum text placeholder.</p>
+                                    <a href="javascript:;" class="card-link"><i class="ti-twitter"></i> 4.1k</a>
+                                    <a href="javascript:;" class="card-link"><i class="ti-facebook"></i> 7.2k</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <img src="assets/img/profile/profile-03.jpg" alt="" class="card-img-top">
+                                <div class="card-body p-2 text-center">
+                                    <h5 class="card-title">Dana Squash</h5>
+                                    <p class="card-text font-size-12">Lorem Ipsum text placeholder.</p>
+                                    <a href="javascript:;" class="card-link"><i class="ti-twitter"></i> 6.1k</a>
+                                    <a href="javascript:;" class="card-link"><i class="ti-facebook"></i> 5.5k</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('img/news-3.jpg}')}}" alt="">
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('img/news-4.jpg')}}" alt="">
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('img/news-5.jpg')}}" alt="">
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
             </div>
-          </div><!-- End News & Updates -->
+        </div>
+    </div>
 
-        </div><!-- End Right side columns -->
-
-      </div>
-    </section>
-
+    <!-- EOF MAIN-BODY -->
 @endsection

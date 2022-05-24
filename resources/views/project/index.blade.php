@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="pagetitle">
+  
     <h1>Project's Lists</h1>
     <nav>
     <ol class="breadcrumb">
@@ -10,7 +11,10 @@
     </ol>
     </nav>
 </div><!-- End Page Title -->
-
+<a href="/users/create" class="btn btn-outline-dark mt-3 ms-3">
+  <i class="bi bi-file-plus-fill fs-4 align-middle"></i>
+  <span class="align-middle">New User</span>
+</a>
 <div class="container mt-5">
     @if (count($projects) > 0)
     <table class="table table-hover">

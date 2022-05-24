@@ -13,6 +13,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         //
@@ -20,6 +27,25 @@ class UserController extends Controller
 
         return view('users.index')->with('users', $users);
     }
+
+    // public function index(Request $request)
+    // {
+    //     if ($request->ajax()) {
+    //         $data = User::select('*');
+    //         return Datatables::of($data)
+    //                 ->addIndexColumn()
+    //                 ->addColumn('action', function($row){
+     
+    //                        $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+    
+    //                         return $btn;
+    //                 })
+    //                 ->rawColumns(['action'])
+    //                 ->make(true);
+    //     }
+        
+    //     return view('users.index');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +74,7 @@ class UserController extends Controller
             'password' => 'required',
             'status' => 'required',
             'usertype' => 'required',
-            'image_profile' => 'image|nullable|max:1999',
+            'image_profile' => 'file|nullable|max:1999',
         ]);
 
         if($request->hasFile('image_profile')) {
@@ -124,7 +150,6 @@ class UserController extends Controller
             $user = User::find($id);
             $user->password = $request->input('renewpassword');
             $user->save();
-
             return redirect('/users/'.$id)->with('success', 'Password Changed Succesfully!');
         }
         else {

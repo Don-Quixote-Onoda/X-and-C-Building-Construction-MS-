@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="pagetitle">
+    {{-- <div class="pagetitle">
         <h1>Add New Users</h1>
         <nav>
         <ol class="breadcrumb">
@@ -10,7 +10,7 @@
         </ol>
         </nav>
   </div><!-- End Page Title -->
-  @include('includes.messages')
+  @include('includes.messages')  
 
   <div class="container my-5">
     {!!Form::open(['action' => 'UserController@store', 'method' => 'POST', 'class' => 'row g-3  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
@@ -82,5 +82,5 @@
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
-      {!!Form::close()!!}
+      {!!Form::close()!!} --}}
 @endsection

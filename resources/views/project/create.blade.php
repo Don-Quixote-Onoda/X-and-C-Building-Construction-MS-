@@ -95,4 +95,5 @@
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
       {!!Form::close()!!}
+  </div>
 @endsection

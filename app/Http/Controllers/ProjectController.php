@@ -16,6 +16,12 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $projects = Project::orderbyDesc("id")->get();
@@ -81,8 +87,10 @@ class ProjectController extends Controller
         $project_infos = Project::all();
         $refunds = Refund::orderByDesc('id')->get();
         $cheques = Cheque::orderByDesc('id')->get();
+        $clients = Client::all();
 
-        return view('project.show')->with('cheques', $cheques)->with('refunds', $refunds)->with('project', $project)->with('employee_names', $employee_names)->with('project_infos', $project_infos);
+        return view('project.show')->with('cheques', $cheques)->with('refunds', $refunds)->with('project', $project)->with('employee_names', $employee_names)
+        ->with('project_infos', $project_infos)->with('clients', $clients);
     }
 
     /**
@@ -105,7 +113,31 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'project_number' => 'required',
+            'project_name' => 'required',
+            'project_description' => 'required',
+            'project_location' => 'required',
+            'client_id' => 'required',
+            'project_budget' => 'required',
+            'project_startdate' => 'required',
+            'project_enddate' => 'required',
+            'project_awarding' => 'required'
+        ]);
+        
+        $project = Project::find($id);
+        $project->project_number = $request->input('project_number');
+        $project->project_name = $request->input('project_name');
+        $project->description = $request->input('project_description');
+        $project->location = $request->input('project_location');
+        $project->client_id = $request->input('client_id');
+        $project->project_start = $request->input('project_startdate');
+        $project->project_ETA = $request->input('project_enddate');
+        $project->project_awarding = $request->input('project_awarding');
+        $project->project_budget = $request->input('project_budget');
+        $project->save();
+
+        return redirect('/projects/create')->with('success', 'Updated Successfully!');
     }
 
     /**
