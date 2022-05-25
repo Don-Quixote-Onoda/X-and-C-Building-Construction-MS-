@@ -1,38 +1,38 @@
 @extends('layouts.app')
 @section('content')
     <div class="pagetitle">
-        <h1>Add New Project</h1>
+        <h1>Edit Project</h1>
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}"><i class="bi bi-house-door"></i></a></li>
             <li class="breadcrumb-item"><a href="{{ route('projects.index') }}">Project</a></li>
-            <li class="breadcrumb-item active">Add Project</li>
+            <li class="breadcrumb-item active">Edit Project</li>
         </ol>
         </nav>
   </div><!-- End Page Title -->
   <div class="card px-5">
-    {!!Form::open(['action' => 'ProjectController@store', 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
+    {!!Form::open(['action' => ['ProjectController@update', $project->id], 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
+    {{Form::hidden('_method', 'PUT')}}
     <div class="form-group row">
       <div class="input-group col-md-12 px-5 mx-auto mt-5 mb-2 offset-md-3">
           <div class="input-group-prepend">
               <span class="input-group-text">Project Number</span>
           </div>
-          <input type="text" name="project_number" class="form-control">
+          <input type="text" name="project_number" value="{{$project->project_number}}" class="form-control">
       </div>
   </div>
-
   <div class="form-group row">
     <div class="input-group col-md-6 pl-5 mx-auto mb-3 offset-md-3">
         <div class="input-group-prepend">
             <span class="input-group-text">Name</span>
         </div>
-        <input type="text" name="project_name" class="form-control">
+        <input type="text" name="project_name" value="{{$project->project_name}}" class="form-control">
     </div>
     <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">
           <span class="input-group-text">Location</span>
       </div>
-      <input type="text" name="location" class="form-control">
+      <input type="text" name="location" value="{{$project->location}}" class="form-control">
   </div>
 </div>
 
@@ -44,16 +44,16 @@
           <select class="form-control mr-3" name="client_id">
               <option>Default Select</option>
               @foreach ($clients as $client)
-                <option value="{{$client->id}}">{{$client->client_name}}</option>
+                <option value="{{$client->id}}" {{($client->id == $project->client_id) ? 'selected' : ''}}>{{$client->client_name}}</option>
               @endforeach
           </select>
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#clientModal"><i class="ti-plus"></i></button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#clientModal"> <i class="ti-plus"></i> </button>
   </div>
   <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
     <div class="input-group-prepend">
         <span class="input-group-text">Budget</span>
     </div>
-    <input type="number" name="project_budget" class="form-control">
+    <input type="number" name="project_budget" value="{{$project->project_budget}}" class="form-control">
     <div class="input-group-append">
       <span class="input-group-text bg-carolina text-white">$</span>
       <span class="input-group-text">0.00</span>
@@ -65,11 +65,11 @@
   <label class="col-md-12 px-5 col-form-label">Date Range</label>
   <div class="col-md-12 px-5 ">
       <div class="input-group daterange">
-          <input type="text" class="form-control" name="project_start">
+          <input type="text" class="form-control" value="{{$project->project_start}}" name="project_start">
           <div class="input-group-append">
               <span class="input-group-text">to</span>
           </div>
-          <input type="text" class="form-control" name="project_eta">
+          <input type="text" class="form-control" value="{{$project->project_ETA}}" name="project_eta">
       </div>
   </div>
 </div>
@@ -80,8 +80,8 @@
           <span class="input-group-text"><i class="ti-export"></i></span>
       </div>
       <div class="custom-file">
-          <input type="file" class="custom-file-input" name="project_image">
-          <label class="custom-file-label">Upload Project Photo</label>
+          <input type="file" class="custom-file-input" value="{{$project->project_image}}" name="project_image">
+          <label class="custom-file-label">{{$project->project_image}}</label>
       </div>
   </div>
   <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
@@ -90,8 +90,8 @@
   </div>
           <select class="form-control" name="status">
               <option>Default Select</option>
-              <option value="1">Active</option>
-              <option value="0">Inactive</option>
+              <option value="1" {{($project->status == 1) ? 'selected' : ''}}>Active</option>
+              <option value="0"{{($project->status == 0) ? 'selected' : ''}}>Inactive</option>
           </select>
   </div>
 </div>
@@ -99,18 +99,17 @@
 <div class="form-group row">
   <label class="col-md-12 px-5 mx-auto col-form-label">Description</label>
   <div class="col-md-12 px-5 mx-auto">
-      <textarea name="description" class="form-control" rows="5" placeholder="..."></textarea>
+      <textarea name="description" class="form-control" rows="5" placeholder="...">{{$project->description}}</textarea>
   </div>
 </div>
 
 <div class="card-footer text-right mx-3 mb-3">
-  <button class="btn btn-primary"><i class="ti-new-window"></i> Submit</button>
+  <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
   <a href="/projects" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
     
     {!!Form::close()!!}
   </div>
-
   <div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -146,7 +145,7 @@
                       <input type="text" name="owner_name" class="form-control">
                   </div>
                 </div>
-                <input type="hidden" name="redirect" value="/projects/create">
+                <input type="hidden" name="redirect" value="/projects/{{$project->id}}/edit">
                 <div class="form-group row">
                   <div class="input-group col px-5 mx-auto mb-2 offset-md-3">
                       <div class="input-group-prepend">
@@ -155,7 +154,6 @@
                       <input type="text" name="contact_details" class="form-control">
                   </div>
                 </div>
-                
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-outline-primary">Save changes</button>
@@ -169,7 +167,6 @@
         </div>
     </div>
 </div>
-
 
 
 

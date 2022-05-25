@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+<div class="row">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="caption uppercase">
+                    <i class="ti-briefcase"></i> Users's Table
+                </div> 
+                <div class="tools">
+                    <a href="/projects/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
+                        To Add New Project</a>
+                </div>
+            </div>
 <div class="card-body">
   <div class="table-responsive">
       <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -36,5 +48,7 @@
     </div>
 </div>
 </div>
-
+</div>
+</div>
+</div>
 @endsection

@@ -47,31 +47,48 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'project_number' => 'required',
             'project_name' => 'required',
-            'project_description' => 'required',
-            'project_location' => 'required',
+            'location' => 'required',
             'client_id' => 'required',
             'project_budget' => 'required',
-            'project_startdate' => 'required',
-            'project_enddate' => 'required',
-            'project_awarding' => 'required'
+            'project_start' => 'required',
+            'project_eta' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+            'project_image' => 'image|nullable|max:1999'
         ]);
+
+        if($request->hasFile('project_image')) {
+            $filenameWithExt = $request->file('project_image');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('project_image')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('project_image')->storeAs('public/users/project_images', $filenameToStore);
+        }
+        else {
+            $filenameToStore = 'noimage.jpg';
+        }
+
+
         
         $project = new Project;
         $project->project_number = $request->input('project_number');
         $project->project_name = $request->input('project_name');
-        $project->description = $request->input('project_description');
-        $project->location = $request->input('project_location');
+        $project->location = $request->input('location');
         $project->client_id = $request->input('client_id');
-        $project->project_start = $request->input('project_startdate');
-        $project->project_ETA = $request->input('project_enddate');
-        $project->project_awarding = $request->input('project_awarding');
         $project->project_budget = $request->input('project_budget');
+        $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
+        $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->status = $request->input('status');
+        $project->project_image = $filenameToStore;
+        $project->description = $request->input('description');
         $project->save();
 
-        return redirect('/projects/create')->with('success', 'Added Successfully!');
+        return redirect('/projects')->with('success', 'Added Successfully!');
     }
 
     /**
@@ -101,7 +118,11 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clients = Client::all();
+        $project = Project::find($id);
+        return view('project.edit')
+        ->with('clients', $clients)
+        ->with('project', $project);
     }
 
     /**
@@ -116,28 +137,44 @@ class ProjectController extends Controller
         $this->validate($request, [
             'project_number' => 'required',
             'project_name' => 'required',
-            'project_description' => 'required',
-            'project_location' => 'required',
+            'location' => 'required',
             'client_id' => 'required',
             'project_budget' => 'required',
-            'project_startdate' => 'required',
-            'project_enddate' => 'required',
-            'project_awarding' => 'required'
+            'project_start' => 'required',
+            'project_eta' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+            'project_image' => 'image|nullable|max:1999'
         ]);
+
+        if($request->hasFile('project_image')) {
+            $filenameWithExt = $request->file('project_image');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('project_image')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('project_image')->storeAs('public/users/project_images', $filenameToStore);
+        }
+        else {
+            $filenameToStore = 'noimage.jpg';
+        }
+
+
         
         $project = Project::find($id);
         $project->project_number = $request->input('project_number');
         $project->project_name = $request->input('project_name');
-        $project->description = $request->input('project_description');
-        $project->location = $request->input('project_location');
+        $project->location = $request->input('location');
         $project->client_id = $request->input('client_id');
-        $project->project_start = $request->input('project_startdate');
-        $project->project_ETA = $request->input('project_enddate');
-        $project->project_awarding = $request->input('project_awarding');
         $project->project_budget = $request->input('project_budget');
+        $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
+        $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->status = $request->input('status');
+        $project->project_image = $filenameToStore;
+        $project->description = $request->input('description');
         $project->save();
 
-        return redirect('/projects/create')->with('success', 'Updated Successfully!');
+        return redirect('/projects')->with('success', 'Updated Successfully!');
     }
 
     /**

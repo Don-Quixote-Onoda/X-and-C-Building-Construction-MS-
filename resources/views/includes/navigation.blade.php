@@ -1,5 +1,5 @@
 <!-- BOF ASIDE-LEFT -->
-<div id="sidebar" class="sidebar" style="height: 100vh;">
+<div id="sidebar" class="sidebar" style="height: 120vh;">
   <div class="sidebar-content">
       <!-- sidebar-menu  -->
       <div class="sidebar-menu">
@@ -8,7 +8,7 @@
                   Categories
               </li>
               <li class="active">
-                  <a href="index.html">
+                  <a href="/dashboard">
                       <i class="ti-dashboard"></i>
                       <span class="menu-text">Dashboard</span>
                   </a>
@@ -35,7 +35,7 @@
                     <span class="menu-text">Projects</span>
                 </a>
                 <div class="subcat">
-                    <ul>
+                    <ul> 
                         <li>
                             <a href="/projects/create" >Add Project</a>
                         </li>
@@ -85,6 +85,7 @@
             </li>
           </ul>
       </div>
+
       <!-- sidebar-menu  -->
   </div>
 </div>

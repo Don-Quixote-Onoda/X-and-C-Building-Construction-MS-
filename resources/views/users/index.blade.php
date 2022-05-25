@@ -7,7 +7,7 @@
           <div class="card-header">
               <div class="caption uppercase">
                   <i class="ti-briefcase"></i> Users's Table
-              </div>
+              </div> 
               <div class="tools">
                   <a href="/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
                       To Add New Row</a>

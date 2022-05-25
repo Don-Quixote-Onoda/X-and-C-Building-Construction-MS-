@@ -11,7 +11,7 @@ class ClientController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
 
     public function __construct()
     {
@@ -42,12 +42,15 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $this->validate($request, [
             'client_name' => 'required',
             'company_name' => 'required',
             'owner_name' => 'required',
             'contact_details' => 'required'
         ]);
+
 
         $client = new Client;
         $client->client_name = $request->input('client_name');
@@ -56,7 +59,7 @@ class ClientController extends Controller
         $client->contact_details = $request->input('contact_details');
         $client->save();
 
-        return redirect('/client')->with('success', 'Added Successfully!');
+        return redirect($request->input('redirect'))->with('success', 'Client Added Successfully!');
     }
 
     /**

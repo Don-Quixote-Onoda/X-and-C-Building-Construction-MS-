@@ -1,22 +1,85 @@
-@if (count($errors) > 0)
-    @foreach ($errors->all() as $error)
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{$error}}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endforeach
-@endif
+<script>
+    var timeout = 1000;
+    toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "preventDuplicates": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "1000",
+            "hideDuration": "1000",
+            "timeOut": "10000",
+            "extendedTimeOut": "10000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            }
+    @if (count($errors) > 0)
+        @foreach ($errors->all() as $error)
+        
 
-@if (session('success'))
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {{session('success')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
+            setTimeout(function () {
+                toastr.error("{{$error}}");
+            }, timeout += 1000 );
+        @endforeach
+    @endif
+</script>
 
-@if (session('error'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{session('error')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
+        
+<script>
+    var timeout = 1000;
+    toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "preventDuplicates": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "1000",
+            "hideDuration": "1000",
+            "timeOut": "10000",
+            "extendedTimeOut": "10000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            }
+
+    @if (session('success'))
+
+    setTimeout(function () {
+                toastr.success("{{session('success')}}");
+            }, timeout += 1000 );
+    @endif
+</script>
+
+<script>
+    var timeout = 1000;
+    toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "preventDuplicates": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "700",
+            "hideDuration": "1000",
+            "timeOut": "10000",
+            "extendedTimeOut": "10000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            }
+
+    @if (session('error'))
+
+    setTimeout(function () {
+                toastr.error("{{session('success')}}");
+            }, timeout += 1000 );
+    @endif
+</script>
+
+    

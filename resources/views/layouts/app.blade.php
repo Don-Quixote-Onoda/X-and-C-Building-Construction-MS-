@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
     <link rel="stylesheet" href="{{asset('assets/css/pages/dashboard1.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/pages/cp_datetime.css')}}">
 </head>
 
 <body class="theme-dark">
@@ -129,6 +130,8 @@
             </div>
         </div>
         <!-- EOF HEADER -->
+
+        {{-- @include('name') --}}
 
         @include('includes.navigation')
 
@@ -558,8 +561,12 @@
     </div> <!-- END WRAPPER -->
 
     <script src="{{asset('assets/scripts/siqtheme.js')}}"></script>
-    <script src="{{asset('assets/scripts/pages/dashboard1.js')}}"></script>
+    {{-- <script src="{{asset('assets/scripts/pages/dashboard1.js')}}"></script> --}}
     <script src="{{asset('assets/scripts/pages/tb_datatables.js')}}"></script>
+    <script src="{{asset('assets/scripts/pages/cp_datetime.js')}}"></script>
+    <script src="{{asset('assets/scripts/pages/ui_toastr.js')}}"></script>
+  @include('includes.messages')
+
 </body>
 
 </html>
