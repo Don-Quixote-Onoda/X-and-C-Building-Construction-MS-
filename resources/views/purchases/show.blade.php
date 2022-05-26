@@ -6,19 +6,31 @@
                 <i class="ti-briefcase"></i> Show Purchase
             </div>
             <div class="tools">
-                <span>{{$purchase->transaction_date}}</span>
+                <span>Transaction Date: {{$purchase->transaction_date}}</span>
             </div>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <h1>OR No. {{$purchase->OR_Number}}</h1>
-            </li>
-        </ul>
         <div class="card-body ml-5">
-            <h3><span class="fw-bold">Project Name:</span> {{$purchase->project_id}} </h3>
-            <h3><span class="fw-bold">Cheque Number:</span> {{$purchase->cheque_number}} </h3>
-            <h3><span class="fw-bold">Amount:</span> PHP {{$purchase->amount}} </h3>
-            <h4 class="card-text mt--5">{{$purchase->description}} </h4>
+            <h4 class="card-title">{{$purchase->project_id}}</h4>
+              <p class="card-text">
+                Cheque Number: {{$purchase->cheque_id}}
+              </p>
+
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-secondary mb-3">
+                        <img src="/storage/projects/project_images/{{$purchase->project_id}}" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">OR Number: {{$purchase->OR_Number}}</h5>
+                        <h5 class="card-title">Amount: {{$purchase->amount}}</h5>
+                        <p class="card-text">
+                            {{$purchase->description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card-footer text-right">
             <a href="/purchases" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>

@@ -10,26 +10,36 @@
               <a href="#tab2" data-toggle="tab" class="nav-link">Project Recieved Fund's Lists</a>
           </li>
       </ul>
+      <div>
+        <a href="/projects" class="btn btn-outline-dark float-right justify-content-end text-light"><i class="fa fa-reply-all"></i> Back</a>
+      </div>
   </div>
   <div class="card-body">
       <div class="tab-content">
           <div class="tab-pane fade show active" id="tab1">
               <h4 class="card-title">{{$project->project_name}}</h4>
               <p class="card-text">
-                {{$project->description}}
+                {{$project->location}}
+              </p>
+              <p class="card-text">
+                Client Name: {{$project->client_id}}
               </p>
 
               <div class="row">
                 <div class="col-md-6">
                     <div class="card card-secondary mb-3">
                         <img src="/storage/projects/project_images/{{$project->project_image}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card With Image Top</h5>
-                            <p class="card-text">Below the music groans the speaking ancestor. The spigot kidnaps the utility
-                                postage on top of a south. A trilogy coasts across a floppy connector. The piano sacks the stable
-                                socket inside the handler. The spike multiplies beside the crazy scroll.</p>
-                            <a href="https://unsplash.com/photos/7GAQQHPWNmE" class="card-link text-light" target="_blank">Photo by Janik Rohland</a>
-                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Project Number: {{$project->project_number}}</h5>
+                        <h5 class="card-title">Budget: {{$project->project_budger}}</h5>
+                        <p>{{$project->project_start}} - {{$project->project_ETA}}</p>
+                        <p class="card-text">
+                            {{$project->description}}
+                        </p>
+                        <p class="card-link text-light">Awarding At {{$project->project_awarding}}</p>
                     </div>
                 </div>
             </div>
