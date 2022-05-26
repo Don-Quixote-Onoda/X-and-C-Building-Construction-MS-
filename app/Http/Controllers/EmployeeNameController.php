@@ -46,12 +46,14 @@ class EmployeeNameController extends Controller
             'position' => 'required'
         ]);
 
+
+
         $employeeName = new EmployeeName;
         $employeeName->employee_name = $request->input('employee_name');
         $employeeName->position = $request->input('position');
         $employeeName->save();
 
-        return redirect(''.$request->input('route_name').'')->with('success', 'Employee Name Added Successfully!');
+        return redirect($request->input('route_name'))->with('success', 'Employee Name Added Successfully!');
     }
 
     /**

@@ -80,7 +80,9 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-        //
+        $purchase = Purchase::find($id);
+        return view('purchases.show')
+        ->with('purchase', $purchase);
     }
 
     /**

@@ -565,6 +565,7 @@
     <script src="{{asset('assets/scripts/pages/tb_datatables.js')}}"></script>
     <script src="{{asset('assets/scripts/pages/cp_datetime.js')}}"></script>
     <script src="{{asset('assets/scripts/pages/ui_toastr.js')}}"></script>
+    <script src="{{asset('assets/scripts/pages/dashboard1.js')}}"></script>
   @include('includes.messages')
 
 </body>

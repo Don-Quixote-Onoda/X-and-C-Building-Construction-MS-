@@ -56,6 +56,7 @@ class ProjectController extends Controller
             'project_budget' => 'required',
             'project_start' => 'required',
             'project_eta' => 'required',
+            'project_awarding' => 'required',
             'status' => 'required',
             'description' => 'required',
             'project_image' => 'image|nullable|max:1999'
@@ -67,7 +68,7 @@ class ProjectController extends Controller
             $extension = $request->file('project_image')->getClientOriginalExtension();
             $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-            $path = $request->file('project_image')->storeAs('public/users/project_images', $filenameToStore);
+            $path = $request->file('project_image')->storeAs('public/projects/project_images', $filenameToStore);
         }
         else {
             $filenameToStore = 'noimage.jpg';
@@ -83,6 +84,7 @@ class ProjectController extends Controller
         $project->project_budget = $request->input('project_budget');
         $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
         $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->project_awarding = date("Y-m-d", strtotime($request->input('project_awarding')));
         $project->status = $request->input('status');
         $project->project_image = $filenameToStore;
         $project->description = $request->input('description');
@@ -102,15 +104,20 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $employee_names = EmployeeName::all();
         $project_infos = Project::all();
-        $refunds = Refund::orderByDesc('id')->get();
+        $funds = Refund::orderByDesc('id')->where('project_id', $id)->get();
+
         $cheques = Cheque::orderByDesc('id')->get();
         $clients = Client::all();
 
-        return view('project.show')->with('cheques', $cheques)->with('refunds', $refunds)->with('project', $project)->with('employee_names', $employee_names)
+        return view('project.show')
+        ->with('cheques', $cheques)
+        ->with('funds', $funds)
+        ->with('project', $project)
+        ->with('employee_names', $employee_names)
         ->with('project_infos', $project_infos)->with('clients', $clients);
     }
 
-    /**
+    /** 
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -142,9 +149,10 @@ class ProjectController extends Controller
             'project_budget' => 'required',
             'project_start' => 'required',
             'project_eta' => 'required',
+            'project_awarding' => 'required',
             'status' => 'required',
             'description' => 'required',
-            'project_image' => 'image|nullable|max:1999'
+            'project_image' => 'file|nullable|max:1999'
         ]);
 
         if($request->hasFile('project_image')) {
@@ -153,7 +161,7 @@ class ProjectController extends Controller
             $extension = $request->file('project_image')->getClientOriginalExtension();
             $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-            $path = $request->file('project_image')->storeAs('public/users/project_images', $filenameToStore);
+            $path = $request->file('project_image')->storeAs('public/projects/project_images', $filenameToStore);
         }
         else {
             $filenameToStore = 'noimage.jpg';
@@ -169,6 +177,7 @@ class ProjectController extends Controller
         $project->project_budget = $request->input('project_budget');
         $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
         $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->project_awarding = date("Y-m-d", strtotime($request->input('project_awarding')));
         $project->status = $request->input('status');
         $project->project_image = $filenameToStore;
         $project->description = $request->input('description');

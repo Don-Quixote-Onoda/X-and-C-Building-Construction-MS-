@@ -7,7 +7,7 @@ use App\Models\Cheque;
 use App\Models\Refund;
 use App\Models\EmployeeName;
 
-class ChequeController extends Controller
+class ChequeController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -51,18 +51,18 @@ class ChequeController extends Controller
         $this->validate($request, [
             'cheque_number' => 'required',
             'amount' => 'required',
-            'datetime' => 'required',
+            'transaction_date' => 'required',
             'employee_id' => 'required' 
         ]);
 
         $cheque = new Cheque;
-        $cheque->datetime = $request->input('datetime');
+        $cheque->datetime = date("Y-m-d", strtotime($request->input('transaction_date')));
         $cheque->amount = $request->input('amount');
         $cheque->cheque_number = $request->input('cheque_number');
         $cheque->employee_id = $request->input('employee_id');
         $cheque->save();
 
-        return redirect('/cheques')->with('sucess', 'Cheque Information Added Successfully!');
+        return redirect('/cheques')->with('success', 'Cheque Information Added Successfully!');
     }
 
     /**
@@ -73,7 +73,9 @@ class ChequeController extends Controller
      */
     public function show($id)
     {
-        //
+        $cheque = Cheque::find($id);
+         return view('cheques.show')
+         ->with('cheque', $cheque);
     }
 
     /**
@@ -84,7 +86,12 @@ class ChequeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee_names = EmployeeName::all();
+        $cheque = Cheque::find($id);
+
+        return view('cheques.edit')
+        ->with('employee_names', $employee_names)
+        ->with('cheque', $cheque);
     }
 
     /**
@@ -96,7 +103,21 @@ class ChequeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'cheque_number' => 'required',
+            'amount' => 'required',
+            'transaction_date' => 'required',
+            'employee_id' => 'required' 
+        ]);
+
+        $cheque = Cheque::find($id);
+        $cheque->datetime = date("Y-m-d", strtotime($request->input('transaction_date')));
+        $cheque->amount = $request->input('amount');
+        $cheque->cheque_number = $request->input('cheque_number');
+        $cheque->employee_id = $request->input('employee_id');
+        $cheque->save();
+
+        return redirect('/cheques')->with('success', 'Cheque Information Updated Successfully!');
     }
 
     /**

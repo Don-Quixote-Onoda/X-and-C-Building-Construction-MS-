@@ -74,6 +74,21 @@
   </div>
 </div>
 
+<div class="form-group row mt-3">
+  <label class="col-md-12 px-5 col-form-label">Project's Awarding Date</label>
+  <div class="col-md-6 pl-5">
+      <div class="input-group date">
+          <input type="text" name="project_awarding" class="form-control">
+          <div class="input-group-append">
+              <span class="input-group-text">
+                  <i class="ti-calendar"></i>
+              </span>
+          </div>
+      </div>
+      <span class="form-text text-muted">Select Date</span>
+  </div>
+</div>
+
 <div class="form-group row">
   <div class="input-group col-md-6 pl-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">
@@ -90,8 +105,8 @@
   </div>
           <select class="form-control" name="status">
               <option>Default Select</option>
-              <option value="1">Active</option>
-              <option value="0">Inactive</option>
+              <option value="1">Complete</option>
+              <option value="0">Incompleted</option>
           </select>
   </div>
 </div>

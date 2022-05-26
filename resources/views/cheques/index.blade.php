@@ -5,11 +5,11 @@
         <div class="card mb-3">
             <div class="card-header">
                 <div class="caption uppercase">
-                    <i class="ti-briefcase"></i> Users's Table
+                    <i class="ti-briefcase"></i> Cheques's Table
                 </div> 
                 <div class="tools">
-                    <a href="/projects/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
-                        To Add New Project</a>
+                    <a href="/cheques/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
+                        To Add New Cheque</a>
                 </div>
             </div>
 <div class="card-body">
@@ -34,12 +34,8 @@
                     <td>{{$cheque->employee_id}}</td>
                     <td>{{$cheque->datetime}}</td>
                     <td class="text-center">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-vcard-o"></i>
-                            Show
-                        </button>
-                        <button class="btn btn-sm btn-warning"><i class="ti-write"></i>
-                            Edit
-                        </button>
+                        <a href="/cheques/{{$cheque->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
+                        <a href="/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
                     </td>
                 </tr>
             @endforeach
