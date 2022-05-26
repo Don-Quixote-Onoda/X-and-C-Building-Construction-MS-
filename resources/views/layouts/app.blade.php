@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     
@@ -12,11 +12,11 @@
     <meta name="keywords" content="bootstrap, admin theme, admin dashboard, jquery, webpack, laravel-mix, template, responsive" />
     <meta name="author" content="siQuang - Simon Nguyen" />
 
-    <title>siQtheme by 3M Square</title>
+    <title>X and C Building Construction</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/siqtheme.css')}}">
 
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
     <link rel="stylesheet" href="{{asset('assets/css/pages/dashboard1.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/pages/cp_datetime.css')}}">
@@ -35,8 +35,10 @@
         <div class="header">
             <div class="header-bar">
                 <div class="brand">
-                    <a href="index.html" class="logo"><span class="text-carolina">siQ</span>theme</a>
-                    <a href="index.html" class="logo-sm text-carolina" style="display: none;">siQ</a>
+                    <a href="/dashboard" class="logo">
+                        <img src="{{asset('assets/img/favicon.png')}}" class="img-fluid w-25" alt="">
+                        <br>
+                        {{-- <span class="text-carolina">X and C Building Construction</span></a> --}}
                 </div>
                 <div class="btn-toggle">
                     <!-- <a href="#" class="toggle-sidebar-btn"><i class="ti-arrow-circle-left"></i></a> -->
