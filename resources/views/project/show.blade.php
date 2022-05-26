@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+<div class="row">
+    <div class="col">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+            <li class="breadcrumb-item active">Show Project</li>
+        </ol>
+    </div>
+</div>
 <div class="card card-tabs mb-3">
   <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
@@ -22,7 +31,7 @@
                 {{$project->location}}
               </p>
               <p class="card-text">
-                Client Name: {{$project->client_id}}
+                Client Name: {{$project->client->client_name}}
               </p>
 
               <div class="row">

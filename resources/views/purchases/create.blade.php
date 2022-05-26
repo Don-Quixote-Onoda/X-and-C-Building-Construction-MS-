@@ -1,15 +1,14 @@
 @extends('layouts.app')
 @section('content')
-    <div class="pagetitle">
-        <h1>Add New Purchase</h1>
-        <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}"><i class="bi bi-house-door"></i></a></li>
-            <li class="breadcrumb-item"><a href="{{ route('purchases.index') }}">Purchase</a></li>
-            <li class="breadcrumb-item active">Add Purchase</li>
-        </ol>
-        </nav>
-  </div><!-- End Page Title -->
+<div class="row">
+  <div class="col">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/purchases">Purchase</a></li>
+          <li class="breadcrumb-item active">Add Purchase</li>
+      </ol>
+  </div>
+</div>
   @include('includes.messages')
   <div class="card px-5">
     {!!Form::open(['action' => 'PurchaseController@store', 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}

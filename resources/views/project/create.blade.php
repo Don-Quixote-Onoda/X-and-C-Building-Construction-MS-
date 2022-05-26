@@ -1,15 +1,14 @@
 @extends('layouts.app')
 @section('content')
-    <div class="pagetitle">
-        <h1>Add New Project</h1>
-        <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}"><i class="bi bi-house-door"></i></a></li>
-            <li class="breadcrumb-item"><a href="{{ route('projects.index') }}">Project</a></li>
-            <li class="breadcrumb-item active">Add Project</li>
-        </ol>
-        </nav>
-  </div><!-- End Page Title -->
+<div class="row">
+  <div class="col">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+          <li class="breadcrumb-item active">Add Project</li>
+      </ol>
+  </div>
+</div>
   <div class="card px-5">
     {!!Form::open(['action' => 'ProjectController@store', 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
     <div class="form-group row">

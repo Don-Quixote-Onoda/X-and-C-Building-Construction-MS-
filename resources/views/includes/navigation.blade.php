@@ -7,7 +7,7 @@
               <li class="header-menu">
                   Categories
               </li>
-              <li class="active">
+              <li>
                   <a href="/dashboard">
                       <i class="ti-dashboard"></i>
                       <span class="menu-text">Dashboard</span>
@@ -29,49 +29,49 @@
                     </ul>
                 </div>
             </li>
-            <li class="maincat">
+            <li class="maincat  {{ (request()->is('projects') || request()->is('projects/create') || request()->is('projects/*/edit')) ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-cubes"></i>
                     <span class="menu-text">Projects</span>
                 </a>
                 <div class="subcat">
                     <ul> 
-                        <li>
+                        <li class=" {{ (request()->is('projects/create')) ? 'active' : '' }}">
                             <a href="/projects/create" >Add Project</a>
                         </li>
-                        <li>
+                        <li class=" {{ (request()->is('projects') || request()->is('projects/*/edit')) ? 'active' : '' }}">
                             <a href="/projects" >Projects' Lists</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="maincat">
+            <li class="maincat {{ (request()->is('purchases') || request()->is('purchases/create') || request()->is('purchases/*/edit')) ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-building"></i>
                     <span class="menu-text">Purchase</span>
                 </a>
                 <div class="subcat">
                     <ul>
-                        <li>
+                        <li class=" {{ (request()->is('purchases/create')) ? 'active' : '' }}">
                             <a href="/purchases/create" >Add Purchase</a>
                         </li>
-                        <li>
+                        <li class=" {{ (request()->is('purchases') || request()->is('purchases/*/edit')) ? 'active' : '' }}">
                             <a href="/purchases" >Purchase' Lists</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="maincat">
+            <li class="maincat {{ (request()->is('cheques') || request()->is('cheques/create') || request()->is('cheques/*/edit')) ? 'active' : '' }}"">
                 <a href="#">
                     <i class="fa fa-money"></i>
                     <span class="menu-text">Cheques</span>
                 </a>
                 <div class="subcat">
                     <ul>
-                        <li>
+                        <li class=" {{ (request()->is('cheques/create')) ? 'active' : '' }}">
                             <a href="/cheques/create" >Add Cheques</a>
                         </li>
-                        <li>
+                        <li class=" {{ (request()->is('cheques') || request()->is('cheques/*/edit')) ? 'active' : '' }}">
                             <a href="/cheques" >Cheques' Lists</a>
                         </li>
                     </ul>

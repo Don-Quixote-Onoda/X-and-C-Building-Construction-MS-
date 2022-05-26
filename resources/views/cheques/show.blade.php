@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+<div class="row">
+    <div class="col">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+            <li class="breadcrumb-item active">Show Cheque</li>
+        </ol>
+    </div>
+</div>
     <div class="card mb-3">
         <div class="card-header">
             <div class="caption uppercase text-secondary">
@@ -8,7 +17,7 @@
         </div>
         <div class="card-body ml-5">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4>Employee Name: {{$cheque->employee_id}}</h4></li>
+                <li class="list-group-item"><h4>Employee Name: {{$cheque->employee->employee_name}}</h4></li>
                 <li class="list-group-item">Cheque Number: {{$cheque->cheque_number}}</li>
                 <li class="list-group-item">Amount: {{$cheque->amount}}</li>
                 <li class="list-group-item">Date: {{$cheque->datetime}}</li>

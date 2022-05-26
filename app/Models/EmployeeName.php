@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class EmployeeName extends Model
 {
     use HasFactory;
+    
+    protected $table = 'employee_names';
+
+    public $primaryKey = 'id';
+
+    public $timestamp = true;
+
+    public function cheques() {
+        return $this->hasMany('App\Models\Cheque');
+    }
 }

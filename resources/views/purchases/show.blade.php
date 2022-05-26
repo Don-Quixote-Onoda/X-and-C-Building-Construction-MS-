@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+<div class="row">
+    <div class="col">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/purchases">Purchase</a></li>
+            <li class="breadcrumb-item active">Show Purchase</li>
+        </ol>
+    </div>
+</div>
     <div class="card mb-3">
         <div class="card-header">
             <div class="caption uppercase text-secondary">
@@ -10,15 +19,15 @@
             </div>
         </div>
         <div class="card-body ml-5">
-            <h4 class="card-title">{{$purchase->project_id}}</h4>
+            <h4 class="card-title">{{$purchase->project->project_name}}</h4>
               <p class="card-text">
-                Cheque Number: {{$purchase->cheque_id}}
+                Cheque Number: {{$purchase->cheque->cheque_number}}
               </p>
 
               <div class="row">
                 <div class="col-md-6">
                     <div class="card card-secondary mb-3">
-                        <img src="/storage/projects/project_images/{{$purchase->project_id}}" class="card-img-top" alt="...">
+                        <img src="/storage/projects/project_images/{{$purchase->project->project_image}}" class="card-img-top" alt="...">
                     </div>
                 </div>
                 <div class="col-md-6">

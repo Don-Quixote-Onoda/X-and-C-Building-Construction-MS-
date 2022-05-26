@@ -2,16 +2,13 @@
 @section('content')
 <div class="row">
     <div class="col">
-        <div class="card mb-3">
-            <div class="card-header">
-                <div class="caption uppercase">
-                    <i class="ti-briefcase"></i> Purchase's Table
-                </div> 
-                <div class="tools">
-                    <a href="/purchases/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
-                        To Add New Purchase</a>
-                </div>
-            </div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/purchases">Purchase</a></li>
+            <li class="breadcrumb-item active">Purchase Lists</li>
+        </ol>
+    </div>
+</div>
 <div class="card-body">
   <div class="table-responsive">
       <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -32,8 +29,8 @@
                 <tr>
                     <td>{{$purchase->OR_Number}}</td>
                     <td>{{$purchase->transaction_date}}</td>
-                    <td>{{$purchase->chequeq_id}}</td>
-                    <td>{{$purchase->project_id}}</td>
+                    <td>{{$purchase->cheque->cheque_number}}</td>
+                    <td>{{$purchase->project->project_name}}</td>
                     <td>{{$purchase->amount}}</td>
                     <td class="text-center">
                         <a href="/purchases/{{$purchase->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>

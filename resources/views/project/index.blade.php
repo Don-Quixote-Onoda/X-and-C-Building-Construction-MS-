@@ -2,6 +2,15 @@
 @section('content')
 <div class="row">
     <div class="col">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+            <li class="breadcrumb-item active">Project Lists</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
         <div class="card mb-3">
             <div class="card-header">
                 <div class="caption uppercase">
@@ -33,7 +42,7 @@
                                     <td>{{$project->project_number}}</td>
                                     <td>{{$project->project_name}}</td>
                                     <td>{{$project->location}}</td>
-                                    <td>{{$project->client->id}}</td>
+                                    <td>{{$project->client->client_name}}</td>
                                     <td>{{$project->project_budget}}</td>
                                     <td class="text-center">
                                         <a href="/projects/{{$project->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>

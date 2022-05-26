@@ -2,6 +2,15 @@
 @section('content')
 <div class="row">
     <div class="col">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+            <li class="breadcrumb-item active">Cheques' Lists</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
         <div class="card mb-3">
             <div class="card-header">
                 <div class="caption uppercase">
@@ -31,7 +40,7 @@
                 <tr>
                     <td>{{$cheque->cheque_number}}</td>
                     <td>{{$cheque->amount}}</td>
-                    <td>{{$cheque->employee_id}}</td>
+                    <td>{{$cheque->employee->employee_name}}</td>
                     <td>{{$cheque->datetime}}</td>
                     <td class="text-center">
                         <a href="/cheques/{{$cheque->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
