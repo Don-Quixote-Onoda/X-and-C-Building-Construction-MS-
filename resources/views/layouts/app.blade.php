@@ -35,10 +35,9 @@
         <div class="header">
             <div class="header-bar">
                 <div class="brand">
-                    <a href="/dashboard" class="logo">
-                        <img src="{{asset('assets/img/favicon.png')}}" class="img-fluid w-25" alt="">
-                        <br>
-                        {{-- <span class="text-carolina">X and C Building Construction</span></a> --}}
+                    <a href="/dashboard" class="logo d-flex">
+                        <img src="{{asset('assets/img/favicon.png')}}" class="img-fluid w-25 h-25" alt="">
+                        <span class="text-carolina mt-3" style="font-size: 1rem;">X and C Building Construction</span></a>
                 </div>
                 <div class="btn-toggle">
                     <!-- <a href="#" class="toggle-sidebar-btn"><i class="ti-arrow-circle-left"></i></a> -->
