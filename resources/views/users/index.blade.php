@@ -9,7 +9,7 @@
                   <i class="ti-briefcase"></i> Users's Table
               </div> 
               <div class="tools">
-                  <a href="/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
+                  <a href="/admin/users/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
                       To Add New Row</a>
               </div>
           </div>

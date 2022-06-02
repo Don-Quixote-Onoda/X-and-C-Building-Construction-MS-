@@ -64,7 +64,7 @@
             "preventDuplicates": false,
             "positionClass": "toast-top-right",
             "onclick": null,
-            "showDuration": "700",
+            "showDuration": "0",
             "hideDuration": "1000",
             "timeOut": "10000",
             "extendedTimeOut": "10000",
@@ -77,7 +77,7 @@
     @if (session('error'))
 
     setTimeout(function () {
-                toastr.error("{{session('success')}}");
+                toastr.error("{{session('error')}}");
             }, timeout += 1000 );
     @endif
 </script>

@@ -8,6 +8,9 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Refund;
 use App\Models\Cheque;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Log;
+
 
 class ProjectController extends Controller
 {
@@ -17,14 +20,16 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function index()
     {
+        // return Auth::guard('admin')->user()->id;
         $projects = Project::orderbyDesc("id")->get();
+
         return view('project.index')->with('projects', $projects);
     }
 
@@ -36,6 +41,9 @@ class ProjectController extends Controller
     public function create()
     {
         $clients = Client::all();
+
+
+
         return view('project.create')->with('clients', $clients);
     }
 
@@ -59,8 +67,10 @@ class ProjectController extends Controller
             'project_awarding' => 'required',
             'status' => 'required',
             'description' => 'required',
-            'project_image' => 'image|nullable|max:1999'
+            'project_image' => 'image|nullable|max:1999',
+            'admin_id' => 'required',
         ]);
+
 
         if($request->hasFile('project_image')) {
             $filenameWithExt = $request->file('project_image');
@@ -77,6 +87,7 @@ class ProjectController extends Controller
 
         
         $project = new Project;
+        $project->admin_id = $request->admin_id;
         $project->project_number = $request->input('project_number');
         $project->project_name = $request->input('project_name');
         $project->location = $request->input('location');
@@ -90,7 +101,14 @@ class ProjectController extends Controller
         $project->description = $request->input('description');
         $project->save();
 
-        return redirect('/projects')->with('success', 'Added Successfully!');
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Projects";
+        $log->description = " ";
+        $log->save();
+
+        return redirect('/admin/projects')->with('success', 'Added Successfully!');
     }
 
     /**
@@ -108,6 +126,13 @@ class ProjectController extends Controller
 
         $cheques = Cheque::orderByDesc('id')->get();
         $clients = Client::all();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 0;
+        $log->affected_table = "Projects";
+        $log->description = " ";
+        $log->save();
 
         return view('project.show')
         ->with('cheques', $cheques)
@@ -182,6 +207,13 @@ class ProjectController extends Controller
         $project->project_image = $filenameToStore;
         $project->description = $request->input('description');
         $project->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 2;
+        $log->affected_table = "Projects";
+        $log->description = " ";
+        $log->save();
 
         return redirect('/projects')->with('success', 'Updated Successfully!');
     }

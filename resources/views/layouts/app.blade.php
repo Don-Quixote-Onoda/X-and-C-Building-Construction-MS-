@@ -173,10 +173,15 @@
                     <!-- BOF TAB-PANE #1 -->
                     <div id="tab-1" class="tab-pane show active">
                         <div class="pane-header">
-                            <h3><i class="ti-user"></i> User Panel</h3>
-                            <i class="fa fa-circle text-success"></i> <span class="profile-user">siQuang
-                                Humbleman</span>
-                            <span class="float-right"><a href="/logout" class="text-carolina">Log-Out</a></span>
+                            <h3><i class="ti-user"></i> 
+                                {{(Auth::guard('admin')->user()->user_type_id == 0) ? 'Administrator' : ''}}
+                                {{(Auth::guard('admin')->user()->user_type_id == 1) ? 'Fund Manager' : ''}}
+                                {{(Auth::guard('admin')->user()->user_type_id == 2) ? 'Transaction Recorder' : ''}}
+                            </h3>
+                            <i class="fa fa-circle text-success"></i> <span class="profile-user">{{Auth::guard('admin')->user()->name}}</span>
+                            <span class="float-right"><a href="{{route('admin.logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-carolina">Log-Out</a>
+                                <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
+                            </span>
                         </div>
                         <div class="pane-body">
                             <div class="card bg-transparent mb-3">

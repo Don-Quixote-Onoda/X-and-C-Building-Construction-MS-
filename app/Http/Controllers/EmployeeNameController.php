@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\EmployeeName;
+use App\Models\Log;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeNameController extends Controller
 {
@@ -13,10 +15,10 @@ class EmployeeNameController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function index()
     {
@@ -52,6 +54,13 @@ class EmployeeNameController extends Controller
         $employeeName->employee_name = $request->input('employee_name');
         $employeeName->position = $request->input('position');
         $employeeName->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Employee";
+        $log->description = "Add new employee";
+        $log->save();
 
         return redirect($request->input('route_name'))->with('success', 'Employee Name Added Successfully!');
     }

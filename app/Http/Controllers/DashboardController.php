@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Log;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -12,13 +14,20 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function index()
     {
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 0;
+        $log->affected_table = "Dashboard";
+        $log->description = "User login";
+        $log->save();
+
         return view('dashboard.index');
     }
 

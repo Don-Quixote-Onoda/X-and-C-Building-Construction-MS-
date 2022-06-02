@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Cheque;
 use App\Models\Refund;
 use App\Models\EmployeeName;
+use App\Models\Log;
+use Illuminate\Support\Facades\Auth;
+
 
 class ChequeController extends Controller 
 {
@@ -15,10 +18,10 @@ class ChequeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function index()
     {
@@ -36,6 +39,8 @@ class ChequeController extends Controller
     {
 
         $employee_names = EmployeeName::all();
+
+        
 
         return view('cheques.create')->with('employee_names', $employee_names);
     }
@@ -61,6 +66,13 @@ class ChequeController extends Controller
         $cheque->cheque_number = $request->input('cheque_number');
         $cheque->employee_id = $request->input('employee_id');
         $cheque->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Cheque";
+        $log->description = "Add new cheque information";
+        $log->save();
 
         return redirect('/cheques')->with('success', 'Cheque Information Added Successfully!');
     }
@@ -116,6 +128,13 @@ class ChequeController extends Controller
         $cheque->cheque_number = $request->input('cheque_number');
         $cheque->employee_id = $request->input('employee_id');
         $cheque->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Cheque";
+        $log->description = "Edit cheque information";
+        $log->save();
 
         return redirect('/cheques')->with('success', 'Cheque Information Updated Successfully!');
     }

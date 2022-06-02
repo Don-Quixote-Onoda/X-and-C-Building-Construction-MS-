@@ -21,7 +21,10 @@
       </ul>
       <div>
         <a href="/projects" class="btn btn-outline-dark float-right justify-content-end text-light"><i class="fa fa-reply-all"></i> Back</a>
+      <a href="/admin/project-report/{{$project->id}}" class="btn btn-danger mr-5 float-right justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT PROJECT REPORT</a>
+
       </div>
+      
   </div>
   <div class="card-body">
       <div class="tab-content">

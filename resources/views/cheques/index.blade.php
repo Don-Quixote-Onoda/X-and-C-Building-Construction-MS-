@@ -3,8 +3,8 @@
 <div class="row">
     <div class="col">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+            <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/cheques">Cheques</a></li>
             <li class="breadcrumb-item active">Cheques' Lists</li>
         </ol>
     </div>
@@ -17,7 +17,7 @@
                     <i class="ti-briefcase"></i> Cheques's Table
                 </div> 
                 <div class="tools">
-                    <a href="/cheques/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
+                    <a href="/admin/cheques/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
                         To Add New Cheque</a>
                 </div>
             </div>
@@ -43,8 +43,8 @@
                     <td>{{$cheque->employee->employee_name}}</td>
                     <td>{{$cheque->datetime}}</td>
                     <td class="text-center">
-                        <a href="/cheques/{{$cheque->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
-                        <a href="/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
+                        <a href="/admin/cheques/{{$cheque->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
+                        <a href="/admin/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
                     </td>
                 </tr>
             @endforeach

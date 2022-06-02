@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Models\Log;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -13,10 +15,10 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */ 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     
     public function index()
@@ -58,6 +60,13 @@ class ClientController extends Controller
         $client->owner_name = $request->input('owner_name');
         $client->contact_details = $request->input('contact_details');
         $client->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Client";
+        $log->description = "Add new client information";
+        $log->save();
 
         return redirect($request->input('redirect'))->with('success', 'Client Added Successfully!');
     }

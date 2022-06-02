@@ -19,7 +19,7 @@
           <input type="text" name="project_number" class="form-control">
       </div>
   </div>
-
+  <input type="hidden" name="admin_id" value="{{Auth::guard('admin')->user()->user_type_id}}" >
   <div class="form-group row">
     <div class="input-group col-md-6 pl-5 mx-auto mb-3 offset-md-3">
         <div class="input-group-prepend">
@@ -144,6 +144,7 @@
                       <input type="text" name="client_name" class="form-control">
                   </div>
                 </div>
+
                 <div class="form-group row">
                   <div class="input-group col px-5 mx-auto mb-2 offset-md-3">
                       <div class="input-group-prepend">

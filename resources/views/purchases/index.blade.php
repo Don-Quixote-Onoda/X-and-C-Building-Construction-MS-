@@ -3,8 +3,8 @@
 <div class="row">
     <div class="col">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/purchases">Purchase</a></li>
+            <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/purchases">Purchase</a></li>
             <li class="breadcrumb-item active">Purchase Lists</li>
         </ol>
     </div>
@@ -33,8 +33,8 @@
                     <td>{{$purchase->project->project_name}}</td>
                     <td>{{$purchase->amount}}</td>
                     <td class="text-center">
-                        <a href="/purchases/{{$purchase->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
-                        <a href="/purchases/{{$purchase->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
+                        <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
+                        <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
                     </td>
                 </tr>
             @endforeach

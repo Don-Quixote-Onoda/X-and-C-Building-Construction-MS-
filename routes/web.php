@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/dashboard', 'DashboardController');
-Route::resource('/users', 'UserController');
-Route::resource('/user-type', 'UserTypeController');
-Route::resource('/client', 'ClientController');
-Route::resource('/projects', 'ProjectController');
-Route::resource('/refunds', 'RefundController');
-Route::resource('/purchases', 'PurchaseController');
-Route::resource('/cheques', 'ChequeController');
-Route::post('/change-password', 'UserController@changePassword');
-Route::resource('/employee_names', 'EmployeeNameController');
+// Route::resource('/user-type', 'UserTypeController');
+
 
 Route::group(['middleware' => ['auth']], function() {
     /**
@@ -40,3 +34,33 @@ Route::group(['middleware' => ['auth']], function() {
   
  
  
+Route::prefix('admin')->name('admin.')->group(function() {
+
+    Route::middleware(['guest:admin'])->group(function() {
+        Route::view('/login', 'dashboard.admin.login')->name('login');
+        Route::post('/create', [AdminController::class, 'create'])->name('create');
+        Route::post('/check', [AdminController::class, 'check'])->name('check');
+        Route::view('/register', 'dashboard.admin.register')->name('register');
+    });
+
+    Route::middleware(['auth:admin'])->group(function() {
+        Route::view('/home', 'dashboard.admin.home')->name('home');
+        Route::resource('/dashboard', 'DashboardController');
+        Route::resource('/client', 'ClientController');
+        Route::resource('/projects', 'ProjectController');
+        Route::resource('/refunds', 'RefundController');
+        Route::resource('/purchases', 'PurchaseController');
+        Route::resource('/cheques', 'ChequeController');
+        Route::resource('/users', 'UserController');
+        Route::resource('/logs', 'LogsController');
+        Route::post('/change-password', 'UserController@changePassword');
+        Route::resource('/employee_names', 'EmployeeNameController');
+        Route::post('logout', [AdminController::class, 'logout'])->name('logout');
+        Route::get('project-report/{id}/', 'PDFMaker@gen');
+        // Route::get('/invoice', function () {
+
+        //     $pdf = PDF::loadView('invoice');
+        //     return $pdf->download('invoice.pdf');
+        // });
+    });
+});

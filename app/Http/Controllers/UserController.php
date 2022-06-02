@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserType;
-use App\Models\User;
+use App\Models\Admin;
 
 class UserController extends Controller
 {
@@ -14,18 +14,18 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
 
     public function index()
     {
         //
-        $users = User::latest()->get();
+        $admins = Admin::latest()->get();
 
-        return view('users.index')->with('users', $users);
+        return view('users.index')->with('users', $admins);
     }
 
     // public function index(Request $request)
@@ -69,37 +69,27 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'employee_id' => 'required',
-            'employee_fullname' => 'required',
-            'username' => 'required',
+            'fullname' => 'required',
+            'usertype' => 'required',
+            'email' => 'required',
             'password' => 'required',
             'status' => 'required',
-            'usertype' => 'required',
-            'image_profile' => 'file|nullable|max:1999',
+            'password_confirmation' => 'required',
         ]);
 
-        if($request->hasFile('image_profile')) {
-            $filenameWithExt = $request->file('image_profile');
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image_profile')->getClientOriginalExtension();
-            $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-            $path = $request->file('image_profile')->storeAs('public/users/image_profiles', $filenameToStore);
-        }
-        else {
-            $filenameToStore = 'noimage.jpg';
-        }
+        $admin = new Admin;
+        $admin->employee_id = $request->input('employee_id');
+        $admin->status = $request->input('status');
+        $admin->name = $request->input('fullname');
+        $admin->user_type_id = $request->input('usertype');
+        $admin->email = $request->input('email');
+        $admin->password = \Hash::make($request->password);
+        $save = $admin->save();
 
-        $user = new User;
-        $user->employee_id = $request->input('employee_id');
-        $user->employee_fullname = $request->input('employee_fullname');
-        $user->username = $request->input('username');
-        $user->password = $request->input('password');
-        $user->status = $request->input('status');
-        $user->usertype_id = $request->input('usertype');
-        $user->image_profile = $filenameToStore;
-        $user->save();
 
-        return redirect('/users/create')->with('success', 'Added Succesfully!');
+        return redirect()->back()->with('success', 'You are now registered successfully!');
+       
     }
 
     /**
