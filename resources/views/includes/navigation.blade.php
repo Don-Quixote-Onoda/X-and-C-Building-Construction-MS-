@@ -93,7 +93,7 @@
             <li class="active">
                 <a href="/admin/logs">
                     <i class="fa fa-line-chart"></i>
-                    <span class="menu-text">Reports</span>
+                    <span class="menu-text">Logs</span>
                 </a>
             </li>
           </ul>

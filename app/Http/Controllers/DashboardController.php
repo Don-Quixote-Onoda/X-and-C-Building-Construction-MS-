@@ -21,8 +21,9 @@ class DashboardController extends Controller
     
     public function index()
     {
+
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 0;
         $log->affected_table = "Dashboard";
         $log->description = "User login";

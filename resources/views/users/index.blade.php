@@ -10,43 +10,47 @@
               </div> 
               <div class="tools">
                   <a href="/admin/users/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
-                      To Add New Row</a>
+                      To Add New User</a>
               </div>
           </div>
+          @if (count($users) > 0)
           <div class="card-body">
-              <div class="table-responsive">
-                  <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                      
-                            <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
-                      <thead class="thead-light">
+            <div class="table-responsive">
+                <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                    
+                          <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
+                    <thead class="thead-light">
+                        <tr>
+                          <th class="sorting sorting_asc" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column descending" aria-sort="ascending" style="width: 150.609px;">id</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">employee id</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">name</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">email</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">user type</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($users as $user)      
                           <tr>
-                            <th class="sorting sorting_asc" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column descending" aria-sort="ascending" style="width: 150.609px;">id</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">name</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">email</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
+                              <td>{{$user->id}}</td>
+                              <td>{{$user->employee_id}}</td>
+                              <td>{{$user->name}}</td>
+                              <td>{{$user->email}}</td>
+                              <td>
+                                  {{($user->user_type_id == 0) ? 'Administrator' : ''}}
+                                  {{($user->user_type_id == 1) ? 'Fund Manager' : ''}}
+                                  {{($user->user_type_id == 2) ? 'Transaction Recorder' : ''}}
+                              </td>
+                              <td>{{($user->status == 1) ? 'active' : 'inactive'}}</td>
+                              
                           </tr>
-                      </thead>
-                      <tbody>
-                        @foreach ($users as $user)      
-                            <tr>
-                                <td>{{$user->id}}</td>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td class="text-center">
-                                    <button class="btn btn-sm btn-primary"><i class="fa fa-vcard-o"></i>
-                                        Show
-                                    </button>
-                                    <button class="btn btn-sm btn-warning"><i class="ti-write"></i>
-                                        Edit
-                                    </button>
-                                </td>
-                            </tr>
-                        @endforeach
-                      </tbody>
-                  </table>
-                </div>
-            </div>
+                      @endforeach
+                    </tbody>
+                </table>
+              </div>
           </div>
+        </div>
+          @endif
       </div>
   </div>
 </div>

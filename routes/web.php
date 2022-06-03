@@ -57,6 +57,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::resource('/employee_names', 'EmployeeNameController');
         Route::post('logout', [AdminController::class, 'logout'])->name('logout');
         Route::get('project-report/{id}/', 'PDFMaker@gen');
+        Route::get('project-summary-report', 'PDFMaker@generateProjectSummaryReport');
+        Route::get('cheques-utilization-report/{id}/', 'PDFMaker@chequesUtilizationReport');
+        Route::get('disbursement-cheque-summary', 'PDFMaker@disburseChequeSummary');
         // Route::get('/invoice', function () {
 
         //     $pdf = PDF::loadView('invoice');

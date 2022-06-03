@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Log;
 
 class AdminController extends Controller
 {
@@ -38,6 +39,9 @@ class AdminController extends Controller
 
 
         if(Auth::guard('admin')->attempt($creds)) {
+
+            
+
             return redirect('/admin/dashboard')->with('success', 'Correct Credentials!');
         }
         else {

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\UserType;
 use App\Models\Admin;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\Log;
+
 class UserController extends Controller
 {
     /**
@@ -24,6 +27,13 @@ class UserController extends Controller
     {
         //
         $admins = Admin::latest()->get();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 0;
+        $log->affected_table = "Users";
+        $log->description = "User Access user table";
+        $log->save();
 
         return view('users.index')->with('users', $admins);
     }
@@ -87,8 +97,15 @@ class UserController extends Controller
         $admin->password = \Hash::make($request->password);
         $save = $admin->save();
 
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 1;
+        $log->affected_table = "Users";
+        $log->description = "New Record for user table";
+        $log->save();
 
-        return redirect()->back()->with('success', 'You are now registered successfully!');
+
+        return redirect()->back()->with('success', 'New user added successfully!');
        
     }
 
@@ -150,41 +167,35 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $this->validate($request, [
             'employee_id' => 'required',
-            'employee_fullname' => 'required',
-            'username' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'usertype' => 'required',
+            'password' => 'required',
             'status' => 'required',
-            'image_profile' => 'image|nullable|max:1999',
-            'usertype' => 'required'
         ]);
 
-        if($request->hasFile('image_profile')) {
-            $filenameWithExt = $request->file('image_profile');
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image_profile')->getClientOriginalExtension();
-            $filenameToStore = $filename.'_'.time().'.'.$extension;
+        $admin = Admin::find($id);
+        $admin->employee_id = $request->input('employee_id');
+        $admin->status = $request->input('status');
+        $admin->name = $request->input('name');
+        $admin->user_type_id = $request->input('usertype');
+        $admin->email = $request->input('email');
+        $admin->password = \Hash::make($request->password);
+        $save = $admin->save();
 
-            $path = $request->file('image_profile')->storeAs('public/users/image_profiles', $filenameToStore);
-        }
-        else {
-            $filenameToStore = 'noimage.jpg';
-        }
-
-        $user = User::find($id);
-        $user->employee_id = $request->input('employee_id');
-        $user->employee_fullname = $request->input('employee_fullname');
-        $user->username = $request->input('username');
-        $user->status = $request->input('status');
-        $user->usertype_id = $request->input('usertype');
-        $user->image_profile = $filenameToStore;
-        $user->save();
-
-        $userInfo = User::find($id);
-        $usertypes = UserType::all();
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 2;
+        $log->affected_table = "Users";
+        $log->description = "Edit Record for user table";
+        $log->save();
 
 
-        return redirect('/users/'.$id)->with('success', 'Updated Succesfully!')->with('users', $userInfo)->with('usertypes', $usertypes);
+        return redirect()->back()->with('success', 'User updated successfully!');
+       
     }
 
     /**

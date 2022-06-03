@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Project Report</title>
+    <title> Project Summary Report</title>
     {{-- <link rel="stylesheet" href="{{asset('invoice/style.css')}}" media="all" /> --}}
     <style>
         .clearfix:after {
@@ -164,7 +164,7 @@ footer {
     </style>
   </head>
   <body>
-    <header class="clearfix">
+    <header class="clearfix" style="margin-bottom: 1rem;">
       <div id="logo">
         {{-- <img src="{{asset('invoice/logo.png')}}"> --}}
       </div>
@@ -180,96 +180,61 @@ footer {
         font-weight: 600;">{{$timeToday}}</span>
       </h1>
       <h2
-      style="color: #5c666e;
+      style="color: #2c2e30;
       text-align: center;
       text-transform:uppercase;
-      text-decoration: underline;
       "
-      >Project Report</h2>
+      >Project Summary Report</h2>
       
-      <div id="company" class="clearfix" style="font-weight: bold;">
-        <div><span>COMPANY NAME</span> :{{$project->client->company_name}}</div>
-        <div><span>OWNER</span> :{{$project->client->owner_name}}</div>
-      </div>
-      <div id="project">
-        <div><span>PROJECT NAME</span> :{{$project->project_name}}</div>
-        <div><span>PROJECT DURATION</span> :{{$project->project_start}} - {{$purchases[0]->project->project_ETA}}</div>
-        <div><span>BUDGET ALLOCATION</span> :{{$project->project_budget}}</div>
-      </div>
     </header>
+    <h3 style="margin:0; 
+        text-align: center;
+    ">({{$projects[0]->project_start}} - {{$projects[count($projects)-1]->project_ETA}})</h3>
     <main>
-      @if (count($funds))
-      <h3>Recieved Funds</h3>
-      <table style="width: 70%;">
-        <thead>
-          <tr style="font-weight: bold;">
-            <th>Date</th>
-            <th>Reference Number</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            @foreach ($funds as $fund)
-            <tr>
-            <td>{{$fund->created_at}}</td>
-            <td>45234534</td>
-            <td>PHP {{$fund->amount}}</td>
-            </tr>
-            @endforeach
-          <tr style=" font-weight: bold; ">
-            <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVED: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
-          </tr>
-        </tbody>
-      </table>
-      @endif
-      
-      @if (count($purchases) > 0)
-      <h3 style="border-top: 2px solid #000; padding-top: 0.5rem;">Expenses</h3>
+      <h3 style="border-top: 2px solid #000; padding-top: 0.5rem;"></h3>
       <table style="width: 100%;  border-bottom: 2px solid; ">
         <thead>
           <tr style="font-weight: bold;">
-            <th>Date</th>
-            <th>OR #</th>
-            <th>Specifications</th>
-            <th>Amount</th>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Duration</th>
+            <th>Budget</th>
+            <th>Expenses</th>
+            <th>Profit</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($purchases as $purchase)
-          <tr>
-            <td>{{$purchase->created_at}}</td>
-            <td>{{$purchase->OR_Number}}</td>
-            <td>{{$purchase->description}}</td>
-            <td>PHP {{$purchase->amount}}</td>
-          </tr>
-          @endforeach
-          <tr style=" font-weight: bold; ">
-            <td colspan="3" style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP {{$totalExpenses}}</td>
-          </tr>
+          @if ($numOfProjects > 0)
+            @for ($i = 0; $i < $numOfProjects; $i++)
+              <tr>
+                <td>{{$projects[$i]->id}}</td>
+                <td>{{$projects[$i]->project_name}}</td>
+                <td>{{$projects[$i]->project_start}} - {{$projects[$i]->project_ETA}}</td>
+                <td>{{$projects[$i]->project_budget}}</td>
+                <td>{{$expenses[$i]}}</td>
+                <td>{{$profits[$i]}}</td>
+              </tr>
+            @endfor
+          @endif
         </tbody>
       </table>
-      @endif
-
       <table style="width: 50%;">
         <tbody>
           <tr>
-            <td>March 1, 2023</td>
-            <td>PHP 1, 000, 000.00</td>
+            <td>Number of Projects</td>
+            <td>: {{$numOfProjects}}</td>
           </tr>
           <tr>
-            <td>December 1, 2023</td>
-            <td>PHP 3, 000, 000.00</td>
+            <td>Total Amount of Project Value (Budget) </td>
+            <td>: {{$totalAmountOfProjectValue}}</td>
           </tr>
           <tr>
-            <td>March 1, 2024</td>
-            <td>PHP 1, 000, 000.00</td>
+            <td>Total Amount of Expenses</td>
+            <td>: {{$totalAmountOfExpenses}}</td>
           </tr>
           <tr style=" font-weight: bold; ">
-            <td style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
+            <td style="text-align: left;">Total Profit: </td>
+            <td style="border-top: 2px solid black;">{{$totalProfit}}</td>
           </tr>
         </tbody>
       </table>

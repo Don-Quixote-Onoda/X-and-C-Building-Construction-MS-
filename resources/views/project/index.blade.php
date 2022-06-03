@@ -17,6 +17,7 @@
                     <i class="ti-briefcase"></i> Project's Table
                 </div> 
                 <div class="tools">
+                  <a href="/admin/project-summary-report" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o""></i> Generate PDF</a>
                     <a href="/admin/projects/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
                         To Add New Project</a>
                 </div>
@@ -25,8 +26,7 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                        
-                                <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
+                    <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                         <thead class="thead-light">
                             <tr>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project number</th>

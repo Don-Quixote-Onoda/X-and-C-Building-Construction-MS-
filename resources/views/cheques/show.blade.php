@@ -14,6 +14,9 @@
             <div class="caption uppercase text-secondary">
                 <i class="ti-briefcase"></i> Show Cheque
             </div>
+            <div class="tools">
+                <a href="/admin/cheques-utilization-report/{{$cheque->id}}" class="btn btn-danger mr-5 float-right justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT CHEQUE UTILIZATION REPORT</a>
+            </div>
         </div>
         <div class="card-body ml-5">
             <ul class="list-group list-group-flush">

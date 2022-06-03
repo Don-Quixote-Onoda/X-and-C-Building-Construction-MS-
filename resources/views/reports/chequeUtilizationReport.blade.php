@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Project Report</title>
+    <title>Cheque Utilization Report</title>
     {{-- <link rel="stylesheet" href="{{asset('invoice/style.css')}}" media="all" /> --}}
     <style>
         .clearfix:after {
@@ -70,9 +70,10 @@ h1 {
 }
 
 #company {
-  float: right;
+  float: left;
   margin-right: 1rem;
   text-align: left;
+  width: 50%;
 }
 
 #company span {
@@ -164,7 +165,7 @@ footer {
     </style>
   </head>
   <body>
-    <header class="clearfix">
+    <header class="clearfix" style="margin-bottom: 1rem;">
       <div id="logo">
         {{-- <img src="{{asset('invoice/logo.png')}}"> --}}
       </div>
@@ -180,97 +181,48 @@ footer {
         font-weight: 600;">{{$timeToday}}</span>
       </h1>
       <h2
-      style="color: #5c666e;
+      style="color: #2c2e30;
       text-align: center;
       text-transform:uppercase;
-      text-decoration: underline;
       "
-      >Project Report</h2>
-      
+      >Cheque Utilization Report</h2>
       <div id="company" class="clearfix" style="font-weight: bold;">
-        <div><span>COMPANY NAME</span> :{{$project->client->company_name}}</div>
-        <div><span>OWNER</span> :{{$project->client->owner_name}}</div>
+        <div><span>Cheque Number</span> :{{$cheques->cheque_number}}</div>
+        <div><span>Issued by</span> :{{$cheques->employee->employee_name}}</div>
       </div>
       <div id="project">
-        <div><span>PROJECT NAME</span> :{{$project->project_name}}</div>
-        <div><span>PROJECT DURATION</span> :{{$project->project_start}} - {{$purchases[0]->project->project_ETA}}</div>
-        <div><span>BUDGET ALLOCATION</span> :{{$project->project_budget}}</div>
+        <div><span>Date Issued</span> :{{$cheques->datetime}}</div>
+        <div><span>Amount</span> :PHP {{$cheques->amount}}</div>
       </div>
     </header>
     <main>
-      @if (count($funds))
-      <h3>Recieved Funds</h3>
-      <table style="width: 70%;">
-        <thead>
-          <tr style="font-weight: bold;">
-            <th>Date</th>
-            <th>Reference Number</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            @foreach ($funds as $fund)
-            <tr>
-            <td>{{$fund->created_at}}</td>
-            <td>45234534</td>
-            <td>PHP {{$fund->amount}}</td>
-            </tr>
-            @endforeach
-          <tr style=" font-weight: bold; ">
-            <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVED: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
-          </tr>
-        </tbody>
-      </table>
-      @endif
-      
-      @if (count($purchases) > 0)
-      <h3 style="border-top: 2px solid #000; padding-top: 0.5rem;">Expenses</h3>
+      <h3 style="padding-top: 0.5rem;"></h3>
       <table style="width: 100%;  border-bottom: 2px solid; ">
         <thead>
           <tr style="font-weight: bold;">
             <th>Date</th>
             <th>OR #</th>
+            <th>Project Name</th>
             <th>Specifications</th>
             <th>Amount</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($purchases as $purchase)
-          <tr>
-            <td>{{$purchase->created_at}}</td>
-            <td>{{$purchase->OR_Number}}</td>
-            <td>{{$purchase->description}}</td>
-            <td>PHP {{$purchase->amount}}</td>
-          </tr>
-          @endforeach
-          <tr style=" font-weight: bold; ">
-            <td colspan="3" style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP {{$totalExpenses}}</td>
-          </tr>
-        </tbody>
-      </table>
-      @endif
-
-      <table style="width: 50%;">
-        <tbody>
-          <tr>
-            <td>March 1, 2023</td>
-            <td>PHP 1, 000, 000.00</td>
-          </tr>
-          <tr>
-            <td>December 1, 2023</td>
-            <td>PHP 3, 000, 000.00</td>
-          </tr>
-          <tr>
-            <td>March 1, 2024</td>
-            <td>PHP 1, 000, 000.00</td>
-          </tr>
-          <tr style=" font-weight: bold; ">
-            <td style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
-          </tr>
+          @if (count($purchases) > 0)
+              @foreach ($purchases as $purchase)
+              <tr>
+                <td>{{$purchase->transaction_date}}</td>
+                <td>{{$purchase->OR_Number}}</td>
+                <td>{{$purchase->project->project_name}}</td>
+                <td>PHP: {{$purchase->description}}</td>
+                <td>{{$purchase->amount}}</td>
+              </tr>
+              @endforeach
+              <tr>
+                <td colspan="4" style="text-align: right; text-transform:uppercase; font-weight: bolder;">total expenses: </td>
+                <td style="font-weight: bolder;">PHP: {{$totalExpenses}}</td>
+              </tr>
+          @endif
         </tbody>
       </table>
       <hr style="border: 2px solid #000;">

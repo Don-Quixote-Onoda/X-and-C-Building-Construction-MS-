@@ -25,11 +25,7 @@
 <body class="theme-dark">
     <div class="grid-wrapper sidebar-bg bg1">
 
-        <!-- Theme switcher -->
-        <div id="theme-tab">
-            <div class="theme-tab-item switch-theme bg-white" data-theme="theme-default" data-toggle="tooltip" title="Light"></div>
-            <div class="theme-tab-item switch-theme bg-dark" data-theme="theme-dark" data-toggle="tooltip" title="Dark"></div>
-        </div>
+    
 
         <!-- BOF HEADER -->
         <div class="header">
@@ -45,82 +41,10 @@
                 </div>
                 <div class="navigation d-flex">
 
-                    <!-- BOF Header Search -->
-                    <form class="navbar-search" role="search" method="post" action="#">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><i class="ti-search"></i></div>
-                            </div>
-                            <input type="text" placeholder="Search for keywords" class="form-control" name="top-search"
-                                id="top-search">
-                        </div>
-                    </form>
                     <!-- EOF Header Search -->
 
                     <!-- BOF Header Nav -->
                     <div class="navbar-menu d-flex">
-                        <div class="menu-item">
-                            <a href="#" class="btn" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <span class="badge badge-pill badge-danger">3</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-alert">
-                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comment-alt"></i> View
-                                        All Alerts <i class="ti-angle-right"></i></a></li>
-                                <li><a href="#"><i class="fa fa-user"></i> New user registered <span>Just now</span></a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-calendar-plus-o"></i> New event created <span>5 min
-                                            ago</span></a></li>
-                                <li><a href="#"><i class="fa fa-area-chart"></i> Report ready to download <span>1 day
-                                            ago</span></a></li>
-                                <li><a href="#"><i class="fa fa-bank"></i> Bill payment reminder <span>1 day
-                                            ago</span></a></li>
-                                <li><a href="#"><i class="fa fa-clock-o"></i> Staff meeting <span>3 days ago</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#" class="btn" data-toggle="dropdown">
-                                <i class="ti-email"></i>
-                                <span class="badge badge-pill badge-success">7</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-message">
-                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comments"></i> View All
-                                        Messages <i class="ti-angle-right"></i></a></li>
-                                <li>
-                                    <img src="{{asset('assets/img/profile/profile-04.jpg')}}">
-                                    <div class="message-row">
-                                        <small>24h ago</small>
-                                        <a href="#"><span class="message-user">Pear Appleton</span><br>
-                                            Staff meeting on Tuesday at 4PM, remember to set date</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets/img/profile/profile-07.jpg')}}">
-                                    <div class="message-row">
-                                        <small>2h ago</small>
-                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
-                                            RE: Remember to generate PNL for October</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets/img/profile/profile-06.jpg')}}">
-                                    <div class="message-row">
-                                        <small>3d ago</small>
-                                        <a href="#"><span class="message-user">Lemony Tang</span><br>
-                                            Appointment with lawyer, better call Saul!</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="{{asset('assets/img/profile/profile-07.jp')}}g">
-                                    <div class="message-row">
-                                        <small>4d ago</small>
-                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
-                                            Theme designed by siQuang for siQthemes</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="menu-item">
                             <a href="#" class="btn right-sidebar-toggle"><i class="ti-user"></i></a>
                         </div>
@@ -159,12 +83,6 @@
                     <li class="nav-item">
                         <a href="#tab-1" data-toggle="tab" class="nav-link active">Profile</a>
                     </li>
-                    <li>
-                        <a href="#tab-2" data-toggle="tab" class="nav-link">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#tab-3" data-toggle="tab" class="nav-link">Help</a>
-                    </li>
                 </ul>
                 <!-- EOF TABS -->
 
@@ -195,120 +113,75 @@
                                     </li>
                                     <li class="list-group-item">
                                         <h5 class="mb-3">My Profile</h5>
-                                        <form class="form-update-profile">
+                                            {!!Form::open(['action' => ['UserController@update', Auth::guard('admin')->user()->id], 'method' => 'POST', 'class' => 'form-update-profile row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
+                                            {{Form::hidden('_method', 'PUT')}}
                                             <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Firstname:</label>
+                                                <label class="col-form-label col-md-4">Employee ID:</label>
                                                 <div class="col">
-                                                    <input type="text" name="first_name" class="form-control-plaintext"
-                                                        value="siQuang">
+                                                    <input type="text" name="employee_id" class="form-control-plaintext"
+                                                        value="{{Auth::guard('admin')->user()->employee_id}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Lastname:</label>
+                                                <label class="col-form-label col-md-4">Name:</label>
                                                 <div class="col">
-                                                    <input type="text" name="last_name" class="form-control-plaintext"
-                                                        value="Humbleman">
+                                                    <input type="text" name="name" class="form-control-plaintext"
+                                                        value="{{Auth::guard('admin')->user()->name}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-md-4">Email:</label>
                                                 <div class="col">
                                                     <input type="text" name="email" class="form-control-plaintext"
-                                                        value="siquang@example.com">
+                                                        value="{{Auth::guard('admin')->user()->email}}">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Username:</label>
-                                                <div class="col">
-                                                    <input type="text" name="username" class="form-control-plaintext"
-                                                        value="siquang">
+                                            <div class="row mb-3">
+                                                <label for="usertype" class="col-md-4 col-form-label text-md-end">{{ __('User Type') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <select class="form-control" name="usertype">
+                                                        <option>Default Select</option>
+                                                        <option value="0" {{(Auth::guard('admin')->user()->user_type_id == 0) ? 'selected' : ''}}>Administrator</option>
+                                                        <option value="1" {{(Auth::guard('admin')->user()->user_type_id == 1) ? 'selected' : ''}}>Fund Manager</option>
+                                                        <option value="2" {{(Auth::guard('admin')->user()->user_type_id == 2) ? 'selected' : ''}}>Transaction Recorder</option>
+                                                    </select>
+                    
+                                                    @error('usertype')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-md-4">Password:</label>
                                                 <div class="col">
                                                     <input type="password" name="password" class="form-control-plaintext"
-                                                        value="123456789">
+                                                        value="{{Auth::guard('admin')->user()->password}}">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <select name="status" class="form-control" >
+                                                        <option value="1" {{(Auth::guard('admin')->user()->status == 1) ? 'selected' : ''}}>Active</option>
+                                                        <option value="0" {{(Auth::guard('admin')->user()->status == 0) ? 'selected' : ''}}>Inactive</option>
+                                                    </select>
+                    
+                                                    @error('name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col offset-md-4 pl-2">
                                                 <button type="submit" class="btn btn-sm btn-primary">Update</button>
                                             </div>
-                                        </form>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h5 class="mb-3">
-                                            Messages
-                                            <span class="badge badge-pill badge-info pull-right">4</span>
-                                        </h5>
-                                        <div class="message-group d-flex flex-row mb-3">
-                                            <a href="#"><img src="{{asset('assets/img/profile/profile-01.jpg')}}" class="rounded"
-                                                    alt="image"></a>
-                                            <div class="message-item">
-                                                <small class="text-carolina">Today 3:30 pm</small><br>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-                                        <div class="message-group d-flex flex-row mb-3">
-                                            <a href="#"><img src="{{asset('assets/img/profile/profile-03.jpg')}}" class="rounded"
-                                                    alt="image"></a>
-                                            <div class="message-item">
-                                                <small class="text-carolina">Today 12:45 pm</small><br>
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                                ut aliquip aute irure dolor in.
-                                            </div>
-                                        </div>
-                                        <div class="message-group d-flex flex-row mb-3">
-                                            <a href="#"><img src="{{asset('assets/img/profile/profile-02.jpg')}}" class="rounded"
-                                                    alt="image"></a>
-                                            <div class="message-item">
-                                                <small class="text-carolina">Yesterday 5:20 pm</small><br>
-                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.
-                                            </div>
-                                        </div>
-                                        <div class="message-group d-flex flex-row">
-                                            <a href="#"><img src="{{asset('assets/img/profile/profile-05.jpg')}}" class="rounded"
-                                                    alt="image"></a>
-                                            <div class="message-item">
-                                                <small class="text-carolina">Tuesday 2:20 pm</small><br>
-                                                Sunt in culpa qui officia deserunt mollit anim est laborum voluptate.
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h5>Upcoming Events</h5>
-                                        <p class="card-text">for Monday - February 25, 2019</p>
-                                        <div class="profile-calendar">
-                                            <table class="table table-bordered table-hover table-sm">
-                                                <thead class="thead-light">
-                                                    <tr>
-                                                        <th scope="col">Schedule</th>
-                                                        <th scope="col">Events</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>All-day</td>
-                                                        <td><i class="fa fa-circle text-info"></i> Project concept</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10:00 am</td>
-                                                        <td><i class="fa fa-circle text-info"></i> Staff meeting</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2:50 pm</td>
-                                                        <td><i class="fa fa-circle text-warning"></i> Send out report
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4:30 pm</td>
-                                                        <td><i class="fa fa-circle text-danger"></i> Appointment with
-                                                            Tang</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            {!!Form::close()!!}
+
                                     </li>
                                 </ul>
                             </div>

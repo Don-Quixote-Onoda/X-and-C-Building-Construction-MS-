@@ -14,7 +14,9 @@ class LogsController extends Controller
      */
     public function index()
     {
-        $logs = Log::all();
+        $logs = Log::orderByDesc('id')->get();
+
+        // return $logs[0];
         return view('logs.index')
         ->with('logs', $logs);
     }

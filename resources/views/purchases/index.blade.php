@@ -9,6 +9,19 @@
         </ol>
     </div>
 </div>
+<div class="col">
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="caption uppercase">
+                <i class="ti-briefcase"></i> Cheques's Table
+            </div> 
+            <div class="tools">
+              <a href="/admin/disbursement-cheque-summary" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o"></i> Generate PDF</a>
+
+                <a href="/admin/purchases/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
+                    To Add New Purchase</a>
+            </div>
+        </div>
 <div class="card-body">
   <div class="table-responsive">
       <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -34,7 +47,7 @@
                     <td>{{$purchase->amount}}</td>
                     <td class="text-center">
                         <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
-                        <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
+                        <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary px-1"><i class="ti-write"></i>Edit</a>
                     </td>
                 </tr>
             @endforeach
