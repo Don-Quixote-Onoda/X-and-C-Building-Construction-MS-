@@ -4,7 +4,7 @@
   <div class="col">
       <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+          <li class="breadcrumb-item"><a href="/admin/cheques">Cheques</a></li>
           <li class="breadcrumb-item active">Edit Cheque</li>
       </ol>
   </div>
@@ -50,7 +50,7 @@
 
 <div class="card-footer text-right mx-3 mb-3">
     <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
-  <a href="#" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
+  <a href="/admin/cheques" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
     
     {!!Form::close()!!}
@@ -75,7 +75,7 @@
                       <input type="text" name="employee_name" class="form-control">
                   </div>
                 </div>
-                <input type="hidden" name="route_name" value="/cheques/create">
+                <input type="hidden" name="route_name" value="/admin/cheques/create">
                 <div class="form-group row">
                   <div class="input-group col px-5 mx-auto mb-2 offset-md-3">
                       <div class="input-group-prepend">

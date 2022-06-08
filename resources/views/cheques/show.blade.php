@@ -4,7 +4,7 @@
     <div class="col">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+            <li class="breadcrumb-item"><a href="/admin/cheques">Cheques</a></li>
             <li class="breadcrumb-item active">Show Cheque</li>
         </ol>
     </div>
@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="card-footer text-right">
-            <a href="/cheques" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>
+            <a href="/admin/cheques" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>
         </div>
     </div>
 @endsection

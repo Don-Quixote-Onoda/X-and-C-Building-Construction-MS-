@@ -4,7 +4,7 @@
     <div class="col">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
+            <li class="breadcrumb-item"><a href="/admin/projects">Projects</a></li>
             <li class="breadcrumb-item active">Show Project</li>
         </ol>
     </div>
@@ -20,7 +20,7 @@
           </li>
       </ul>
       <div>
-        <a href="/projects" class="btn btn-outline-dark float-right justify-content-end text-light"><i class="fa fa-reply-all"></i> Back</a>
+        <a href="/admin/projects" class="btn btn-outline-dark float-right justify-content-end text-light"><i class="fa fa-reply-all"></i> Back</a>
       <a href="/admin/project-report/{{$project->id}}" class="btn btn-danger mr-5 float-right justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT PROJECT REPORT</a>
 
       </div>

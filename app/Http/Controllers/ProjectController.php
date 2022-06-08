@@ -67,7 +67,7 @@ class ProjectController extends Controller
             'project_awarding' => 'required',
             'status' => 'required',
             'description' => 'required',
-            'project_image' => 'image|nullable|max:1999',
+            'profile_picture' => 'image|nullable|max:1999',
             'admin_id' => 'required',
         ]);
 
@@ -124,8 +124,11 @@ class ProjectController extends Controller
         $project_infos = Project::all();
         $funds = Refund::orderByDesc('id')->where('project_id', $id)->get();
 
+        $fund = Refund::all();
+
         $cheques = Cheque::orderByDesc('id')->get();
         $clients = Client::all();
+
 
         $log = new Log;
         $log->user_id = Auth::guard('admin')->user()->id;
@@ -215,7 +218,7 @@ class ProjectController extends Controller
         $log->description = " ";
         $log->save();
 
-        return redirect('/projects')->with('success', 'Updated Successfully!');
+        return redirect('/admin/projects')->with('success', 'Updated Successfully!');
     }
 
     /**

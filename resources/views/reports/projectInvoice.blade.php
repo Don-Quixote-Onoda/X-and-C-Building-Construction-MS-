@@ -212,14 +212,14 @@ footer {
           
             @foreach ($funds as $fund)
             <tr>
-            <td>{{$fund->created_at}}</td>
+            <td>{{date('F d, Y', strtotime($fund->created_at))}}</td>
             <td>45234534</td>
             <td>PHP {{$fund->amount}}</td>
             </tr>
             @endforeach
           <tr style=" font-weight: bold; ">
             <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVED: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
+            <td style="border-top: 2px solid black;">PHP {{$totalFunds}}</td>
           </tr>
         </tbody>
       </table>
@@ -239,7 +239,7 @@ footer {
         <tbody>
           @foreach ($purchases as $purchase)
           <tr>
-            <td>{{$purchase->created_at}}</td>
+            <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
             <td>{{$purchase->OR_Number}}</td>
             <td>{{$purchase->description}}</td>
             <td>PHP {{$purchase->amount}}</td>
@@ -256,20 +256,16 @@ footer {
       <table style="width: 50%;">
         <tbody>
           <tr>
-            <td>March 1, 2023</td>
-            <td>PHP 1, 000, 000.00</td>
+            <td>TOTAL FUNDS RECIEVED</td>
+            <td>PHP {{$totalFunds}}</td>
           </tr>
           <tr>
-            <td>December 1, 2023</td>
-            <td>PHP 3, 000, 000.00</td>
-          </tr>
-          <tr>
-            <td>March 1, 2024</td>
-            <td>PHP 1, 000, 000.00</td>
+            <td>TOTAL EXPENSES</td>
+            <td>PHP {{$totalExpenses}}</td>
           </tr>
           <tr style=" font-weight: bold; ">
-            <td style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP 5, 000, 000.00</td>
+            <td style="text-align: left;">PROFIT: </td>
+            <td style="">PHP {{$totalFunds + $totalExpenses}}</td>
           </tr>
         </tbody>
       </table>
@@ -277,28 +273,36 @@ footer {
         </div>
     </main>
     <div style="display: flex; margin-bottom: 2rem;">
-      <div style="width: 50%;">
-        <p>Prepared by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectManager[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Manager</p>
-        </div>
-      </div>
-      <div style="width: 50%;">
-        <p>Validated by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Supervisor</p>
-        </div>
-      </div>
+      <table>
+        <tr>
+          <td>Prepared by:</td>
+          <td>
+            Validated by:
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Manager</p>
+            </div>
+          </td>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Supervisor</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <footer>
       Page 1 of 1

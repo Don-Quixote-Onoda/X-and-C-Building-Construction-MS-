@@ -4,7 +4,7 @@
   <div class="col">
       <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/cheques">Cheques</a></li>
+          <li class="breadcrumb-item"><a href="/admin/cheques">Cheques</a></li>
           <li class="breadcrumb-item active">Add Cheques</li>
       </ol>
   </div>
@@ -75,7 +75,7 @@
                       <input type="text" name="employee_name" class="form-control">
                   </div>
                 </div>
-                <input type="hidden" name="route_name" value="/cheques/create">
+                <input type="hidden" name="route_name" value="/admin/cheques/create">
                 <div class="form-group row">
                   <div class="input-group col px-5 mx-auto mb-2 offset-md-3">
                       <div class="input-group-prepend">

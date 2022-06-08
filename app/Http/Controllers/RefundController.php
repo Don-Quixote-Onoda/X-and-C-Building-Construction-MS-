@@ -7,6 +7,8 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\EmployeeName;
 use App\Models\Refund;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Log;
 
 class RefundController extends Controller
 {
@@ -56,9 +58,10 @@ class RefundController extends Controller
         $refund->amount = $request->input('amount');
         $refund->employee_id = $request->input('employee_id');
         $refund->project_id = $request->input('project_id');
+        $refund->admin_id = Auth::guard('admin')->user()->id;
         $refund->save();
 
-        return redirect('/projects/'.$request->input('project_id'))->with('success', 'Fund Inserted Successfully!');
+        return redirect('/admin/projects/'.$request->input('project_id'))->with('success', 'Fund Inserted Successfully!');
     }
 
     /**

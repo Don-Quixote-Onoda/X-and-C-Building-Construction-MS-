@@ -31,6 +31,7 @@
                           <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                     <thead class="thead-light">
                         <tr>
+                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">id</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">cheque number</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">employee id</th>
@@ -41,6 +42,7 @@
                     <tbody>
                       @foreach ($cheques as $cheque)      
                           <tr>
+                              <td>{{$cheque->id}}</td>
                               <td>{{$cheque->cheque_number}}</td>
                               <td>{{$cheque->amount}}</td>
                               <td>{{$cheque->employee->employee_name}}</td>

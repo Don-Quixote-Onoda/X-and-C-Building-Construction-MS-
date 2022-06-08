@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
@@ -37,14 +38,14 @@ Route::group(['middleware' => ['auth']], function() {
 Route::prefix('admin')->name('admin.')->group(function() {
 
     Route::middleware(['guest:admin'])->group(function() {
-        Route::view('/login', 'dashboard.admin.login')->name('login');
+        Route::view('/', 'dashboard.admin.login')->name('login');
         Route::post('/create', [AdminController::class, 'create'])->name('create');
         Route::post('/check', [AdminController::class, 'check'])->name('check');
         Route::view('/register', 'dashboard.admin.register')->name('register');
     });
 
     Route::middleware(['auth:admin'])->group(function() {
-        Route::view('/home', 'dashboard.admin.home')->name('home');
+        Route::resource('/home', 'DashboardController');
         Route::resource('/dashboard', 'DashboardController');
         Route::resource('/client', 'ClientController');
         Route::resource('/projects', 'ProjectController');

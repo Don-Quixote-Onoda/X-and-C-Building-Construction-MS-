@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card pl-4 pt-3">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -114,6 +114,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+        <a href="/admin/users" class="btn btn-outline-dark float-right justify-content-end text-dark"><i class="fa fa-reply-all"></i> Back</a>
+
                             </div>
                         </div>
                     {!!Form::close()!!}

@@ -191,7 +191,7 @@ footer {
         <div><span>Issued by</span> :{{$cheques->employee->employee_name}}</div>
       </div>
       <div id="project">
-        <div><span>Date Issued</span> :{{$cheques->datetime}}</div>
+        <div><span>Date Issued</span> :{{date('F d, Y', strtotime($cheques->datetime))}}</div>
         <div><span>Amount</span> :PHP {{$cheques->amount}}</div>
       </div>
     </header>
@@ -211,7 +211,7 @@ footer {
           @if (count($purchases) > 0)
               @foreach ($purchases as $purchase)
               <tr>
-                <td>{{$purchase->transaction_date}}</td>
+                <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
                 <td>{{$purchase->OR_Number}}</td>
                 <td>{{$purchase->project->project_name}}</td>
                 <td>PHP: {{$purchase->description}}</td>
@@ -229,28 +229,36 @@ footer {
         </div>
     </main>
     <div style="display: flex; margin-bottom: 2rem;">
-      <div style="width: 50%;">
-        <p>Prepared by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectManager[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Manager</p>
-        </div>
-      </div>
-      <div style="width: 50%;">
-        <p>Validated by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Supervisor</p>
-        </div>
-      </div>
+      <table>
+        <tr>
+          <td>Prepared by:</td>
+          <td>
+            Validated by:
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Manager</p>
+            </div>
+          </td>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Supervisor</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <footer>
       Page 1 of 1

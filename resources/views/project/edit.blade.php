@@ -119,7 +119,7 @@
 
 <div class="card-footer text-right mx-3 mb-3">
   <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
-  <a href="/projects" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
+  <a href="/admin/projects" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
     
     {!!Form::close()!!}

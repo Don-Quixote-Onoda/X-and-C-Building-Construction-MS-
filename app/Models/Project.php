@@ -23,4 +23,8 @@ class Project extends Model
         return $this->hasMany('App\Models\Purchase');
     }
 
+    public function refunds() {
+        return $this->hasMany('App\Models\Refund');
+    }
+
 }

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/pages/cp_datetime.css')}}">
 </head>
 
-<body class="theme-dark">
+<body class="theme-default">
     <div class="grid-wrapper sidebar-bg bg1">
 
     
@@ -31,9 +31,9 @@
         <div class="header">
             <div class="header-bar">
                 <div class="brand">
-                    <a href="/dashboard" class="logo d-flex">
+                    <a href="/admin/home" class="logo d-flex">
                         <img src="{{asset('assets/img/favicon.png')}}" class="img-fluid w-25 h-25" alt="">
-                        <span class="text-carolina mt-3" style="font-size: 1rem;">X and C Building Construction</span></a>
+                        <span class="mt-3 text-light" style="font-size: 1rem;">X and C Building Construction</span></a>
                 </div>
                 <div class="btn-toggle">
                     <!-- <a href="#" class="toggle-sidebar-btn"><i class="ti-arrow-circle-left"></i></a> -->
@@ -46,7 +46,7 @@
                     <!-- BOF Header Nav -->
                     <div class="navbar-menu d-flex">
                         <div class="menu-item">
-                            <a href="#" class="btn right-sidebar-toggle"><i class="ti-user"></i></a>
+                            <a href="#" class="btn right-sidebar-toggle text-light"><i class="ti-user"></i></a>
                         </div>
                     </div>
                     <!-- EOF Header Nav -->

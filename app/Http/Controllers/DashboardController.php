@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Log;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Project;
+use App\Models\Client;
+use App\Models\EmployeeName;
 
 class DashboardController extends Controller
 {
@@ -29,8 +32,25 @@ class DashboardController extends Controller
         $log->description = "User login";
         $log->save();
 
-        return view('dashboard.index');
-    }
+        $projects = Project::select('*')->where('status', 0)->get();
+        $ongoingProjects = Project::select('*')->where('status', 0)->get();
+
+        $clients = Client::all();
+
+        $employees = EmployeeName::all();
+
+        $completeProjects = Project::select('*')->where('status', 1)->get();
+        
+        $inProgressProjects = Project::select('*')->where('status', 0)->get();
+
+        return view('dashboard.index')
+        ->with('projects', $projects)
+        ->with('ongoingProjects', $ongoingProjects)
+        ->with('employees', $employees)
+        ->with('completeProjects', $completeProjects)
+        ->with('inProgressProjects', $inProgressProjects)
+        ->with('clients', $clients);
+    } 
 
     /**
      * Show the form for creating a new resource.

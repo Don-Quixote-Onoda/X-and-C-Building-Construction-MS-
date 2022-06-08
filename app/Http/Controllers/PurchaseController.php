@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Cheque;
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Log;
 
 class PurchaseController extends Controller
 {
@@ -23,6 +25,14 @@ class PurchaseController extends Controller
     public function index()
     {
         $purchases = Purchase::all();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 0;
+        $log->affected_table = "Purchase";
+        $log->description = "User access purchases list's";
+        $log->save();
+
         return view('purchases.index')->with('purchases', $purchases);
     }
 
@@ -66,10 +76,18 @@ class PurchaseController extends Controller
         $purchase->project_id = $request->input('project_id');
         $purchase->amount = $request->input('amount');
         $purchase->description = $request->input('description');
+        $purchase->admin_id = Auth::guard('admin')->user()->id;
         $purchase->save();
 
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 1;
+        $log->affected_table = "Purchase";
+        $log->description = "User add new purchase";
+        $log->save();
 
-        return redirect('/purchases')->with('success', 'Purchase Inserted Successfully!');
+
+        return redirect('/admin/purchases')->with('success', 'Purchase Inserted Successfully!');
     }
 
     /**
@@ -130,8 +148,15 @@ class PurchaseController extends Controller
         $purchase->description = $request->input('description');
         $purchase->save();
 
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->log_type = 2;
+        $log->affected_table = "Purchase";
+        $log->description = "User edit existing purchase!";
+        $log->save();
 
-        return redirect('/purchases')->with('success', 'Purchase Updated Successfully!');
+
+        return redirect('/admin/purchases')->with('success', 'Purchase Updated Successfully!');
     }
 
     /**

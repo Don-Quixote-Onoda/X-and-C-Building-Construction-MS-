@@ -59,7 +59,7 @@ class PDFMaker extends Controller
         ->where('user_type_id', 2)
         ->get();
 
-        $todayTime =  date("F d, Y h:i:s", time());
+        $todayTime =  date("F d, Y h:i:s A", time());
 
         // return view('reports.projectSummaryReport')
         // ->with('projects', $projects)
@@ -119,8 +119,10 @@ class PDFMaker extends Controller
         ->where('user_type_id', 2)
         ->get();
 
-        $todayTime =  date("F d, Y h:i:s", time());
+        $todayTime =  date("F d, Y h:i:s A", time());
 
+
+        // return $purchases;
          $pdf = PDF::loadView('reports.chequeUtilizationReport', [
             'cheques'=>$cheques,
             'purchases'=>$purchases,
@@ -157,7 +159,7 @@ class PDFMaker extends Controller
         ->where('user_type_id', 2)
         ->get();
 
-        $todayTime =  date("F d, Y h:i:s", time());
+        $todayTime =  date("F d, Y h:i:s A", time());
 
         $purchases = Purchase::all();
         $chequeStart = Cheque::all()[0];
@@ -217,7 +219,7 @@ class PDFMaker extends Controller
         ->where('user_type_id', 2)
         ->get();
 
-        $todayTime =  date("F d, Y h:i:s", time());
+        $todayTime =  date("F d, Y h:i:s A", time());
 
         $totalExpenses = 0;
 
@@ -227,6 +229,12 @@ class PDFMaker extends Controller
 
         foreach($purchases as $purchase) {
             $totalExpenses += $purchase->amount;
+        }
+
+        $totalFunds = 0;
+
+        foreach($funds as $fund) {
+            $totalFunds += $fund->amount;
         }
 
 
@@ -242,6 +250,7 @@ class PDFMaker extends Controller
             'projectManager'=>$projectManager,
             'timeToday'=> $todayTime,
             'totalExpenses'=> $totalExpenses,
+            'totalFunds' => $totalFunds
         ]);
 
         return $pdf->download('project_'.$rand.'_invoice.pdf');
@@ -258,8 +267,8 @@ class PDFMaker extends Controller
         // ->with('projectSupervisor',$projectSupervisor)
         // ->with('projectManager',$projectManager)
         // ->with('timeToday', $todayTime)
-        // ->with('totalExpenses', $totalExpenses);
-        
+        // ->with('totalExpenses', $totalExpenses)
+        // ->with('totalFunds', $totalFunds);
         
 
     }

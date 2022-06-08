@@ -65,6 +65,7 @@ class ChequeController extends Controller
         $cheque->amount = $request->input('amount');
         $cheque->cheque_number = $request->input('cheque_number');
         $cheque->employee_id = $request->input('employee_id');
+        $cheque->admin_id = Auth::guard('admin')->user()->id;
         $cheque->save();
 
         $log = new Log;
@@ -74,7 +75,7 @@ class ChequeController extends Controller
         $log->description = "Add new cheque information";
         $log->save();
 
-        return redirect('/cheques')->with('success', 'Cheque Information Added Successfully!');
+        return redirect('/admin/cheques')->with('success', 'Cheque Information Added Successfully!');
     }
 
     /**
@@ -127,6 +128,7 @@ class ChequeController extends Controller
         $cheque->amount = $request->input('amount');
         $cheque->cheque_number = $request->input('cheque_number');
         $cheque->employee_id = $request->input('employee_id');
+        $cheque->admin_id = Auth::guard('admin')->user()->id;
         $cheque->save();
 
         $log = new Log;
@@ -136,7 +138,7 @@ class ChequeController extends Controller
         $log->description = "Edit cheque information";
         $log->save();
 
-        return redirect('/cheques')->with('success', 'Cheque Information Updated Successfully!');
+        return redirect('/admin/cheques')->with('success', 'Cheque Information Updated Successfully!');
     }
 
     /**

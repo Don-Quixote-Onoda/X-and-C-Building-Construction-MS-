@@ -17,7 +17,7 @@
                     <i class="ti-briefcase"></i> Project's Table
                 </div> 
                 <div class="tools">
-                  <a href="/admin/project-summary-report" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o""></i> Generate PDF</a>
+                  <a href="/admin/project-summary-report" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o"></i> Generate PDF</a>
                     <a href="/admin/projects/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
                         To Add New Project</a>
                 </div>

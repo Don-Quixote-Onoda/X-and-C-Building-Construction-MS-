@@ -189,7 +189,7 @@ footer {
     </header>
     <h3 style="margin:0; 
         text-align: center;
-    ">({{$projects[0]->project_start}} - {{$projects[count($projects)-1]->project_ETA}})</h3>
+    ">({{date('F d, Y', strtotime($projects[0]->project_start))}} - {{date('F d, Y', strtotime($projects[count($projects)-1]->project_ETA))}})</h3>
     <main>
       <h3 style="border-top: 2px solid #000; padding-top: 0.5rem;"></h3>
       <table style="width: 100%;  border-bottom: 2px solid; ">
@@ -209,7 +209,7 @@ footer {
               <tr>
                 <td>{{$projects[$i]->id}}</td>
                 <td>{{$projects[$i]->project_name}}</td>
-                <td>{{$projects[$i]->project_start}} - {{$projects[$i]->project_ETA}}</td>
+                <td>{{date('F d, Y', strtotime($projects[$i]->project_start))}} - {{date('F d, Y', strtotime($projects[$i]->project_ETA))}}</td>
                 <td>{{$projects[$i]->project_budget}}</td>
                 <td>{{$expenses[$i]}}</td>
                 <td>{{$profits[$i]}}</td>
@@ -242,28 +242,36 @@ footer {
         </div>
     </main>
     <div style="display: flex; margin-bottom: 2rem;">
-      <div style="width: 50%;">
-        <p>Prepared by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectManager[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Manager</p>
-        </div>
-      </div>
-      <div style="width: 50%;">
-        <p>Validated by: </p>
-        <div style="width: 50%; margin: auto;">
-          <p style="border-bottom: 2px solid #000;
-          text-align: center;
-          margin: 0;
-          font-size: 15px;
-          font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
-          <p style="text-align: center; margin: 0;">Project Supervisor</p>
-        </div>
-      </div>
+      <table>
+        <tr>
+          <td>Prepared by:</td>
+          <td>
+            Validated by:
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Manager</p>
+            </div>
+          </td>
+          <td>
+            <div style="width: 50%; margin: auto;">
+              <p style="border-bottom: 2px solid #000;
+              text-align: center;
+              margin: 0;
+              font-size: 15px;
+              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              <p style="text-align: center; margin: 0;">Project Supervisor</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <footer>
       Page 1 of 1

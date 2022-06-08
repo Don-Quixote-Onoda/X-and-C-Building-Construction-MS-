@@ -18,4 +18,8 @@ class EmployeeName extends Model
     public function cheques() {
         return $this->hasMany('App\Models\Cheque');
     }
+
+    public function refunds() {
+        return $this->hasMany('App\Models\Refund');
+    }
 }
