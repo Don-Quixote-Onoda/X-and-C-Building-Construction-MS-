@@ -16,9 +16,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'VisitorsController@index');
 
 // Auth::routes();
 
