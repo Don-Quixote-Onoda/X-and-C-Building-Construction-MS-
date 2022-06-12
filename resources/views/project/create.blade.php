@@ -101,7 +101,7 @@
   <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
     <div class="input-group-prepend">
       <span class="input-group-text">Status</span>
-  </div>
+  </div> 
           <select class="form-control" name="status">
               <option>Default Select</option>
               <option value="1">Complete</option>
@@ -119,7 +119,7 @@
 
 <div class="card-footer text-right mx-3 mb-3">
   <button class="btn btn-primary"><i class="ti-new-window"></i> Submit</button>
-  <a href="/projects" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
+  <a href="/admin/projects" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
     
     {!!Form::close()!!}

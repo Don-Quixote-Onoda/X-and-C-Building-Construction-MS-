@@ -6,7 +6,7 @@
       <div class="card mb-3">
           <div class="card-header">
               <div class="caption uppercase">
-                  <i class="ti-briefcase"></i> Users's Table
+                  <i class="ti-briefcase"></i> Users Table
               </div> 
               <div class="tools">
                   <a href="/admin/users/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
@@ -21,18 +21,19 @@
                           <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                     <thead class="thead-light">
                         <tr>
-                          <th class="sorting sorting_asc" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column descending" aria-sort="ascending" style="width: 150.609px;">id</th>
+                          <th class="sorting sorting_asc d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column descending" aria-sort="ascending" style="width: 150.609px;">id</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">employee id</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">name</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">email</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">user type</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">status</th>
+                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">action</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($users as $user)      
                           <tr>
-                              <td>{{$user->id}}</td>
+                              <td class="d-none">{{$user->id}}</td>
                               <td>{{$user->employee_id}}</td>
                               <td>{{$user->name}}</td>
                               <td>{{$user->email}}</td>
@@ -42,7 +43,10 @@
                                   {{($user->user_type_id == 2) ? 'Transaction Recorder' : ''}}
                               </td>
                               <td>{{($user->status == 1) ? 'active' : 'inactive'}}</td>
-                              
+                              <td class="text-center">
+                                <a href="/admin/users/{{$user->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i></a>
+                                <a href="/admin/users/{{$user->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
+                            </td>
                           </tr>
                       @endforeach
                     </tbody>

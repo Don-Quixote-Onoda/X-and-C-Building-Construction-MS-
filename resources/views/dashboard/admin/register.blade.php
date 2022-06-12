@@ -10,6 +10,18 @@
                 <div class="card-body">
                     <form method="POST" action=" {{ route('admin.create') }} ">
                         @csrf
+                        <div class="row mb-1 ">
+                            <div class="input-group col-md-10 ml-0 mb-3 offset-md-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ti-export"></i></span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="profile_picture">
+                                    <label class="custom-file-label">Upload Profile Picture</label>
+                                </div>
+                            </div>
+                        </div>
+                        
 
                         <div class="row mb-3">
                             <label for="employee_id" class="col-md-4 col-form-label text-md-end">{{ __('Employee ID') }}</label>
@@ -23,7 +35,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> 
+
+
 
                         <div class="row mb-3">
                             <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Full Name') }}</label>
@@ -57,6 +71,8 @@
                                 @enderror
                             </div>
                         </div>
+
+                        
 
                         <div class="row mb-3">
                             <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>

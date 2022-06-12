@@ -15,7 +15,7 @@
 
   <!-- Favicon
 ================================================== -->
-  <link rel="icon" type="image/png" href="{{asset('construction/images/favicon.png')}}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
 
   <!-- CSS
 ================================================== -->
@@ -52,6 +52,7 @@
                   </div>
                   <div class="w-100">
                   <p style="font-weight: 700; font-size: 20px; margin-top: 1rem;">X and C Building Construction</p>
+                  {{-- <input type="text" value="{{$password}}"> --}}
                   </div>
                 </a>
             </div><!-- logo end -->

@@ -14,7 +14,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <div class="caption uppercase">
-                    <i class="ti-briefcase"></i> Cheques's Table
+                    <i class="ti-briefcase"></i> Cheques Table
                 </div> 
                 <div class="tools">
                   <a href="/admin/disbursement-cheque-summary" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o"></i> Generate PDF</a>
@@ -31,7 +31,7 @@
                           <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                     <thead class="thead-light">
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">id</th>
+                            <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">id</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">cheque number</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
                           <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">employee id</th>
@@ -42,14 +42,14 @@
                     <tbody>
                       @foreach ($cheques as $cheque)      
                           <tr>
-                              <td>{{$cheque->id}}</td>
+                              <td class="d-none">{{$cheque->id}}</td>
                               <td>{{$cheque->cheque_number}}</td>
                               <td>{{$cheque->amount}}</td>
                               <td>{{$cheque->employee->employee_name}}</td>
-                              <td>{{$cheque->datetime}}</td>
+                              <td>{{date('F d, Y', strtotime($cheque->datatime))}}</td>
                               <td class="text-center">
-                                  <a href="/admin/cheques/{{$cheque->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
-                                  <a href="/admin/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
+                                  <a href="/admin/cheques/{{$cheque->id}}" class="btn btn-primary "><i class="fa fa-vcard-o"></i></a>
+                                  <a href="/admin/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
                               </td>
                           </tr>
                       @endforeach

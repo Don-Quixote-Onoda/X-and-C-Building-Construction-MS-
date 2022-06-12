@@ -70,7 +70,7 @@
 
 <div class="card-footer text-right mx-3 mb-3">
   <button class="btn btn-primary" type="submit"><i class="ti-new-window"></i> Submit</button>
-  <a href="/purchases" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
+  <a href="/admin/purchases" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
     
     {!!Form::close()!!}

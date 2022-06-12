@@ -47,8 +47,8 @@
                       <td>{{$purchase->amount}}</td>
                       <td>{{$purchase->description}}</td>
                       <td class="text-center">
-                          <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary px-0"><i class="fa fa-vcard-o"></i>Show</a>
-                          <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary px-0"><i class="ti-write"></i>Edit</a>
+                          <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary"><i class="fa fa-vcard-o"></i></a>
+                          <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
                       </td>
                   </tr>
               @endforeach

@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Controllers\\RefundController' => $baseDir . '/app/Http/Controllers/RefundController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\UserTypeController' => $baseDir . '/app/Http/Controllers/UserTypeController.php',
+    'App\\Http\\Controllers\\VisitorsController' => $baseDir . '/app/Http/Controllers/VisitorsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

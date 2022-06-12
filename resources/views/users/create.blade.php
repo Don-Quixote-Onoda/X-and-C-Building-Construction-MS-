@@ -9,7 +9,17 @@
 
                 <div class="card-body">
                     {!!Form::open(['action' => 'UserController@store', 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
-
+                    <div class="row mb-1 ">
+                        <div class="input-group col-md-10 ml-0 mb-3 offset-md-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ti-export"></i></span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="profile_picture">
+                                <label class="custom-file-label">Upload Profile Picture</label>
+                            </div>
+                        </div>
+                    </div>
                         <div class="row mb-3">
                             <label for="employee_id" class="col-md-4 col-form-label text-md-end">{{ __('Employee ID') }}</label>
 
@@ -28,7 +38,7 @@
                             <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Full Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
+                                <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" name="name" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
 
                                 @error('fullname')
                                     <span class="invalid-feedback" role="alert">

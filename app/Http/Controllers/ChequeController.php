@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cheque;
 use App\Models\Refund;
 use App\Models\EmployeeName;
+use App\Models\Purchase;
 use App\Models\Log;
 use Illuminate\Support\Facades\Auth;
 
@@ -87,8 +88,11 @@ class ChequeController extends Controller
     public function show($id)
     {
         $cheque = Cheque::find($id);
+
+        $purchases = Purchase::select('*')->where('cheque_id', $id)->get();
          return view('cheques.show')
-         ->with('cheque', $cheque);
+         ->with('cheque', $cheque)
+         ->with('purchases', $purchases);
     }
 
     /**

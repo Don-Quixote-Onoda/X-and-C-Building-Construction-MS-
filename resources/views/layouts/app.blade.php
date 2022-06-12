@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/pages/cp_datetime.css')}}">
 </head>
 
-<body class="theme-default">
+<body class="theme-blue">
     <div class="grid-wrapper sidebar-bg bg1">
 
     
@@ -81,7 +81,7 @@
                 <!-- BOF TABS -->
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a href="#tab-1" data-toggle="tab" class="nav-link active">Profile</a>
+                        <a href="#tab-1" data-toggle="tab" class="nav-link active text-light">Profile</a>
                     </li>
                 </ul>
                 <!-- EOF TABS -->
@@ -91,12 +91,12 @@
                     <!-- BOF TAB-PANE #1 -->
                     <div id="tab-1" class="tab-pane show active">
                         <div class="pane-header">
-                            <h3><i class="ti-user"></i> 
+                            <h3 class=" text-light"><i class="ti-user"></i> 
                                 {{(Auth::guard('admin')->user()->user_type_id == 0) ? 'Administrator' : ''}}
                                 {{(Auth::guard('admin')->user()->user_type_id == 1) ? 'Fund Manager' : ''}}
                                 {{(Auth::guard('admin')->user()->user_type_id == 2) ? 'Transaction Recorder' : ''}}
                             </h3>
-                            <i class="fa fa-circle text-success"></i> <span class="profile-user">{{Auth::guard('admin')->user()->name}}</span>
+                            <i class="fa fa-circle text-success "></i> <span class="profile-user  text-light">{{Auth::guard('admin')->user()->name}}</span>
                             <span class="float-right"><a href="{{route('admin.logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-carolina">Log-Out</a>
                                 <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
                             </span>
@@ -104,13 +104,6 @@
                         <div class="pane-body">
                             <div class="card bg-transparent mb-3">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h5 class="mb-3">My Theme</h5>
-                                        <div class="btn-group mb-2">
-                                            <button type="button" class="btn switch-theme btn-light" data-theme="theme-default">Light</button>
-                                            <button type="button" class="btn switch-theme btn-dark" data-theme="theme-dark">Dark</button>
-                                        </div>
-                                    </li>
                                     <li class="list-group-item">
                                         <h5 class="mb-3">My Profile</h5>
                                             {!!Form::open(['action' => ['UserController@update', Auth::guard('admin')->user()->id], 'method' => 'POST', 'class' => 'form-update-profile row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}

@@ -79,21 +79,33 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'employee_id' => 'required',
-            'fullname' => 'required',
-            'usertype' => 'required',
+            'name' => 'required',
             'email' => 'required',
+            'usertype' => 'required',
             'password' => 'required',
             'status' => 'required',
-            'password_confirmation' => 'required',
+            'profile_picture' => 'image|nullable|max:1999',
         ]);
 
+        if($request->hasFile('profile_picture')) {
+            $filenameWithExt = $request->file('profile_picture');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('profile_picture')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('profile_picture')->storeAs('public/projects/profile_pictures', $filenameToStore);
+        }
+        else {
+            $filenameToStore = 'noimage.jpg';
+        }
 
         $admin = new Admin;
         $admin->employee_id = $request->input('employee_id');
         $admin->status = $request->input('status');
-        $admin->name = $request->input('fullname');
+        $admin->name = $request->input('name');
         $admin->user_type_id = $request->input('usertype');
         $admin->email = $request->input('email');
+        $admin->profile_picture = $filenameToStore;
         $admin->password = \Hash::make($request->password);
         $save = $admin->save();
 
@@ -105,7 +117,7 @@ class UserController extends Controller
         $log->save();
 
 
-        return redirect()->back()->with('success', 'New user added successfully!');
+        return redirect('/admin/users')->with('success', 'New user added successfully!');
        
     }
 
@@ -118,7 +130,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user = User::find($id);
+        $user = Admin::find($id);
         $usertypes = UserType::all();
         return view('users.show')->with('user', $user)->with('usertypes', $usertypes);
     }
@@ -131,7 +143,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $admin = Admin::find($id);
+
+        return view("users.edit")->with('admin', $admin);
     }
 
     /**
@@ -175,7 +189,20 @@ class UserController extends Controller
             'usertype' => 'required',
             'password' => 'required',
             'status' => 'required',
+            'profile_picture' => 'image|nullable|max:1999',
         ]);
+
+        if($request->hasFile('profile_picture')) {
+            $filenameWithExt = $request->file('profile_picture');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('profile_picture')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('profile_picture')->storeAs('public/projects/profile_pictures', $filenameToStore);
+        }
+        else {
+            $filenameToStore = 'noimage.jpg';
+        }
 
         $admin = Admin::find($id);
         $admin->employee_id = $request->input('employee_id');
@@ -183,18 +210,19 @@ class UserController extends Controller
         $admin->name = $request->input('name');
         $admin->user_type_id = $request->input('usertype');
         $admin->email = $request->input('email');
+        $admin->profile_picture = $filenameToStore;
         $admin->password = \Hash::make($request->password);
         $save = $admin->save();
 
         $log = new Log;
         $log->user_id = Auth::guard('admin')->user()->user_type_id;
-        $log->log_type = 2;
+        $log->log_type = 1;
         $log->affected_table = "Users";
         $log->description = "Edit Record for user table";
         $log->save();
 
 
-        return redirect()->back()->with('success', 'User updated successfully!');
+        return redirect('/admin/users')->with('success', 'User updated successfully!');
        
     }
 

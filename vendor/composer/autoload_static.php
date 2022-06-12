@@ -578,6 +578,7 @@ class ComposerStaticInit7e7b13df3bfba400b6f986bfe8fc90c4
         'App\\Http\\Controllers\\RefundController' => __DIR__ . '/../..' . '/app/Http/Controllers/RefundController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\UserTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserTypeController.php',
+        'App\\Http\\Controllers\\VisitorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/VisitorsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

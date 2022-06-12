@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col">
       <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/purchases">Purchase</a></li>
+          <li class="breadcrumb-item"><a href="/admin/dashboard"><i class="ti-home"></i> Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/admin/purchases">Purchase</a></li>
           <li class="breadcrumb-item active">Edit Purchase</li>
       </ol>
   </div>
@@ -70,6 +70,6 @@
 
 <div class="card-footer text-right mx-3 mb-3">
   <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
-  <a href="/purchases" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
+  <a href="/admin/purchases" class="btn btn-secondary"><i class="ti-close"></i> Cancel</a>
 </div>
 @endsection

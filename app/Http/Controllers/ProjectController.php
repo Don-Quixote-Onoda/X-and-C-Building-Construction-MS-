@@ -124,11 +124,15 @@ class ProjectController extends Controller
         $project_infos = Project::all();
         $funds = Refund::orderByDesc('id')->where('project_id', $id)->get();
 
-        $fund = Refund::all();
 
         $cheques = Cheque::orderByDesc('id')->get();
         $clients = Client::all();
 
+        $totalFunds = 0;
+        
+        foreach($funds as $fund) {
+            $totalFunds += $fund->amount;
+        }
 
         $log = new Log;
         $log->user_id = Auth::guard('admin')->user()->id;
@@ -142,6 +146,7 @@ class ProjectController extends Controller
         ->with('funds', $funds)
         ->with('project', $project)
         ->with('employee_names', $employee_names)
+        ->with('totalFunds', $totalFunds)
         ->with('project_infos', $project_infos)->with('clients', $clients);
     }
 

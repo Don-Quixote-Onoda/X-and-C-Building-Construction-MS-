@@ -160,7 +160,6 @@
                 <div class="card-body" id="product-sales-chart"></div>
             </div>
         </div>
-
         <!-- Expenses Chart -->
         <div class="col-md-6">
             <div class="card mb-3">

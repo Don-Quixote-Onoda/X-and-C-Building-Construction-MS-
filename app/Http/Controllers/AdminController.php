@@ -33,7 +33,7 @@ class AdminController extends Controller
 
         $creds = $request->only('email', 'password');
 
-        // return $creds;
+        // return Admin::all()[0]->password;
 
 
 
@@ -42,7 +42,7 @@ class AdminController extends Controller
 
             
 
-            return redirect('/admin/dashboard')->with('success', 'Correct Credentials!');
+            return redirect('/admin/dashboard')->with('success', 'Welcome!');
         }
         else {
             return redirect()->route('admin.login')->with('error', 'Incorrect Credentials!');
@@ -63,16 +63,30 @@ class AdminController extends Controller
     public function create(Request $request)
     {
 
+
+        
         $this->validate($request, [
+            // 'profile_picture' => 'image|nullable|max:1999',
             'employee_id' => 'required',
-            'fullname' => 'required',
+            'employee_id' => 'required',
             'usertype' => 'required',
+            'status' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'status' => 'required',
-            'password_confirmation' => 'required',
         ]);
 
+
+        if($request->hasFile('profile_picture')) {
+            $filenameWithExt = $request->file('profile_picture');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('profile_picture')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('profile_picture')->storeAs('public/projects/profile_pictures', $filenameToStore);
+        }
+        else {
+            $filenameToStore = 'noimage.jpg';
+        }
 
         $admin = new Admin;
         $admin->employee_id = $request->input('employee_id');
@@ -80,11 +94,12 @@ class AdminController extends Controller
         $admin->name = $request->input('fullname');
         $admin->user_type_id = $request->input('usertype');
         $admin->email = $request->input('email');
+        $admin->profile_picture = $filenameToStore;
         $admin->password = \Hash::make($request->password);
         $save = $admin->save();
 
 
-        return redirect()->back()->with('success', 'You are now registered successfully!');
+        return redirect('/admin')->with('success', 'You are now registered successfully!');
        
     }
 

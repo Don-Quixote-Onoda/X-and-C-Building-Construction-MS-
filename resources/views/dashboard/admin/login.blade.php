@@ -1,4 +1,58 @@
-@extends('layouts.register')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mazer Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assetss/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assetss/vendors/bootstrap-icons/bootstrap-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assetss/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('assetss/css/pages/auth.css')}}">
+</head>
+
+<body>
+    <div id="auth">
+
+        <div class="row h-100">
+            <div class="col-lg-6 col-12">
+                <div id="auth-left">
+                    <div class="auth-logo">
+                        <a  class="d-flex justify-content-center"><img src="{{asset('assetss/images/logo/favicon.png')}}" class="w-50 h-50" alt="Logo"></a>
+                    </div>
+                    <h1 class="auth-title">Log in.</h1>
+                    <form action="{{ route('admin.check') }}" method="post" class="mt-5">
+                        @csrf
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" class="form-control form-control-xl" name="email" placeholder="Email">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="password" class="form-control form-control-xl" name="password" placeholder="Password">
+                            <div class="form-control-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div id="auth-right">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+{{-- @extends('layouts.register')
 @section('content')
 <div class="container-fluid p-0">
     <div class="row">
@@ -36,4 +90,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

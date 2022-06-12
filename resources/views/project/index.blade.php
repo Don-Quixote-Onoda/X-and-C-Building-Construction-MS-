@@ -14,7 +14,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <div class="caption uppercase">
-                    <i class="ti-briefcase"></i> Project's Table
+                    <i class="ti-briefcase"></i> Projects Table
                 </div> 
                 <div class="tools">
                   <a href="/admin/project-summary-report" class="btn btn-sm btn-danger mr-3"><i class="fa fa-file-pdf-o"></i> Generate PDF</a>
@@ -29,7 +29,7 @@
                     <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                         <thead class="thead-light">
                             <tr>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project number</th>
+                                <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project number</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">project name</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">location</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">client name</th>
@@ -40,14 +40,14 @@
                         <tbody> 
                             @foreach ($projects as $project)      
                                 <tr>
-                                    <td>{{$project->project_number}}</td>
+                                    <td class="d-none">{{$project->project_number}}</td>
                                     <td>{{$project->project_name}}</td>
                                     <td>{{$project->location}}</td>
                                     <td>{{$project->client->client_name}}</td>
                                     <td>{{$project->project_budget}}</td>
                                     <td class="text-center">
-                                        <a href="/admin/projects/{{$project->id}}" class="btn btn-primary px-1"><i class="fa fa-vcard-o"></i>Show</a>
-                                        <a href="/admin/projects/{{$project->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i>Edit</a>
+                                        <a href="/admin/projects/{{$project->id}}" class="btn btn-primary px-3"><i class="fa fa-vcard-o"></i></a>
+                                        <a href="/admin/projects/{{$project->id}}/edit" class="btn btn-secondary px-3s"><i class="ti-write"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

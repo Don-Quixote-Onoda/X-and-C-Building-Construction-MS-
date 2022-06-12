@@ -20,7 +20,7 @@
           </li>
       </ul>
       <div>
-        <a href="/admin/projects" class="btn btn-outline-dark float-right justify-content-end text-light"><i class="fa fa-reply-all"></i> Back</a>
+        <a href="/admin/projects" class="btn btn-outline-dark float-right justify-content-end text-dark"><i class="fa fa-reply-all"></i> Back</a>
       <a href="/admin/project-report/{{$project->id}}" class="btn btn-danger mr-5 float-right justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT PROJECT REPORT</a>
 
       </div>
@@ -29,7 +29,7 @@
   <div class="card-body">
       <div class="tab-content">
           <div class="tab-pane fade show active" id="tab1">
-              <h4 class="card-title">{{$project->project_name}}</h4>
+              <h4 class="card-title fs-1">{{$project->project_name}}</h4>
               <p class="card-text">
                 {{$project->location}}
               </p>
@@ -46,12 +46,12 @@
                 <div class="col-md-6">
                     <div class="card-body">
                         <h5 class="card-title">Project Number: {{$project->project_number}}</h5>
-                        <h5 class="card-title">Budget: {{$project->project_budger}}</h5>
-                        <p>{{$project->project_start}} - {{$project->project_ETA}}</p>
+                        <h5 class="card-title">Budget: {{$project->project_budget}}</h5>
+                        <p>{{ date('F d, Y', strtotime( $project->project_start))}} - {{ date('F d, Y', strtotime( $project->project_ETA))}}</p>
                         <p class="card-text">
                             {{$project->description}}
                         </p>
-                        <p class="card-link text-light">Awarding At {{$project->project_awarding}}</p>
+                        <p class="card-link text-light">Awarding At {{ date('F d, Y', strtotime( $project->project_awarding))}}</p>
                     </div>
                 </div>
             </div>
@@ -80,12 +80,14 @@
                         <tbody> 
                             @foreach ($funds as $fund)      
                                 <tr>
-                                    <td>{{$fund->employee_id}}</td>
+                                    <td>{{$fund->employee_name->employee_name}}</td>
                                     <td>{{$fund->amount}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+
+                    <h1 class="text-light">Total Funds: PHP {{$totalFunds}}</h1>
                     </div>
                 </div>
             </div>
