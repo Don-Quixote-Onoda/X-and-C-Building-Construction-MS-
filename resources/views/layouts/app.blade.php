@@ -101,84 +101,6 @@
                                 <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
                             </span>
                         </div>
-                        <div class="pane-body">
-                            <div class="card bg-transparent mb-3">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h5 class="mb-3">My Profile</h5>
-                                            {!!Form::open(['action' => ['UserController@update', Auth::guard('admin')->user()->id], 'method' => 'POST', 'class' => 'form-update-profile row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
-                                            {{Form::hidden('_method', 'PUT')}}
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Employee ID:</label>
-                                                <div class="col">
-                                                    <input type="text" name="employee_id" class="form-control-plaintext"
-                                                        value="{{Auth::guard('admin')->user()->employee_id}}">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Name:</label>
-                                                <div class="col">
-                                                    <input type="text" name="name" class="form-control-plaintext"
-                                                        value="{{Auth::guard('admin')->user()->name}}">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Email:</label>
-                                                <div class="col">
-                                                    <input type="text" name="email" class="form-control-plaintext"
-                                                        value="{{Auth::guard('admin')->user()->email}}">
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="usertype" class="col-md-4 col-form-label text-md-end">{{ __('User Type') }}</label>
-                    
-                                                <div class="col-md-6">
-                                                    <select class="form-control" name="usertype">
-                                                        <option>Default Select</option>
-                                                        <option value="0" {{(Auth::guard('admin')->user()->user_type_id == 0) ? 'selected' : ''}}>Administrator</option>
-                                                        <option value="1" {{(Auth::guard('admin')->user()->user_type_id == 1) ? 'selected' : ''}}>Fund Manager</option>
-                                                        <option value="2" {{(Auth::guard('admin')->user()->user_type_id == 2) ? 'selected' : ''}}>Transaction Recorder</option>
-                                                    </select>
-                    
-                                                    @error('usertype')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-md-4">Password:</label>
-                                                <div class="col">
-                                                    <input type="password" name="password" class="form-control-plaintext"
-                                                        value="{{Auth::guard('admin')->user()->password}}">
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
-                    
-                                                <div class="col-md-6">
-                                                    <select name="status" class="form-control" >
-                                                        <option value="1" {{(Auth::guard('admin')->user()->status == 1) ? 'selected' : ''}}>Active</option>
-                                                        <option value="0" {{(Auth::guard('admin')->user()->status == 0) ? 'selected' : ''}}>Inactive</option>
-                                                    </select>
-                    
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col offset-md-4 pl-2">
-                                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
-                                            </div>
-                                            {!!Form::close()!!}
-
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <!-- EOF TAB-PANE #1 -->
 
@@ -439,9 +361,19 @@
     <script src="{{asset('assets/scripts/pages/ui_toastr.js')}}"></script>
     <script src="{{asset('assets/scripts/pages/dashboard1.js')}}"></script>
   @include('includes.messages')
-
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+    $('#dt-addrows').DataTable({
+        order: [[0, 'desc']],
+    });
+});
+</script>
 </html>
 
 {{-- <!DOCTYPE html>

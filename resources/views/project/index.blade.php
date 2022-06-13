@@ -29,25 +29,35 @@
                     <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                         <thead class="thead-light">
                             <tr>
-                                <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project number</th>
+                                <th class="sorting sorting_desc d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="project start: activate to sort column ascending" style="width: 64.3438px;" aria-sort="descending">project start</th>
+                                <th class="sorting " tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project started</th>
+                                <th class="sorting " tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project number</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">project name</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">location</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">client name</th>
                                 <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">budget</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
+                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">status</th>
+                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="2" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
                             </tr>
                         </thead>
-                        <tbody> 
+                        <tbody>
                             @foreach ($projects as $project)      
                                 <tr>
-                                    <td class="d-none">{{$project->project_number}}</td>
+                                    <td class="d-none">{{strtotime($project->project_start)}}</td>
+                                    <td>{{date('F d, Y', strtotime($project->project_start))}}</td>
+                                    <td>{{$project->project_number}}</td>
                                     <td>{{$project->project_name}}</td>
                                     <td>{{$project->location}}</td>
                                     <td>{{$project->client->client_name}}</td>
-                                    <td>{{$project->project_budget}}</td>
+                                    <td>₱ {{number_format($project->project_budget)}}</td>
+                                    <td>
+                                        {{($project->status == 0) ? 'on going': ''}}
+                                    </td>
                                     <td class="text-center">
-                                        <a href="/admin/projects/{{$project->id}}" class="btn btn-primary px-3"><i class="fa fa-vcard-o"></i></a>
-                                        <a href="/admin/projects/{{$project->id}}/edit" class="btn btn-secondary px-3s"><i class="ti-write"></i></a>
+                                        <a href="/admin/projects/{{$project->id}}" class="btn btn-primary"><i class="fa fa-vcard-o"></i></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/admin/projects/{{$project->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

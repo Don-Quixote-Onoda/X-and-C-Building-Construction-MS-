@@ -39,9 +39,6 @@ class AdminController extends Controller
 
 
         if(Auth::guard('admin')->attempt($creds)) {
-
-            
-
             return redirect('/admin/dashboard')->with('success', 'Welcome!');
         }
         else {

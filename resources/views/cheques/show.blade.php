@@ -20,14 +20,14 @@
         </div>
         <div class="card-body ml-5">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4>Employee Name: {{$cheque->employee->employee_name}}</h4></li>
-                <li class="list-group-item">Cheque Number: {{$cheque->cheque_number}}</li>
-                <li class="list-group-item">Amount: {{$cheque->amount}}</li>
-                <li class="list-group-item">Date: {{$cheque->datetime}}</li>
+                <li class="list-group-item"><h4 class=" fs-4"><span class="fw-normal">Employee Name:</span> {{$cheque->employee->employee_name}}</h4></li>
+                <li class="list-group-item"><p class="fs-5">Cheque #: {{$cheque->cheque_number}}</p></li>
+                <li class="list-group-item"><p class="fs-5">Amount: ₱ {{number_format($cheque->amount)}}</p></li>
+                <li class="list-group-item"><p class="fs-5">Date: {{ date('F d, Y', strtotime($cheque->datetime))}}</p></li>
             </ul>
         </div>
-        <h1>Cheque #: {{$cheque->cheque_number}}</h1>
-        <div class="card-body">
+        {{-- <h1>Cheque #: {{$cheque->cheque_number}}</h1> --}}
+        <div class="card-body px-5">
             <div class="table-responsive">
                 <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                     
@@ -49,7 +49,7 @@
                                     <td>{{$purchase->id}}</td>
                                     <td>{{$purchase->OR_Number}}</td>
                                     <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
-                                    <td>{{$purchase->amount}}</td>
+                                    <td>₱ {{number_format($purchase->amount)}}</td>
                                     <td>{{$purchase->description}}</td>
                                     <td>{{$purchase->project->project_name}}</td>
                                 </tr>

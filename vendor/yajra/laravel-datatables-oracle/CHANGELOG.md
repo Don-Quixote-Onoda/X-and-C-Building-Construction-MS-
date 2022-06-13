@@ -8,6 +8,18 @@
 
 ### [Unreleased]
 
+### [v10.0.7] - 2022-05-23
+
+- Fix create eloquent datatable from relation #2789
+
+### [v10.0.6] - 2022-05-18
+
+- Added null parameter type as allowed to handle default Action column from laravel-datatables-html #2787
+
+### [v10.0.5] - 2022-05-17
+
+- Fix Return value must be of type int, string returned.
+
 ### [v10.0.4] - 2022-05-08
 
 - Fix accidental formatter issue on eloquent 
@@ -37,7 +49,10 @@
 - Drop support for `ApiResourceDataTable`
 - PHP8 syntax / method signature changed
 
-[Unreleased]: https://github.com/yajra/laravel-datatables/compare/v10.0.4...10.x
+[Unreleased]: https://github.com/yajra/laravel-datatables/compare/v10.0.7...10.x
+[v10.0.7]: https://github.com/yajra/laravel-datatables/compare/v10.0.7...v10.0.6
+[v10.0.6]: https://github.com/yajra/laravel-datatables/compare/v10.0.6...v10.0.5
+[v10.0.5]: https://github.com/yajra/laravel-datatables/compare/v10.0.5...v10.0.4
 [v10.0.4]: https://github.com/yajra/laravel-datatables/compare/v10.0.4...v10.0.3
 [v10.0.3]: https://github.com/yajra/laravel-datatables/compare/v10.0.3...v10.0.2
 [v10.0.2]: https://github.com/yajra/laravel-datatables/compare/v10.0.2...v10.0.1

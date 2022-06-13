@@ -8,6 +8,7 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Refund;
 use App\Models\Cheque;
+use App\Models\Purchase;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Log;
 
@@ -25,10 +26,11 @@ class ProjectController extends Controller
     //     $this->middleware('auth');
     // }
     
-    public function index()
+    public function index(Request $request)
     {
         // return Auth::guard('admin')->user()->id;
-        $projects = Project::orderbyDesc("id")->get();
+        $projects = Project::orderbyDesc("id")->where('status', 0)->get();
+        // $peo
 
         return view('project.index')->with('projects', $projects);
     }
@@ -123,15 +125,21 @@ class ProjectController extends Controller
         $employee_names = EmployeeName::all();
         $project_infos = Project::all();
         $funds = Refund::orderByDesc('id')->where('project_id', $id)->get();
+        $purchases = Purchase::orderByDesc('id')->where('project_id', $id)->get();
 
 
         $cheques = Cheque::orderByDesc('id')->get();
         $clients = Client::all();
 
         $totalFunds = 0;
+        $totalExpenses = 0;
         
         foreach($funds as $fund) {
             $totalFunds += $fund->amount;
+        }
+
+        foreach($purchases as $purchase) {
+            $totalExpenses += $purchase->amount;
         }
 
         $log = new Log;
@@ -144,9 +152,11 @@ class ProjectController extends Controller
         return view('project.show')
         ->with('cheques', $cheques)
         ->with('funds', $funds)
+        ->with('purchases', $purchases)
         ->with('project', $project)
         ->with('employee_names', $employee_names)
         ->with('totalFunds', $totalFunds)
+        ->with('totalExpenses', $totalExpenses)
         ->with('project_infos', $project_infos)->with('clients', $clients);
     }
 

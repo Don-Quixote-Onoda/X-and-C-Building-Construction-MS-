@@ -210,8 +210,8 @@
                     @if (count($clients) > 0)
                     <div class="row">
                         @foreach ($clients as $client)
-                        <div class="col-md-4 mb-3 mb-md-0">
-                            <div class="card">
+                        <div class="col-md-4  mb-md-0">
+                            <div class="card mb-3">
                                 <img src="assets/img/profile/profile-01.jpg" alt="" class="card-img-top">
                                 <div class="card-body p-2 text-center">
                                     <h5 class="card-title">{{$client->client_name}}</h5>

@@ -44,7 +44,9 @@ class PurchaseController extends Controller
     public function create()
     {
         $cheques = Cheque::all();
-        $projects = Project::all();
+        $projects = Project::select('*')->where('status', 1)->get();
+
+        
         return view('purchases.create')
         ->with('cheques', $cheques)
         ->with('projects', $projects);
@@ -113,7 +115,7 @@ class PurchaseController extends Controller
     {
         $purchase = Purchase::find($id);
         $cheques = Cheque::all();
-        $projects = Project::all();
+        $projects = Project::select('*')->where('status', 1)->get();
         return view('purchases.edit')
         ->with('cheques', $cheques)
         ->with('projects', $projects)

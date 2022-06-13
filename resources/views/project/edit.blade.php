@@ -105,7 +105,7 @@
           <select class="form-control" name="status">
               <option>Default Select</option>
               <option value="1" {{($project->status == 1) ? 'selected' : ''}}>Complete</option>
-              <option value="0"{{($project->status == 0) ? 'selected' : ''}}>Incomplete</option>
+              <option value="0"{{($project->status == 0) ? 'selected' : ''}}>On Going</option>
           </select>
   </div>
 </div>

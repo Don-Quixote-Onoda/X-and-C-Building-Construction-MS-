@@ -104,8 +104,7 @@
   </div> 
           <select class="form-control" name="status">
               <option>Default Select</option>
-              <option value="1">Complete</option>
-              <option value="0">Incompleted</option>
+              <option value="0">On Going</option>
           </select>
   </div>
 </div>

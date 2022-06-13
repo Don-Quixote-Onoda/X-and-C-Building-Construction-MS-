@@ -44,7 +44,7 @@
                       <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
                       <td>{{$purchase->cheque->cheque_number}}</td>
                       <td>{{$purchase->project->project_name}}</td>
-                      <td>{{$purchase->amount}}</td>
+                      <td>₱ {{number_format($purchase->amount)}}</td>
                       <td>{{$purchase->description}}</td>
                       <td class="text-center">
                           <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary"><i class="fa fa-vcard-o"></i></a>

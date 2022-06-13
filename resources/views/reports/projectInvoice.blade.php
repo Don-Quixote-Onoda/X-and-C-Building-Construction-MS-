@@ -199,7 +199,7 @@ footer {
     </header>
     <main>
       @if (count($funds))
-      <h3>Recieved Funds</h3>
+      <h3>Recieve Funds</h3>
       <table style="width: 70%;">
         <thead>
           <tr style="font-weight: bold;">
@@ -218,7 +218,7 @@ footer {
             </tr>
             @endforeach
           <tr style=" font-weight: bold; ">
-            <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVED: </td>
+            <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVE: </td>
             <td style="border-top: 2px solid black;">PHP {{$totalFunds}}</td>
           </tr>
         </tbody>
@@ -256,7 +256,7 @@ footer {
       <table style="width: 50%;">
         <tbody>
           <tr>
-            <td>TOTAL FUNDS RECIEVED</td>
+            <td>TOTAL FUNDS RECIEVE</td>
             <td>PHP {{$totalFunds}}</td>
           </tr>
           <tr>
