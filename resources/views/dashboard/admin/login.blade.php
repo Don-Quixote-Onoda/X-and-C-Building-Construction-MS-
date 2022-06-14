@@ -25,7 +25,7 @@
                     <form action="{{ route('admin.check') }}" method="post" class="mt-5">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" name="email" placeholder="Email">
+                            <input type="text" class="form-control form-control-xl"  name="email" placeholder="Email">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>

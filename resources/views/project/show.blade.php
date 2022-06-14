@@ -67,8 +67,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">created at</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">employee name</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
+                                <th class="sorting  text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">employee name</th>
+                                <th class="sorting  text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
                             </tr>
                         </thead>
                         <tbody> 
@@ -86,8 +86,8 @@
                     </div>
                 </div>
                 <div class="ml-3 my-3 mt-5">
-                    <h1 class="fs-3">Expenses</h1>
-                    <p class="fs-4">Total Expenses: ₱ {{number_format($totalExpenses)}}</p>
+                    <h1 class="fs-3">Purchases</h1>
+                    <p class="fs-4">Total Purchases: ₱ {{number_format($totalExpenses)}}</p>
                 </div>
                 <div class="table-responsive mx-3">
                     <div id="dt-addrows_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -95,10 +95,10 @@
                                 <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                         <thead class="thead-light">
                             <tr>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">transaction date</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">OR #</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">specification</th>
-                                <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
+                                <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">transaction date</th>
+                                <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">OR #</th>
+                                <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">specification</th>
+                                <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
                             </tr>
                         </thead>
                         <tbody> 

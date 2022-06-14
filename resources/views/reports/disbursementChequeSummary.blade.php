@@ -127,7 +127,7 @@ table .desc {
 }
 
 table td {
-  padding: 20px;
+  padding: 5px;
   text-align: left;
 }
 
@@ -209,14 +209,14 @@ footer {
                 <td>{{date('F d, Y', strtotime($purchase->cheque->datetime))}}</td>
                 <td>{{$purchase->cheque->cheque_number}}</td>
                 <td>{{$purchase->cheque->employee->employee_name}}</td>
-                <td>{{$purchase->cheque->amount}}</td>
+                <td style="text-align: right;">PHP {{number_format($purchase->cheque->amount)}}</td>
                 <td>{{$purchase->description}}</td>
               </tr>
               @endforeach
               <tr>
                
                 <td colspan="4" style="text-align: right; text-transform:uppercase; font-weight: bolder;">total: </td>
-                <td style="font-weight: bolder;">PHP: {{$totalAmount}} </td>
+                <td style="font-weight: bolder; text-align: right;">PHP: {{number_format($totalAmount)}} </td>
               </tr>
           @endif
         </tbody>
@@ -239,7 +239,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Manager</p>
             </div>
           </td>
@@ -249,7 +249,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Supervisor</p>
             </div>
           </td>

@@ -1,5 +1,5 @@
 <!-- BOF ASIDE-LEFT -->
-<div id="sidebar" class="sidebar" style="height: 300vh;">
+<div id="sidebar" class="sidebar" style="height: 500vh;">
   <div class="sidebar-content">
       <!-- sidebar-menu  -->
       <div class="sidebar-menu">

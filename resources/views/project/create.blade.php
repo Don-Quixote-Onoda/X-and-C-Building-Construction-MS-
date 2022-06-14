@@ -12,11 +12,11 @@
   <div class="card px-5">
     {!!Form::open(['action' => 'ProjectController@store', 'method' => 'POST', 'class' => 'row g-3 d-block  needs-validation', 'novalidate', 'enctype' =>'multipart/form-data'])!!}
     <div class="form-group row">
-      <div class="input-group col-md-12 px-5 mx-auto mt-5 mb-2 offset-md-3">
+      <div class="input-group col-md-6 pl-5 mx-0 mt-5 mb-2 offset-md-3">
           <div class="input-group-prepend">
               <span class="input-group-text">Project Number</span>
           </div>
-          <input type="text" name="project_number" class="form-control">
+          <input type="text" name="project_number" value="{{old('project_number')}}" class="form-control" required>
       </div>
   </div>
   <input type="hidden" name="admin_id" value="{{Auth::guard('admin')->user()->user_type_id}}" >
@@ -25,13 +25,13 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Name</span>
         </div>
-        <input type="text" name="project_name" class="form-control">
+        <input type="text" name="project_name" class="form-control" value="{{old('project_name')}}" required>
     </div>
     <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">
           <span class="input-group-text">Location</span>
       </div>
-      <input type="text" name="location" class="form-control">
+      <input type="text" name="location" class="form-control" value="{{old('location')}}" required>
   </div>
 </div>
 
@@ -40,10 +40,10 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Client Name</span>
         </div>
-          <select class="form-control mr-3" name="client_id">
-              <option>Default Select</option>
+          <select class="form-control mr-3" name="client_id" value="{{old('client_id')}}">
+              <option value="">Default Select</option>
               @foreach ($clients as $client)
-                <option value="{{$client->id}}">{{$client->client_name}}</option>
+                <option value="{{$client->id}}" >{{$client->client_name}}</option>
               @endforeach
           </select>
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#clientModal"><i class="ti-plus"></i></button>
@@ -52,9 +52,9 @@
     <div class="input-group-prepend">
         <span class="input-group-text">Budget</span>
     </div>
-    <input type="number" name="project_budget" class="form-control">
+    <input type="number" name="project_budget" value="{{old('project_budget')}}" class="form-control" required>
     <div class="input-group-append">
-      <span class="input-group-text bg-carolina text-white">$</span>
+      <span class="input-group-text bg-carolina text-white">₱</span>
       <span class="input-group-text">0.00</span>
   </div>
   </div>
@@ -64,11 +64,11 @@
   <label class="col-md-12 px-5 col-form-label">Date Range</label>
   <div class="col-md-12 px-5 ">
       <div class="input-group daterange">
-          <input type="text" class="form-control" name="project_start">
+          <input type="date" class="form-control" name="project_start" value="{{old('project_start')}}" required>
           <div class="input-group-append">
               <span class="input-group-text">to</span>
           </div>
-          <input type="text" class="form-control" name="project_eta">
+          <input type="date" class="form-control" name="project_eta" value="{{old('project_eta')}}" required>
       </div>
   </div>
 </div>
@@ -77,7 +77,7 @@
   <label class="col-md-12 px-5 col-form-label">Project's Awarding Date</label>
   <div class="col-md-6 pl-5">
       <div class="input-group date">
-          <input type="text" name="project_awarding" class="form-control">
+          <input type="date" name="project_awarding" value="{{old('project_awarding')}}" class="form-control" required>
           <div class="input-group-append">
               <span class="input-group-text">
                   <i class="ti-calendar"></i>
@@ -94,7 +94,7 @@
           <span class="input-group-text"><i class="ti-export"></i></span>
       </div>
       <div class="custom-file">
-          <input type="file" class="custom-file-input" name="project_image">
+          <input type="file" class="custom-file-input" name="project_image" value="{{old('project_image')}}" required>
           <label class="custom-file-label">Upload Project Photo</label>
       </div>
   </div>
@@ -102,9 +102,9 @@
     <div class="input-group-prepend">
       <span class="input-group-text">Status</span>
   </div> 
-          <select class="form-control" name="status">
+          <select class="form-control" name="status" value="{{old('status')}}">
               <option>Default Select</option>
-              <option value="0">On Going</option>
+              <option value="0" selected>On Going</option>
           </select>
   </div>
 </div>
@@ -112,7 +112,7 @@
 <div class="form-group row">
   <label class="col-md-12 px-5 mx-auto col-form-label">Description</label>
   <div class="col-md-12 px-5 mx-auto">
-      <textarea name="description" class="form-control" rows="5" placeholder="..."></textarea>
+      <textarea name="description" class="form-control" rows="5" placeholder="..." required>{{old('description')}}</textarea>
   </div>
 </div>
 

@@ -31,25 +31,25 @@
                           <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                     <thead class="thead-light">
                         <tr>
-                            <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">id</th>
-                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">cheque number</th>
-                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
-                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">employee id</th>
-                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">datetime</th>
-                          <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
+                            <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">datetime</th>
+                          <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">cheque number</th>
+                          <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
+                          <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">employee name</th>
+                          <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">datetime</th>
+                          <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach ($cheques as $cheque)      
                           <tr>
-                              <td class="d-none">{{$cheque->id}}</td>
+                              <td class="d-none">{{$cheque->datetime}}</td>
                               <td>{{$cheque->cheque_number}}</td>
-                              <td>₱ {{number_format($cheque->amount)}}</td>
+                              <td class="text-right">₱ {{number_format($cheque->amount)}}</td>
                               <td>{{$cheque->employee->employee_name}}</td>
                               <td>{{date('F d, Y', strtotime($cheque->datatime))}}</td>
                               <td class="text-center">
-                                  <a href="/admin/cheques/{{$cheque->id}}" class="btn btn-primary "><i class="fa fa-vcard-o"></i></a>
-                                  <a href="/admin/cheques/{{$cheque->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
+                                  <a href="/admin/cheques/{{$cheque->id}}" class="p-0"><i class="fa fa-vcard-o fs-5 text-primary"></i></a>
+                                  <a href="/admin/cheques/{{$cheque->id}}/edit" class="p-0"><i class="fa fa-pencil-square text-success fs-5"></i></a>
                               </td>
                           </tr>
                       @endforeach

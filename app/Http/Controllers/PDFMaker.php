@@ -86,7 +86,7 @@ class PDFMaker extends Controller
         'timeToday'=>$todayTime
         ]);
 
-        return $pdf->download('project_summary_'.$rand.'_report.pdf');
+        return $pdf->download('project_summary_report_'.$rand.'_'.$todayTime.'.pdf');
     }
 
     function chequesUtilizationReport($id) {
@@ -132,7 +132,7 @@ class PDFMaker extends Controller
             'totalExpenses'=>$totalExpenses,
          ]);
 
-        return $pdf->download('cheque_utilization_'.$rand.'_report.pdf');
+        return $pdf->download('cheque_utilization_report_'.$rand.'_'.$todayTime.'.pdf');
 
         // return view('reports.chequeUtilizationReport')
         // ->with('cheques', $cheques)
@@ -181,7 +181,7 @@ class PDFMaker extends Controller
             'totalAmount'=>$totalAmount,
         ]);
 
-        return $pdf->download('disbursement_cheque_'.$rand.'_summary.pdf');
+        return $pdf->download('disbursement_cheque__summary_'.$rand.'_'.$todayTime.'.pdf');
 
         // return view('reports.disbursementChequeSummary')
         // ->with('purchases', $purchases)
@@ -253,7 +253,7 @@ class PDFMaker extends Controller
             'totalFunds' => $totalFunds
         ]);
 
-        return $pdf->download('project_'.$rand.'_invoice.pdf');
+        return $pdf->download('project_invoice_'.$rand.'_'.$todayTime.'.pdf');
 
         
 

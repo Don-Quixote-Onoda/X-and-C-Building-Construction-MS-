@@ -38,7 +38,7 @@
       <div class="input-group-prepend">
           <span class="input-group-text">Transaction Date</span>
       </div>
-      <input type="text" placeholder="" value="{{$cheque->datetime}}" name="transaction_date" class="form-control date-input">
+      <input type="date" placeholder="" value="{{$cheque->datetime}}" name="transaction_date" class="form-control date-input">
   </div>
     <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">

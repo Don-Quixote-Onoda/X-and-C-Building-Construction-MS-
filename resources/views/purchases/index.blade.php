@@ -28,27 +28,29 @@
       <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
             <thead class="thead-light">
                 <tr>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">or number</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">transaction date</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">cheque id</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">project name</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">description</th>
-                  <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
+                  <th class="sorting text-uppercase d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">id</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">or #</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">transaction date</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">cheque number</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">project name</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">amount</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">description</th>
+                  <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 150.609px;">actions</th>
                 </tr>
             </thead>
             <tbody>
               @foreach ($purchases as $purchase)      
                   <tr>
+                      <td class="d-none">{{$purchase->id}}</td>
                       <td>{{$purchase->OR_Number}}</td>
                       <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
                       <td>{{$purchase->cheque->cheque_number}}</td>
                       <td>{{$purchase->project->project_name}}</td>
-                      <td>₱ {{number_format($purchase->amount)}}</td>
+                      <td class="text-right">₱ {{number_format($purchase->amount)}}</td>
                       <td>{{$purchase->description}}</td>
-                      <td class="text-center">
-                          <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary"><i class="fa fa-vcard-o"></i></a>
-                          <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-secondary"><i class="ti-write"></i></a>
+                      <td class="">
+                          {{-- <a href="/admin/purchases/{{$purchase->id}}" class="btn btn-primary"><i class="fa fa-vcard-o"></i></a> --}}
+                          <a href="/admin/purchases/{{$purchase->id}}/edit" class="btn btn-success"><i class="fa fa-pencil-square fs-5"></i> Edit</a>
                       </td>
                   </tr>
               @endforeach

@@ -17,7 +17,7 @@
           <div class="input-group-prepend">
               <span class="input-group-text">OR Number</span>
           </div>
-          <input type="text" name="or_number" class="form-control">
+          <input type="text" name="or_number" value="{{old('or_number')}}" class="form-control">
       </div>
   </div>
 
@@ -26,13 +26,13 @@
       <div class="input-group-prepend">
           <span class="input-group-text">Transaction Date</span>
       </div>
-      <input type="text" placeholder="" name="transaction_date" class="form-control date-input">
+      <input type="date" placeholder="" name="transaction_date" value="{{old('transaction_date')}}" class="form-control date-input">
   </div>
     <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">
           <span class="input-group-text">Amount</span>
       </div>
-      <input type="number" name="amount" class="form-control">
+      <input type="number" name="amount" value="{{old('amount')}}" class="form-control">
   </div>
 </div>
 
@@ -41,18 +41,20 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Cheque Number</span>
         </div>
-          <select class="form-control" name="cheque_id">
+        <input type="text" name="cheque_number" value="{{old('cheque_id')}}" class="form-control">
+        
+          {{-- <select class="form-control" >
               <option>Default Select</option>
               @foreach ($cheques as $cheque)
                 <option value="{{$cheque->id}}">{{$cheque->cheque_number}}</option>
               @endforeach
-          </select>
+          </select> --}}
   </div>
   <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
     <div class="input-group-prepend">
       <span class="input-group-text">Project Name</span>
     </div>
-      <select class="form-control" name="project_id">
+      <select class="form-control" name="project_id" value="{{old('project_id')}}">
           <option>Default Select</option>
           @foreach ($projects as $project)
             <option value="{{$project->id}}">{{$project->project_name}}</option>
@@ -64,7 +66,7 @@
 <div class="form-group row">
   <label class="col-md-12 px-5 mx-auto col-form-label">Description</label>
   <div class="col-md-12 px-5 mx-auto">
-      <textarea class="form-control" name="description" rows="5" placeholder="..."></textarea>
+      <textarea class="form-control" name="description" rows="5" placeholder="...">{{old('description')}}</textarea>
   </div>
 </div>
 

@@ -41,7 +41,7 @@ class ChequeController extends Controller
 
         $employee_names = EmployeeName::all();
 
-        
+
 
         return view('cheques.create')->with('employee_names', $employee_names);
     }
@@ -70,7 +70,7 @@ class ChequeController extends Controller
         $cheque->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 1;
         $log->affected_table = "Cheque";
         $log->description = "Add new cheque information";
@@ -88,10 +88,28 @@ class ChequeController extends Controller
     public function show($id)
     {
         $cheque = Cheque::find($id);
+        // return $cheque->id;
 
-        $purchases = Purchase::select('*')->where('cheque_id', $id)->get();
+        $purchases = Purchase::select('*')->where('cheque_id', $cheque->id)->get();
+
+
+        $totalExpenses = 0;
+
+        foreach($purchases as $purchase) {
+            $totalExpenses += $purchase->amount;
+        }
+
+        // return $totalExpenses;
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 0;
+        $log->affected_table = "Cheque";
+        $log->description = "Show cheque information";
+        $log->save();
+
          return view('cheques.show')
          ->with('cheque', $cheque)
+         ->with('totalExpenses', $totalExpenses)
          ->with('purchases', $purchases);
     }
 
@@ -136,8 +154,8 @@ class ChequeController extends Controller
         $cheque->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
-        $log->log_type = 1;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 2;
         $log->affected_table = "Cheque";
         $log->description = "Edit cheque information";
         $log->save();

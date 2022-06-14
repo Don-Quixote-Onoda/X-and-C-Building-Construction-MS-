@@ -17,13 +17,13 @@
           <div class="input-group-prepend">
               <span class="input-group-text">Cheque Number</span>
           </div>
-          <input type="text" name="cheque_number" class="form-control">
+          <input type="text" name="cheque_number" value="{{old('cheque_number')}}"  class="form-control">
       </div>
       <div class="input-group col-md-6 pr-5 mx-auto mt-5 mb-2 offset-md-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Employee Name</span>
         </div>
-          <select class="form-control mr-3" name="employee_id">
+          <select class="form-control mr-3" name="employee_id" value="{{old('employee_id')}}">
               <option>Default Select</option>
               @foreach ($employee_names as $employee_name)
                 <option value="{{$employee_name->id}}">{{$employee_name->employee_name}}</option>
@@ -38,13 +38,13 @@
       <div class="input-group-prepend">
           <span class="input-group-text">Transaction Date</span>
       </div>
-      <input type="text" placeholder="" name="transaction_date" class="form-control date-input">
+      <input type="date" placeholder="" name="transaction_date" value="{{old('transaction_date')}}" class="form-control date-input">
   </div>
     <div class="input-group col-md-6 pr-5 mx-auto mb-3 offset-md-3">
       <div class="input-group-prepend">
           <span class="input-group-text">Amount</span>
       </div>
-      <input type="number" name="amount" class="form-control">
+      <input type="number" name="amount" value="{{old('amount')}}" class="form-control">
   </div>
 </div>
 

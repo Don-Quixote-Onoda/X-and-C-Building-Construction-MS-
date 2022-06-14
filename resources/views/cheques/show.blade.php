@@ -15,16 +15,47 @@
                 <i class="ti-briefcase"></i> Show Cheque
             </div>
             <div class="tools">
-                <a href="/admin/cheques-utilization-report/{{$cheque->id}}" class="btn btn-danger mr-5 float-right justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT CHEQUE UTILIZATION REPORT</a>
+                <a href="/admin/cheques" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>
+                <a href="/admin/cheques-utilization-report/{{$cheque->id}}" class="btn btn-danger mr-5 float-left justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT CHEQUE UTILIZATION REPORT</a>
             </div>
         </div>
         <div class="card-body ml-5">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4 class=" fs-4"><span class="fw-normal">Employee Name:</span> {{$cheque->employee->employee_name}}</h4></li>
-                <li class="list-group-item"><p class="fs-5">Cheque #: {{$cheque->cheque_number}}</p></li>
-                <li class="list-group-item"><p class="fs-5">Amount: ₱ {{number_format($cheque->amount)}}</p></li>
-                <li class="list-group-item"><p class="fs-5">Date: {{ date('F d, Y', strtotime($cheque->datetime))}}</p></li>
-            </ul>
+            <div class="table-responsive">
+                <table class="table w-75">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><h4 class=" fs-4"><span class="fw-normal">Employee Name:</span></h4></td>
+                            <td><h4 class=" fs-4">{{$cheque->employee->employee_name}}</h4></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs-5">Cheque #:</p></td>
+                            <td><p class="fs-5">{{$cheque->cheque_number}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs-5">Date: </p></td>
+                            <td><p class="fs-5">{{ date('F d, Y', strtotime($cheque->datetime))}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs-5">Amount:</p></td>
+                            <td class=""><p class="fs-5">₱ {{number_format($cheque->amount)}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs-5">Total Expenses:</p></td>
+                            <td class=""><p class="fs-5">₱ {{number_format($totalExpenses)}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs-5">Remaining Balance:</p></td>
+                            <td class=""><p class="fs-5">₱ {{number_format($cheque->amount - $totalExpenses)}}</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         {{-- <h1>Cheque #: {{$cheque->cheque_number}}</h1> --}}
         <div class="card-body px-5">
@@ -34,22 +65,22 @@
                             <table class="table table-bordered table-hover dataTable no-footer" id="dt-addrows" aria-describedby="dt-addrows_info">
                     <thead class="thead-light">
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">id</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">OR #</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">date of transaction</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">description</th>
-                            <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project name</th>
+                            <th class="sorting d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 150.609px;">id</th>
+                            <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">OR #</th>
+                            <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">date of transaction</th>
+                            <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">amount</th>
+                            <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">description</th>
+                            <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">project name</th>
                         </tr>
                     </thead>
                     <tbody> 
                         @if (count($purchases) > 0)
                             @foreach ($purchases as $purchase)
                                 <tr>
-                                    <td>{{$purchase->id}}</td>
+                                    <td class="d-none">{{$purchase->id}}</td>
                                     <td>{{$purchase->OR_Number}}</td>
                                     <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
-                                    <td>₱ {{number_format($purchase->amount)}}</td>
+                                    <td class="text-right">₱ {{number_format($purchase->amount)}}</td>
                                     <td>{{$purchase->description}}</td>
                                     <td>{{$purchase->project->project_name}}</td>
                                 </tr>
@@ -61,8 +92,6 @@
                 </div>
             </div>
         </div>
-        <div class="card-footer text-right">
-            <a href="/admin/cheques" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>
-        </div>
+        
     </div>
 @endsection

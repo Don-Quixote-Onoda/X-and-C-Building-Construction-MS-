@@ -127,7 +127,7 @@ table .desc {
 }
 
 table td {
-  padding: 20px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -210,9 +210,9 @@ footer {
                 <td>{{$projects[$i]->id}}</td>
                 <td>{{$projects[$i]->project_name}}</td>
                 <td>{{date('F d, Y', strtotime($projects[$i]->project_start))}} - {{date('F d, Y', strtotime($projects[$i]->project_ETA))}}</td>
-                <td>{{$projects[$i]->project_budget}}</td>
-                <td>{{$expenses[$i]}}</td>
-                <td>{{$profits[$i]}}</td>
+                <td>PHP {{number_format($projects[$i]->project_budget)}}</td>
+                <td>PHP {{number_format($expenses[$i])}}</td>
+                <td>PHP {{number_format($profits[$i])}}</td>
               </tr>
             @endfor
           @endif
@@ -226,15 +226,15 @@ footer {
           </tr>
           <tr>
             <td>Total Amount of Project Value (Budget) </td>
-            <td>: {{$totalAmountOfProjectValue}}</td>
+            <td>:PHP {{number_format($totalAmountOfProjectValue)}}</td>
           </tr>
           <tr>
             <td>Total Amount of Expenses</td>
-            <td>: {{$totalAmountOfExpenses}}</td>
+            <td>:PHP {{number_format($totalAmountOfExpenses)}}</td>
           </tr>
           <tr style=" font-weight: bold; ">
             <td style="text-align: left;">Total Profit: </td>
-            <td style="border-top: 2px solid black;">{{$totalProfit}}</td>
+            <td style="border-top: 2px solid black;">PHP {{number_format($totalProfit)}}</td>
           </tr>
         </tbody>
       </table>
@@ -256,7 +256,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Manager</p>
             </div>
           </td>
@@ -266,7 +266,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Supervisor</p>
             </div>
           </td>

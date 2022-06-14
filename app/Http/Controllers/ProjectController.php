@@ -104,10 +104,10 @@ class ProjectController extends Controller
         $project->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 1;
         $log->affected_table = "Projects";
-        $log->description = " ";
+        $log->description = "Add new project information";
         $log->save();
 
         return redirect('/admin/projects')->with('success', 'Added Successfully!');
@@ -143,10 +143,10 @@ class ProjectController extends Controller
         }
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 0;
         $log->affected_table = "Projects";
-        $log->description = " ";
+        $log->description = "Show Project Information";
         $log->save();
 
         return view('project.show')
@@ -227,10 +227,10 @@ class ProjectController extends Controller
         $project->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 2;
         $log->affected_table = "Projects";
-        $log->description = " ";
+        $log->description = "Edit project information";
         $log->save();
 
         return redirect('/admin/projects')->with('success', 'Updated Successfully!');

@@ -27,7 +27,7 @@ class PurchaseController extends Controller
         $purchases = Purchase::all();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 0;
         $log->affected_table = "Purchase";
         $log->description = "User access purchases list's";
@@ -44,7 +44,10 @@ class PurchaseController extends Controller
     public function create()
     {
         $cheques = Cheque::all();
-        $projects = Project::select('*')->where('status', 1)->get();
+        $projects = Project::select('*')->where('status', 0)->get();
+
+        // $purchases = Purchase::all();
+        // return $purchases;
 
         
         return view('purchases.create')
@@ -60,21 +63,53 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+        
+
 
         $this->validate($request, [
             'or_number' => 'required',
             'transaction_date' => 'required',
             'amount' => 'required', 
-            'cheque_id' => 'required',
+            'cheque_number' => 'required',
             'project_id' => 'required',
             'description' => 'required'
         ]); 
 
 
+        $cheques = Cheque::select('*')->where('cheque_number', $request->cheque_number)->get();
+
+        // return $cheques;
+
+        if(count($cheques) <= 0) {
+            return redirect()->back()->with('error', 'Cheque Number not exists!');
+        }
+
+
+        $purchases = Purchase::select('*')->where('cheque_id', $cheques[0]->id)->get();
+
+
+        $totalPurchase = 0;
+
+        foreach($purchases as $purchase) {
+            $totalPurchase += $purchase->amount;
+        }
+
+
+
+        if($totalPurchase >= $cheques[0]->amount) {
+            
+            if( ($totalPurchase + $request->amount) >= $cheques[0]->amount) {
+                return redirect()->back()->with('error', 'Cheque Number is not available!');
+            }
+        }
+
+        
+
+
         $purchase = new Purchase;
         $purchase->OR_Number = $request->input('or_number');
         $purchase->transaction_date = date("Y-m-d", strtotime($request->input('transaction_date')));
-        $purchase->cheque_id = $request->input('cheque_id');
+        $purchase->cheque_id = $cheques[0]->id;
         $purchase->project_id = $request->input('project_id');
         $purchase->amount = $request->input('amount');
         $purchase->description = $request->input('description');
@@ -82,7 +117,7 @@ class PurchaseController extends Controller
         $purchase->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 1;
         $log->affected_table = "Purchase";
         $log->description = "User add new purchase";
@@ -115,7 +150,7 @@ class PurchaseController extends Controller
     {
         $purchase = Purchase::find($id);
         $cheques = Cheque::all();
-        $projects = Project::select('*')->where('status', 1)->get();
+        $projects = Project::select('*')->where('status', 0)->get();
         return view('purchases.edit')
         ->with('cheques', $cheques)
         ->with('projects', $projects)
@@ -151,7 +186,7 @@ class PurchaseController extends Controller
         $purchase->save();
 
         $log = new Log;
-        $log->user_id = Auth::guard('admin')->user()->id;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
         $log->log_type = 2;
         $log->affected_table = "Purchase";
         $log->description = "User edit existing purchase!";

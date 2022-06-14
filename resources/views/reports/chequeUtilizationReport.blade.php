@@ -128,7 +128,7 @@ table .desc {
 }
 
 table td {
-  padding: 20px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -192,7 +192,7 @@ footer {
       </div>
       <div id="project">
         <div><span>Date Issued</span> :{{date('F d, Y', strtotime($cheques->datetime))}}</div>
-        <div><span>Amount</span> :PHP {{$cheques->amount}}</div>
+        <div><span>Amount</span> :PHP {{number_format($cheques->amount)}}</div>
       </div>
     </header>
     <main>
@@ -214,13 +214,13 @@ footer {
                 <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
                 <td>{{$purchase->OR_Number}}</td>
                 <td>{{$purchase->project->project_name}}</td>
-                <td>PHP: {{$purchase->description}}</td>
-                <td>{{$purchase->amount}}</td>
+                <td> {{$purchase->description}}</td>
+                <td style="text-align: right;">PHP:{{number_format($purchase->amount)}}</td>
               </tr>
               @endforeach
               <tr>
                 <td colspan="4" style="text-align: right; text-transform:uppercase; font-weight: bolder;">total expenses: </td>
-                <td style="font-weight: bolder;">PHP: {{$totalExpenses}}</td>
+                <td style="font-weight: bolder; text-align: right;">PHP: {{$totalExpenses}}</td>
               </tr>
           @endif
         </tbody>
@@ -243,7 +243,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Manager</p>
             </div>
           </td>
@@ -253,7 +253,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Supervisor</p>
             </div>
           </td>

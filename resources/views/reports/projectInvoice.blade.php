@@ -127,7 +127,7 @@ table .desc {
 }
 
 table td {
-  padding: 20px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -193,8 +193,8 @@ footer {
       </div>
       <div id="project">
         <div><span>PROJECT NAME</span> :{{$project->project_name}}</div>
-        <div><span>PROJECT DURATION</span> :{{$project->project_start}} - {{$purchases[0]->project->project_ETA}}</div>
-        <div><span>BUDGET ALLOCATION</span> :{{$project->project_budget}}</div>
+        <div><span>PROJECT DURATION</span> :{{date('F d, Y', strtotime($project->project_start))}} - {{ date('F d, Y', strtotime($purchases[0]->project->project_ETA))}}</div>
+        <div><span>BUDGET ALLOCATION</span> :PHP {{number_format($project->project_budget)}}</div>
       </div>
     </header>
     <main>
@@ -214,12 +214,12 @@ footer {
             <tr>
             <td>{{date('F d, Y', strtotime($fund->created_at))}}</td>
             <td>45234534</td>
-            <td>PHP {{$fund->amount}}</td>
+            <td>PHP {{number_format($fund->amount)}}</td>
             </tr>
             @endforeach
           <tr style=" font-weight: bold; ">
             <td colspan="2" style="text-align: right;">TOTAL FUNDS RECIEVE: </td>
-            <td style="border-top: 2px solid black;">PHP {{$totalFunds}}</td>
+            <td style="border-top: 2px solid black;">PHP {{number_format($totalFunds)}}</td>
           </tr>
         </tbody>
       </table>
@@ -242,12 +242,12 @@ footer {
             <td>{{date('F d, Y', strtotime($purchase->transaction_date))}}</td>
             <td>{{$purchase->OR_Number}}</td>
             <td>{{$purchase->description}}</td>
-            <td>PHP {{$purchase->amount}}</td>
+            <td>PHP {{number_format($purchase->amount)}}</td>
           </tr>
           @endforeach
           <tr style=" font-weight: bold; ">
             <td colspan="3" style="text-align: right;">TOTAL EXPENSES: </td>
-            <td style="border-top: 2px solid black;">PHP {{$totalExpenses}}</td>
+            <td style="border-top: 2px solid black;">PHP {{number_format($totalExpenses)}}</td>
           </tr>
         </tbody>
       </table>
@@ -257,15 +257,15 @@ footer {
         <tbody>
           <tr>
             <td>TOTAL FUNDS RECIEVE</td>
-            <td>PHP {{$totalFunds}}</td>
+            <td>PHP {{number_format($totalFunds)}}</td>
           </tr>
           <tr>
             <td>TOTAL EXPENSES</td>
-            <td>PHP {{$totalExpenses}}</td>
+            <td>PHP {{number_format($totalExpenses)}}</td>
           </tr>
           <tr style=" font-weight: bold; ">
             <td style="text-align: left;">PROFIT: </td>
-            <td style="">PHP {{$totalFunds + $totalExpenses}}</td>
+            <td style="">PHP {{number_format($totalFunds + $totalExpenses)}}</td>
           </tr>
         </tbody>
       </table>
@@ -287,7 +287,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectManager[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Manager</p>
             </div>
           </td>
@@ -297,7 +297,7 @@ footer {
               text-align: center;
               margin: 0;
               font-size: 15px;
-              font-weight: bolder;">{{$projectSupervisor[0]->name}}</p>
+              font-weight: bolder;"></p>
               <p style="text-align: center; margin: 0;">Project Supervisor</p>
             </div>
           </td>

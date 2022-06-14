@@ -64,11 +64,11 @@
   <label class="col-md-12 px-5 col-form-label">Date Range</label>
   <div class="col-md-12 px-5 ">
       <div class="input-group daterange">
-          <input type="text" class="form-control" value="{{$project->project_start}}" name="project_start">
+          <input type="date" class="form-control" value="{{$project->project_start}}" name="project_start">
           <div class="input-group-append">
               <span class="input-group-text">to</span>
           </div>
-          <input type="text" class="form-control" value="{{$project->project_ETA}}" name="project_eta">
+          <input type="date" class="form-control" value="{{$project->project_ETA}}" name="project_eta">
       </div>
   </div>
 </div>
@@ -77,7 +77,7 @@
   <label class="col-md-12 px-5 col-form-label">Project's Awarding Date</label>
   <div class="col-md-6 pl-5">
       <div class="input-group date">
-          <input type="text" name="project_awarding" value="{{$project->project_awarding}}" class="form-control">
+          <input type="date" name="project_awarding" value="{{$project->project_awarding}}" class="form-control">
           <div class="input-group-append">
               <span class="input-group-text">
                   <i class="ti-calendar"></i>

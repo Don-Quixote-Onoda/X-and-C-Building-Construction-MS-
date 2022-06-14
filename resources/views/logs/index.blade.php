@@ -18,29 +18,29 @@
                         <thead class="thead-light">
                             <tr>
                               <th class="sorting sorting_desc d-none" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="id: activate to sort column ascending" style="width: 107.594px;" aria-sort="descending">id</th>
-                              <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">user_id</th>
-                              <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">log_type</th>
-                              <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">affected table</th>
-                              <th class="sorting" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">description</th>
+                              <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 150.609px;">user type</th>
+                              <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">log_type</th>
+                              <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">affected table</th>
+                              <th class="sorting text-uppercase" tabindex="0" aria-controls="dt-addrows" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 150.609px;">description</th>
                             </tr>
                         </thead>
                         <tbody>
                           @foreach ($logs as $log)      
                               <tr>
                                   <td class="d-none">{{$log->id}}</td>
-                                  <td>
+                                  <td class=" text-uppercase">
                                       {{($log->user_id == 0) ? 'Administrator' : ''}}
                                       {{($log->user_id == 1) ? 'Fund Manager' : ''}}
                                       {{($log->user_id == 2) ? 'Transaction Recorder' : ''}}
                                     
                                     </td>
-                                  <td>
+                                  <td class=" text-uppercase">
                                     {{($log->log_type == 0) ? 'User Access' : ''}}
                                     {{($log->log_type == 1) ? 'New Record':''}}
                                     {{($log->log_type == 2) ? 'Edit Record':''}}
                                     </td>
-                                  <td>{{$log->affected_table}}</td>
-                                  <td>{{$log->description}}</td>
+                                  <td class=" text-uppercase">{{$log->affected_table}}</td>
+                                  <td class=" text-uppercase">{{$log->description}}</td>
                               </tr>
                           @endforeach
                         </tbody>
