@@ -175,6 +175,8 @@ class ProjectController extends Controller
         ->with('project', $project);
     }
 
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -244,6 +246,18 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
+        $project = Project::find($id);
+        $project->status = 1;
+        $project->save();
+
+        $log = new Log;
+        $log->user_id = Auth::guard('admin')->user()->user_type_id;
+        $log->log_type = 2;
+        $log->affected_table = "Projects";
+        $log->description = "Edit project information";
+        $log->save();
+
+        return redirect('/admin/dashboard')->with('success', 'Status Updated Successfully!');
     }
 }

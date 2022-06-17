@@ -56,7 +56,7 @@ class RefundController extends Controller
 
         $refund = new Refund;
         $refund->amount = $request->input('amount');
-        $refund->employee_id = $request->input('employee_id');
+        $refund->employee_name_id = $request->input('employee_id');
         $refund->project_id = $request->input('project_id');
         $refund->admin_id = Auth::guard('admin')->user()->id;
         $refund->save();

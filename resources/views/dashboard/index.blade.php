@@ -128,16 +128,19 @@
                                     <li class="list-group-item">
                                         <div class="d-flex align-items-baseline">
                                             <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" class="custom-control-input" id="checkbox1" name="checkbox1">
-                                                <label class="custom-control-label" for="checkbox1">&nbsp;</label>
+                                                {{-- <input type="checkbox" class="custom-control-input" id="checkbox1" name="checkbox1"> --}}
+                                                {{-- <label class="custom-control-label" for="checkbox1">&nbsp;</label> --}}
                                             </div>
                                             <div class="pl-4">
-                                                <strong>{{$project->project_name}} <i class="ti-hand-open text-warning"></i></strong><br>{{$project->location}}
+                                                <strong>{{$project->project_name}}</strong><br>{{$project->location}}
                                             </div>
                                             <div class="ml-auto text-right">
                                                 <div class="btn-group btn-group-sm">
-                                                    <a href="javascript:;" class="btn btn-sm btn-success"><i class="ti-check"></i></a>
-                                                    <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a>
+                                                    {!!Form::open(['action' => ['ProjectController@destroy', $project->id], 'method' => 'POST'])!!}
+                                                        {{Form::hidden('_method', 'DELETE')}}
+                                                        <button type="submit" class="btn btn-sm btn-success"><i class="ti-check"></i></button>
+                                                    {!!Form::close()!!}
+                                                    {{-- <a href="javascript:;" class="btn btn-sm btn-secondary"><i class="ti-trash"></i></a> --}}
                                                 </div>
                                             </div>
                                         </div>

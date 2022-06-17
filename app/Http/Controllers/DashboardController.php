@@ -32,7 +32,7 @@ class DashboardController extends Controller
         $log->description = "User login";
         $log->save();
 
-        $projects = Project::select('*')->where('status', 0)->get();
+        $projects = Project::all();
         $ongoingProjects = Project::select('*')->where('status', 0)->get();
 
         $clients = Client::all();

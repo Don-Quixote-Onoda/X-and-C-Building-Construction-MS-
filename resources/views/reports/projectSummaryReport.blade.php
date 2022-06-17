@@ -189,7 +189,7 @@ footer {
     </header>
     <h3 style="margin:0; 
         text-align: center;
-    ">({{date('F d, Y', strtotime($projects[0]->project_start))}} - {{date('F d, Y', strtotime($projects[count($projects)-1]->project_ETA))}})</h3>
+    ">({{date('F d, Y', strtotime($projectStart[0]->project_start))}} - {{date('F d, Y', strtotime($projectEnd[0]->project_ETA))}})</h3>
     <main>
       <h3 style="border-top: 2px solid #000; padding-top: 0.5rem;"></h3>
       <table style="width: 100%;  border-bottom: 2px solid; ">

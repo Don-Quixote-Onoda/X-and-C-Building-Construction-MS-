@@ -46,14 +46,52 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title fs-4 fw-normal"> #: {{$project->project_number}}</h5>
-                        <p class="fs-5">Range:  {{ date('F d, Y', strtotime( $project->project_start))}} - {{ date('F d, Y', strtotime( $project->project_ETA))}}</p>
-                        <h5 class="card-title fs-5 fw-bold">₱ {{number_format($project->project_budget)}}</h5>
-                        <p class="card-text">Description: 
-                            {{$project->description}}
-                        </p>
-                        <p class="card-link text-light fs-5">Awarding At {{ date('F d, Y', strtotime( $project->project_awarding))}}</p>
+                    <div class="card-body p-0">
+                        <table class="table border-0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h5 class="card-title fs-4 fw-normal"> #:</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{$project->project_number}}</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="fs-5"><span class="fw-bold">Range:</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ date('F d, Y', strtotime( $project->project_start))}} - {{ date('F d, Y', strtotime( $project->project_ETA))}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5 class="card-title fs-5 fw-bold">Budget </h5>
+                                    </td>
+                                    <td>
+                                        <h5 class="card-title fs-5 fw-bold">₱ {{number_format($project->project_budget)}}</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="card-text"><span class="fw-bold">Description: </span>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="card-text">
+                                            {{$project->description}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        
+                        
+                        
+                        {{-- <p class="card-link text-light fs-5">Awarding At {{ date('F d, Y', strtotime( $project->project_awarding))}}</p> --}}
+                    
+                        </table>
                     </div>
                 </div>
                 <div class="ml-3 my-3">
@@ -131,7 +169,7 @@
                           <input type="number" name="amount" class="form-control">
                       </div>
                     </div>
-                    <input type="hidden" name="route_name" value="/projects/{{$project->id}}">
+                    <input type="hidden" name="route_name" value="/admin/projects/{{$project->id}}">
                     <input type="hidden" name="project_id" value="{{$project->id}}">
                     <div class="form-group row">
                       <div class="input-group col-md-12 px-5 mx-auto mb-2 offset-md-3">
@@ -184,7 +222,7 @@
                     <input type="text" name="employee_name" class="form-control">
                 </div>
               </div>
-              <input type="hidden" name="route_name" value="/projects/{{$project->id}}">
+              <input type="hidden" name="route_name" value="/admin/projects/{{$project->id}}">
               <div class="form-group row">
                 <div class="input-group col px-5 mx-auto mb-2 offset-md-3">
                     <div class="input-group-prepend">

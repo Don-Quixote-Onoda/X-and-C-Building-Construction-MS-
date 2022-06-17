@@ -27,6 +27,9 @@ class PDFMaker extends Controller
         
 
         $projects = Project::all();
+        $projectStart = Project::select('project_start')->orderBy('project_start', 'ASC')->get();
+        $projectEnd = Project::select('project_ETA')->orderBy('project_ETA', 'DESC')->get();
+        // return $projectEnd;
 
         $expenses = array();
         $profits = array();
@@ -71,6 +74,8 @@ class PDFMaker extends Controller
         // ->with('totalProfit', $totalProfit)
         // ->with('projectSupervisor', $projectSupervisor)
         // ->with('projectManager', $projectManager)
+        // ->with('projectStart', $projectStart)
+        // ->with('projectEnd', $projectEnd)
         // ->with('timeToday', $todayTime);
 
         $pdf = PDF::loadView('reports.projectSummaryReport', [
@@ -83,6 +88,8 @@ class PDFMaker extends Controller
         'totalProfit'=>$totalProfit,
         'projectSupervisor'=>$projectSupervisor,
         'projectManager'=>$projectManager,
+        'projectStart'=> $projectStart,
+        'projectEnd'=> $projectEnd,
         'timeToday'=>$todayTime
         ]);
 
@@ -208,16 +215,20 @@ class PDFMaker extends Controller
 
         $rand = rand(100000, 100000000000000);
         $purchases = Purchase::where('project_id', $id)->get();
+
         $funds = Refund::where('project_id', $id)->get();
+        
         $project = Project::find($id);
 
         $projectSupervisor = Admin::select('name')
         ->where('user_type_id', 1)
         ->get();
+        
 
         $projectManager = Admin::select('name')
         ->where('user_type_id', 2)
         ->get();
+        
 
         $todayTime =  date("F d, Y h:i:s A", time());
 
@@ -236,6 +247,8 @@ class PDFMaker extends Controller
         foreach($funds as $fund) {
             $totalFunds += $fund->amount;
         }
+
+
 
 
         // return $purchases;

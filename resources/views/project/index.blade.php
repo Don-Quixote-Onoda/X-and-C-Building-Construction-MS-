@@ -49,7 +49,7 @@
                                     <td>{{$project->project_name}}</td>
                                     <td>{{$project->location}}</td>
                                     <td>{{$project->client->client_name}}</td>
-                                    <td class="text-right">₱ {{number_format($project->project_budget)}}</td>
+                                    <td class="text-right">₱{{number_format($project->project_budget)}}</td>
                                     <td>
                                         {{($project->status == 0) ? 'on going': ''}}
                                     </td>

@@ -193,7 +193,7 @@ footer {
       </div>
       <div id="project">
         <div><span>PROJECT NAME</span> :{{$project->project_name}}</div>
-        <div><span>PROJECT DURATION</span> :{{date('F d, Y', strtotime($project->project_start))}} - {{ date('F d, Y', strtotime($purchases[0]->project->project_ETA))}}</div>
+        <div><span>PROJECT DURATION</span> :{{date('F d, Y', strtotime($project->project_start))}} - {{ date('F d, Y', strtotime($project->project_ETA))}}</div>
         <div><span>BUDGET ALLOCATION</span> :PHP {{number_format($project->project_budget)}}</div>
       </div>
     </header>

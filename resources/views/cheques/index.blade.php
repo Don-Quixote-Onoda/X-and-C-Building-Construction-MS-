@@ -44,7 +44,7 @@
                           <tr>
                               <td class="d-none">{{$cheque->datetime}}</td>
                               <td>{{$cheque->cheque_number}}</td>
-                              <td class="text-right">₱ {{number_format($cheque->amount)}}</td>
+                              <td class="text-right">₱{{number_format($cheque->amount)}}</td>
                               <td>{{$cheque->employee->employee_name}}</td>
                               <td>{{date('F d, Y', strtotime($cheque->datatime))}}</td>
                               <td class="text-center">
