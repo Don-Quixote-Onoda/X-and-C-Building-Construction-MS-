@@ -16,8 +16,7 @@
                 <i class="ti-briefcase"></i> Purchase's Table
             </div> 
             <div class="tools">
-                <a href="/admin/purchases/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Click
-                    To Add New Purchase</a>
+                <a href="/admin/purchases/create" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Add New Purchase</a>
             </div>
         </div>
 @if (count($purchases) > 0)

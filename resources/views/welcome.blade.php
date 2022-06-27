@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>Constra - Construction Html5 Template</title>
+  <title>X and C Building Construction</title>
 
   <!-- Mobile Specific Metas
 ================================================== -->
@@ -281,7 +281,7 @@
                 <img loading="lazy" src="{{asset('construction/images/icon-image/fact1.png')}}" alt="facts-img">
               </div>
               <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="1789">0</span></h2>
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="{{count($projects)}}">0</span></h2>
                 <h3 class="ts-facts-title">Total Projects</h3>
               </div>
           </div><!-- Col end -->
@@ -311,8 +311,8 @@
                 <img loading="lazy" src="{{asset('construction/images/icon-image/fact4.png')}}" alt="facts-img">
               </div>
               <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="44">0</span></h2>
-                <h3 class="ts-facts-title">Countries Experience</h3>
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="1">0</span></h2>
+                <h3 class="ts-facts-title">Philippines</h3>
               </div>
           </div><!-- Col end -->
 
@@ -698,27 +698,6 @@
         </div><!-- Row end -->
       </div><!-- Container end -->
     </div><!-- Footer main end -->
-
-    <div class="copyright">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <div class="copyright-info text-center">
-              <span>Copyright &copy; <script>
-                  document.write(new Date().getFullYear())
-                </script>, Designed &amp; Developed by <a href="https://themefisher.com">Themefisher</a></span>
-            </div>
-          </div>
-        </div><!-- Row end -->
-
-        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-          <button class="btn btn-primary" title="Back to Top">
-            <i class="fa fa-angle-double-up"></i>
-          </button>
-        </div>
-
-      </div><!-- Container end -->
-    </div><!-- Copyright end -->
   </footer><!-- Footer end -->
 
 

@@ -16,7 +16,7 @@
             </div>
             <div class="tools">
                 <a href="/admin/cheques" class="btn btn-secondary"><i class="fa fa-reply-all"></i> Back</a>
-                <a href="/admin/cheques-utilization-report/{{$cheque->id}}" class="btn btn-danger mr-5 float-left justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT CHEQUE UTILIZATION REPORT</a>
+                <a href="/admin/cheques-utilization-report/{{$cheque->id}}" class="btn btn-danger mr-5 float-left justify-content-end text-light"><i class="fa fa-file-pdf-o"></i> PRINT</a>
             </div>
         </div>
         <div class="card-body ml-5">

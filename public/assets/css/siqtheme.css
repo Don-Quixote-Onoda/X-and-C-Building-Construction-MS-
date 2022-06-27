@@ -23979,6 +23979,54 @@ body.theme-blue .card.card-tabs .card-body {
 
 @media screen and (max-width: 768px) {
   /* collapsed sidebar */
+  img.img-fluid.w-25.h-25 {
+    display: none;
+  }
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.main > div.card.card-tabs.mb-3 > div.card-header > div > a.btn.btn-outline-dark.float-right.justify-content-end.text-dark {
+    display: none;
+  }
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.main > div.card.card-tabs.mb-3 > div.card-header > div > a.btn.btn-danger.mr-5.float-right.justify-content-end.text-light
+  {
+    margin-right: 0 !important;
+  }
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.header > div > div.brand > a > span {
+    margin-top: 0 !important;
+  }
+
+  body > div > div.main > div:nth-child(2) > div > div > div.card-header > div.tools {
+    display: grid;
+  }
+
+  body > div > div.main > div:nth-child(2) > div > div > div.card-header > div.tools > a {
+    margin-bottom: 0.5rem;
+    margin-right: 0 !important;
+  }
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.main > div.card.px-5 > form > div > div.input-group
+  {
+    padding: 0 !important;
+  }
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.main > div.card.px-5 > form > div.form-group.row > label
+  {
+    padding: 0 !important;
+  } 
+
+  body > div.grid-wrapper.sidebar-bg.bg1 > div.main > div.card.px-5 > form > div.form-group.row > div
+  {
+    padding: 0 !important;
+  } 
+
+  body > div > div.main > div.card.mb-3 > div.card-header > div.tools > a.btn.btn-secondary {
+    display: none !important;
+  }
+
+  body > div > div.main > div.card.mb-3 > div.card-header > div.tools > a.btn.btn-danger.mr-5.float-left.justify-content-end.text-light {
+    margin-right: 0 !important;
+  }
 
   .grid-wrapper {
     grid-template-columns: auto;
