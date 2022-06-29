@@ -13,7 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        $table->integer('employee_name_id');
+        Schema::table('refunds', function (Blueprint $table) {
+            $table->integer('employee_name_id');
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        $table->dropColumn('employee_name_id');
+        Schema::table('refunds', function (Blueprint $table) {
+            $table->dropColumn('employee_name_id');
+        });
     }
 };
