@@ -96,7 +96,7 @@ class ProjectController extends Controller
         $project->client_id = $request->input('client_id');
         $project->project_budget = $request->input('project_budget');
         $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
-        $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->project_ETA = date("Y-m-d", strtotime($request->input('project_eta')));
         $project->project_awarding = date("Y-m-d", strtotime($request->input('project_awarding')));
         $project->status = $request->input('status');
         $project->project_image = $filenameToStore;
@@ -221,7 +221,7 @@ class ProjectController extends Controller
         $project->client_id = $request->input('client_id');
         $project->project_budget = $request->input('project_budget');
         $project->project_start = date("Y-m-d", strtotime($request->input('project_start')));
-        $project->project_eta = date("Y-m-d", strtotime($request->input('project_eta')));
+        $project->project_ETA = date("Y-m-d", strtotime($request->input('project_eta')));
         $project->project_awarding = date("Y-m-d", strtotime($request->input('project_awarding')));
         $project->status = $request->input('status');
         $project->project_image = $filenameToStore;
