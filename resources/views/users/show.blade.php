@@ -18,7 +18,7 @@
               <div class="row">
                 <div class="col-md-3">
                     <div class="card card-secondary mb-3">
-                        <img src="/storage/projects/profile_pictures/{{$user->profile_picture}}" class="card-img-top" alt="...">
+                        <img src="{{asset('storage/projects/profile_pictures')}}/{{$user->profile_picture}}" class="card-img-top" alt="...">
                     </div>
                 </div>
                 <div class="col-md-9">

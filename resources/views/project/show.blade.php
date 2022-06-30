@@ -42,7 +42,7 @@
               <div class="row">
                 <div class="col-md-4">
                     <div class="card card-secondary mb-3">
-                        <img src="/storage/projects/project_images/{{$project->project_image}}" class="card-img-top" alt="...">
+                        <img src="{{asset('storage/projects/project_images')}}/{{$project->project_image}}" class="card-img-top" alt="...">
                     </div>
                 </div>
                 <div class="col-md-8">
