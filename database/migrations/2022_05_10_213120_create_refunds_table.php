@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('refunds', function (Blueprint $table) {
             $table->id();
             $table->double('amount', 10, 2);
-            $table->integer('employee_id');
+            $table->integer('employee_name_id');
             $table->integer('project_id');
             $table->timestamps();
         });
