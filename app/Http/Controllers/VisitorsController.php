@@ -13,10 +13,8 @@ class VisitorsController extends Controller
     public function index() {
 
         $projects = Project::latest()->get();
-        $admin = Admin::all()[0]->password;
 
         return view('welcome')
-        ->with('projects', $projects)
-        ->with('password', $admin);
+        ->with('projects', $projects);
     }
 }
