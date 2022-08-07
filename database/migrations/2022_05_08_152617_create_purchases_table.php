@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('project_id');
             $table->double('amount', 10, 2);
             $table->string('description');
+            $table->integer('admin_id');
             $table->timestamps();
         });
     }

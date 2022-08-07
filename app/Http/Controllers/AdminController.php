@@ -65,7 +65,7 @@ class AdminController extends Controller
         $this->validate($request, [
             // 'profile_picture' => 'image|nullable|max:1999',
             'employee_id' => 'required',
-            'employee_id' => 'required',
+            'fullname' => 'required',
             'usertype' => 'required',
             'status' => 'required',
             'email' => 'required',
@@ -73,17 +73,17 @@ class AdminController extends Controller
         ]);
 
 
-        if($request->hasFile('profile_picture')) {
-            $filenameWithExt = $request->file('profile_picture');
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('profile_picture')->getClientOriginalExtension();
-            $filenameToStore = $filename.'_'.time().'.'.$extension;
+        // if($request->hasFile('profile_picture')) {
+        //     $filenameWithExt = $request->file('profile_picture');
+        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        //     $extension = $request->file('profile_picture')->getClientOriginalExtension();
+        //     $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-            $path = $request->file('profile_picture')->storeAs('public/projects/profile_pictures', $filenameToStore);
-        }
-        else {
-            $filenameToStore = 'noimage.jpg';
-        }
+        //     $path = $request->file('profile_picture')->storeAs('public/projects/profile_pictures', $filenameToStore);
+        // }
+        // else {
+        //     $filenameToStore = 'noimage.jpg';
+        // }
 
         $admin = new Admin;
         $admin->employee_id = $request->input('employee_id');
@@ -91,7 +91,7 @@ class AdminController extends Controller
         $admin->name = $request->input('fullname');
         $admin->user_type_id = $request->input('usertype');
         $admin->email = $request->input('email');
-        $admin->profile_picture = $filenameToStore;
+        // $admin->profile_picture = $filenameToStore;
         $admin->password = \Hash::make($request->password);
         $save = $admin->save();
 

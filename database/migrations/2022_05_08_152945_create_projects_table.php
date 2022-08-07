@@ -24,6 +24,8 @@ return new class extends Migration
             $table->date('project_ETA');
             $table->date('project_awarding');
             $table->double('project_budget', 10, 2);
+            $table->integer('status');
+            $table->integer('admin_id');
             $table->timestamps();
         });
     }

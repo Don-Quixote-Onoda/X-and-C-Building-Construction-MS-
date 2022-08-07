@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('log_type');
             $table->string('description');
+            $table->string('affected_table');
             $table->timestamps();
         });
     }

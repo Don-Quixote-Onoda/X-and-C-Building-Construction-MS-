@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cheque_number');
             $table->double('amount', 10, 2);
             $table->integer('employee_id');
+            $table->integer('admin_id');
             $table->timestamps();
         });
     }
