@@ -23,7 +23,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('construction/plugins/bootstrap/bootstrap.min.css') }}">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="{{ asset('construction/plugins/fontawesome/css/all.min.css') }}">
+    <script src="https://kit.fontawesome.com/fae71b3e77.js" crossorigin="anonymous"></script>
+
     <!-- Animation -->
     <link rel="stylesheet" href="{{ asset('construction/plugins/animate-css/animate.css') }}">
     <!-- slick Carousel -->
@@ -108,7 +109,7 @@
             </div>
 
             <div class="banner-carousel-item"
-                style="background-image:url({{ asset('construction/images/slider-main/bg3xyconstruction.jpg') }})">
+                style="background-image:url({{ asset('construction/images/projects/04.jpg') }})">
                 <div class="slider-content" style="background-color: #000000ab;">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
@@ -123,7 +124,7 @@
             </div>
 
             <div class="banner-carousel-item"
-                style="background-image:url({{ asset('construction/images/slider-main/bg3xyconstruction.jpg') }})">
+                style="background-image:url({{ asset('construction/images/projects/10.jpg') }})">
                 <div class="slider-content" style="background-color: #000000ab;">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
@@ -149,7 +150,9 @@
                     <div class="col-lg-6">
                         <div class="ts-intro">
                             <h3 class="into-sub-title">Company Mission</h3>
-                            <p>To be a leading construction company in the global market. To become the customers most
+                            <p style="text-align: justify; text-indent: 3rem;">To be a leading construction company in
+                                the global market. To
+                                become the customers most
                                 preferred choice by attaining excellence in quality and timely completed value added
                                 projects. To
                                 provide the highest level of services in the constructions industry while offering
@@ -169,7 +172,9 @@
 
                         <div class="ts-intro">
                             <h3 class="into-sub-title">Company Vision</h3>
-                            <p>To Become the Leading Construction company, while delivering Projects that consistently
+                            <p style="text-align: justify; text-indent: 3rem; ">To Become the Leading Construction
+                                company, while delivering
+                                Projects that consistently
                                 exceed international standards and provide exceptional customer satisfaction. To deliver
                                 excellent value
                                 and innovative construction solutions to meet our client’s requirements. Using Modern
@@ -308,47 +313,25 @@
             <div class="container">
                 <div class="facts-wrapper">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 ts-facts">
+                        <div class="col-md-6 col-sm-6 ts-facts">
                             <div class="ts-facts-img">
                                 <img loading="lazy" src="{{ asset('construction/images/icon-image/fact1.png') }}"
                                     alt="facts-img">
                             </div>
                             <div class="ts-facts-content">
-                                <h2 class="ts-facts-num"><span class="counterUp" data-count="0">0</span></h2>
+                                <h2 class="ts-facts-num"><span class="counterUp" data-count="18">0</span>+</h2>
                                 <h3 class="ts-facts-title">Total Projects</h3>
                             </div>
                         </div><!-- Col end -->
 
-                        <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
+                        <div class="col-md-6 col-sm-6 ts-facts mt-5 mt-sm-0">
                             <div class="ts-facts-img">
                                 <img loading="lazy" src="{{ asset('construction/images/icon-image/fact2.png') }}"
                                     alt="facts-img">
                             </div>
                             <div class="ts-facts-content">
-                                <h2 class="ts-facts-num"><span class="counterUp" data-count="647">0</span></h2>
+                                <h2 class="ts-facts-num"><span class="counterUp" data-count="100">0</span>+</h2>
                                 <h3 class="ts-facts-title">Staff Members</h3>
-                            </div>
-                        </div><!-- Col end -->
-
-                        <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
-                            <div class="ts-facts-img">
-                                <img loading="lazy" src="{{ asset('construction/images/icon-image/fact3.png') }}"
-                                    alt="facts-img">
-                            </div>
-                            <div class="ts-facts-content">
-                                <h2 class="ts-facts-num"><span class="counterUp" data-count="4000">0</span></h2>
-                                <h3 class="ts-facts-title">Hours of Work</h3>
-                            </div>
-                        </div><!-- Col end -->
-
-                        <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
-                            <div class="ts-facts-img">
-                                <img loading="lazy" src="{{ asset('construction/images/icon-image/fact4.png') }}"
-                                    alt="facts-img">
-                            </div>
-                            <div class="ts-facts-content">
-                                <h2 class="ts-facts-num"><span class="counterUp" data-count="1">0</span></h2>
-                                <h3 class="ts-facts-title">Philippines</h3>
                             </div>
                         </div><!-- Col end -->
 
@@ -363,7 +346,6 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">
-                        <h2 class="section-title">We Are Specialists In</h2>
                         <h3 class="section-sub-title">What We Do</h3>
                     </div>
                 </div>
@@ -378,8 +360,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Home Construction</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Construction</h3>
                             </div>
                         </div><!-- Service 1 end -->
 
@@ -390,8 +371,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Building Remodels</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Building</h3>
                             </div>
                         </div><!-- Service 2 end -->
 
@@ -402,8 +382,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Interior Design</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Water Supply</h3>
                             </div>
                         </div><!-- Service 3 end -->
 
@@ -423,8 +402,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Exterior Design</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Road Concreting</h3>
                             </div>
                         </div><!-- Service 4 end -->
 
@@ -435,8 +413,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Renovation</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Renovation</h3>
                             </div>
                         </div><!-- Service 5 end -->
 
@@ -447,8 +424,7 @@
                                     alt="service-icon">
                             </div>
                             <div class="ts-service-box-info">
-                                <h3 class="service-box-title"><a href="#">Safety Management</a></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+                                <h3 class="service-box-title">Safety Management</h3>
                             </div>
                         </div><!-- Service 6 end -->
                     </div><!-- Col end -->
@@ -463,284 +439,442 @@
                 <div class="row text-center">
                     <div class="col-lg-12">
                         <h2 class="section-title">Work of Excellence</h2>
-                        <h3 class="section-sub-title">Recent Projects</h3>
+                        <h3 class="section-sub-title">Company Projects</h3>
                     </div>
                 </div>
                 <!--/ Title row end -->
 
-                {{-- <div class="row">
-      <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
 
-        @if (count($projects) > 0)
-        <div class="row shuffle-wrapper">
-          <div class="col-1 shuffle-sizer"></div>
+                        <div class="row shuffle-wrapper">
+                            <div class="col-1 shuffle-sizer"></div>
 
-          @foreach ($projects as $project)
-          <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-            <div class="project-img-container">
-              <a class="gallery-popup" href="/storage/projects/project_images/{{$project->project_image}}" aria-label="project-img">
-                <img class="img-fluid" src="/storage/projects/project_images/{{$project->project_image}}" alt="project-img">
-                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-              </a>
-              <div class="project-item-info">
-                <div class="project-item-info-content">
-                  <h3 class="project-item-title">
-                    <a href="#">{{$project->project_name}}</a>
-                  </h3>
-                  <p class="project-cat">{{$project->project_location}}</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- shuffle item 1 end -->
-          @endforeach
-          
-        </div><!-- shuffle end -->
-        @endif
-        
-      </div>
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/00.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/00.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of Gate and Fence at Balay Paglaum
+                                                    Located at Capitol Compound, Malaybalay City, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/01.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/01.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of One(1) Storey Three(3) Classroom
+                                                    School Building Located at Bulonay, Impasug-ong, Bukidnon</a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/02.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/02.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of One(1) Storey Three(3) Classroom
+                                                    School Building Located at Licoan, Sumilao, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/05.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/05.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">22KA0050-Construction of Drainage along Jct SH
+                                                    Aglayan-Zamboanguita Road, K1518+(-160)-K1518+350 Aglayan,
+                                                    Malaybalay City, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">Road Concreting </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/03.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/03.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">22KA0054-Construction of Road, Barangay Aglayan,
+                                                    Malaybalay City, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">Road Concreting </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/04.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/04.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Rehabilitation of 40 Barangays at Malaybalay Area
+                                                    2022 Located at Malaybalay City, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/06.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/06.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of Perimeter Fence @ BPH-San Fernando
+                                                    Phase I Located at San Fernando, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
 
-    </div><!-- Content row end --> --}}
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/07.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/07.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of 1Unit 2Classroom at Songco IS,
+                                                    Lantapan, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/08.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/08.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of 1Unit 2Classroom @ Guilang Guilang
+                                                    Integrated School (I/S) Located at Manolo Fortich, Bukidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/09.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/09.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">Construction of 1Unit 2Classroom @ Kalagangan
+                                                    National High School Annex Located at San Fernando, Bukidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/10.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/10.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">21KA0047-Construction of Water System, Barangay
+                                                    Cabulohan, Cabanglasan, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">Water Supply </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/11.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/11.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">21KA0050-Construction of Water System, Sitio Omalao,
+                                                    Barangay Freedom, Cabanglasan, Bukidnon </a>
+                                            </h3>
+                                            <p class="project-cat">Water Supply </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/12.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/12.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">21KA0051-Construction of Water System, Barangay Sto.
+                                                    Domingo, San Fernando, Bukidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">Water Supply </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/13.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/13.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">21KA0069-Construction (Completion) of Multi-Purpose
+                                                    Building (Admin Building), Barangay Bugcaon, Lantapan, Bukidnon</a>
+                                            </h3>
+                                            <p class="project-cat">General Building </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/14.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/14.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">21KA0109-Concreting of Local Road, Brgy. 11,
+                                                    Malaybalay City, BUkidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">Road Concreting </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/05.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/05.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">22KA0020-Construction of Road, Barangay Kalasungay,
+                                                    Malaybalay City, Bukidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">Road Concreting </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/03.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/03.jpg') }}"
+                                            alt="project-img">
+                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                    <div class="project-item-info"
+                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                        <div class="project-item-info-content">
+                                            <h3 class="project-item-title">
+                                                <a href="#">22KA0002-Construction of Road, Barangay Laguitas,
+                                                    Malaybalay City, Bukidnon
+                                                </a>
+                                            </h3>
+                                            <p class="project-cat">Road Concreting </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                        </div><!-- shuffle end -->
+
+                    </div>
+
+                </div><!-- Content row end -->
             </div>
             <!--/ Container end -->
+
+
         </section><!-- Project area end -->
 
-        <section class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h3 class="column-title">Testimonials</h3>
-
-                        <div id="testimonial-slide" class="testimonial-slide">
-                            <div class="item">
-                                <div class="quote-item">
-                                    <span class="quote-text">
-                                        Question ran over her cheek When she reached the first hills of the Italic
-                                        Mountains, she had a last
-                                        view back on the skyline of her hometown Bookmarksgrove, the headline of
-                                        Alphabet Village and the
-                                        subline of her own road.
-                                    </span>
-
-                                    <div class="quote-item-footer">
-                                        <img loading="lazy" class="testimonial-thumb"
-                                            src="{{ asset('construction/images/clients/testimonial1.png') }}"
-                                            alt="testimonial">
-                                        <div class="quote-item-info">
-                                            <h3 class="quote-author">Gabriel Denis</h3>
-                                            <span class="quote-subtext">Chairman, OKT</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Quote item end -->
-                            </div>
-                            <!--/ Item 1 end -->
-
-                            <div class="item">
-                                <div class="quote-item">
-                                    <span class="quote-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        inci done idunt ut
-                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa
-                                        tion ullamco laboris
-                                        nisi aliquip consequat.
-                                    </span>
-
-                                    <div class="quote-item-footer">
-                                        <img loading="lazy" class="testimonial-thumb"
-                                            src="{{ asset('construction/images/clients/testimonial2.png') }}"
-                                            alt="testimonial">
-                                        <div class="quote-item-info">
-                                            <h3 class="quote-author">Weldon Cash</h3>
-                                            <span class="quote-subtext">CFO, First Choice</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Quote item end -->
-                            </div>
-                            <!--/ Item 2 end -->
-
-                            <div class="item">
-                                <div class="quote-item">
-                                    <span class="quote-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        inci done idunt ut
-                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa
-                                        tion ullamco laboris
-                                        nisi ut commodo consequat.
-                                    </span>
-
-                                    <div class="quote-item-footer">
-                                        <img loading="lazy" class="testimonial-thumb"
-                                            src="{{ asset('construction/images/clients/testimonial3.png') }}"
-                                            alt="testimonial">
-                                        <div class="quote-item-info">
-                                            <h3 class="quote-author">Minter Puchan</h3>
-                                            <span class="quote-subtext">Director, AKT</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Quote item end -->
-                            </div>
-                            <!--/ Item 3 end -->
-
-                        </div>
-                        <!--/ Testimonial carousel end-->
-                    </div><!-- Col end -->
-
-                    <div class="col-lg-6 mt-5 mt-lg-0">
-
-                        <h3 class="column-title">Happy Clients</h3>
-
-                        <div class="row all-clients">
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client1.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 1 end -->
-
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client2.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 2 end -->
-
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client3.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 3 end -->
-
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client4.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 4 end -->
-
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client5.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 5 end -->
-
-                            <div class="col-sm-4 col-6">
-                                <figure class="clients-logo">
-                                    <a href="#!"><img loading="lazy" class="img-fluid"
-                                            src="{{ asset('construction/images/clients/client6.png') }}"
-                                            alt="clients-logo" /></a>
-                                </figure>
-                            </div><!-- Client 6 end -->
-
-                        </div><!-- Clients row end -->
-
-                    </div><!-- Col end -->
-
-                </div>
-                <!--/ Content row end -->
-            </div>
-            <!--/ Container end -->
-        </section><!-- Content end -->
-
-
-        <section id="news" class="news">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <h2 class="section-title">Work of Excellence</h2>
-                        <h3 class="section-sub-title">Recent Projects</h3>
-                    </div>
-                </div>
-                <!--/ Title row end -->
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="latest-post">
-                            <div class="latest-post-media">
-                                <a href="news-single.html" class="latest-post-img">
-                                    <img loading="lazy" class="img-fluid"
-                                        src="{{ asset('construction/images/news/news1.jpg') }}" alt="img">
-                                </a>
-                            </div>
-                            <div class="post-body">
-                                <h4 class="post-title">
-                                    <a href="news-single.html" class="d-inline-block">We Just Completes $17.6 million
-                                        Medical Clinic in Mid-Missouri</a>
-                                </h4>
-                                <div class="latest-post-meta">
-                                    <span class="post-item-date">
-                                        <i class="fa fa-clock-o"></i> July 20, 2017
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- Latest post end -->
-                    </div><!-- 1st post col end -->
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="latest-post">
-                            <div class="latest-post-media">
-                                <a href="news-single.html" class="latest-post-img">
-                                    <img loading="lazy" class="img-fluid"
-                                        src="{{ asset('construction/images/news/news2.jpg') }}" alt="img">
-                                </a>
-                            </div>
-                            <div class="post-body">
-                                <h4 class="post-title">
-                                    <a href="news-single.html" class="d-inline-block">Thandler Airport Water
-                                        Reclamation Facility Expansion Project Named</a>
-                                </h4>
-                                <div class="latest-post-meta">
-                                    <span class="post-item-date">
-                                        <i class="fa fa-clock-o"></i> June 17, 2017
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- Latest post end -->
-                    </div><!-- 2nd post col end -->
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="latest-post">
-                            <div class="latest-post-media">
-                                <a href="news-single.html" class="latest-post-img">
-                                    <img loading="lazy" class="img-fluid"
-                                        src="{{ asset('construction/images/news/news3.jpg') }}" alt="img">
-                                </a>
-                            </div>
-                            <div class="post-body">
-                                <h4 class="post-title">
-                                    <a href="news-single.html" class="d-inline-block">Silicon Bench and Cornike Begin
-                                        Construction Solar Facilities</a>
-                                </h4>
-                                <div class="latest-post-meta">
-                                    <span class="post-item-date">
-                                        <i class="fa fa-clock-o"></i> Aug 13, 2017
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- Latest post end -->
-                    </div><!-- 3rd post col end -->
-                </div>
-                <!--/ Content row end -->
-
-                <div class="general-btn text-center mt-4">
-                    <a class="btn btn-primary" href="news-left-sidebar.html">See All Posts</a>
-                </div>
-
-            </div>
-            <!--/ Container end -->
-        </section>
-        <!--/ News end -->
 
         <footer id="footer" class="footer bg-overlay">
             <div class="footer-main">
                 <div class="container">
                     <div class="row justify-content-between">
-                        <div class="col-lg-4 col-md-6 footer-widget footer-about">
+                        <div class="col-lg-4 col-md-5 footer-widget footer-about">
                             <h3 class="widget-title">About Us</h3>
                             <div class="d-flex">
                                 <div class="w-50">
@@ -752,31 +886,16 @@
                                         Construction</p>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done
-                                idunt ut
-                                labore et dolore magna aliqua.</p>
                         </div><!-- Col end -->
 
-                        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                            <h3 class="widget-title">Working Hours</h3>
-                            <div class="working-hours">
-                                We work 7 days a week, every day excluding major holidays. Contact us if you have an
-                                emergency, with our
-                                Hotline and Contact form.
-                                <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
-                                <br> Saturday: <span class="text-right">12:00 - 15:00</span>
-                                <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
-                            </div>
-                        </div><!-- Col end -->
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                            <h3 class="widget-title">Services</h3>
-                            <ul class="list-arrow">
-                                <li><a href="service-single.html">Pre-Construction</a></li>
-                                <li><a href="service-single.html">General Contracting</a></li>
-                                <li><a href="service-single.html">Construction Management</a></li>
-                                <li><a href="service-single.html">Design and Build</a></li>
-                                <li><a href="service-single.html">Self-Perform Construction</a></li>
+                        <div class="col-lg-8 col-md-7 mt-5 mt-lg-0 footer-widget">
+                            <ul style="list-style-type: none">
+                                <li><i class="fa-brands fa-square-facebook"></i><a
+                                        href="https://www.facebook.com/profile.php?id=100075981462185"
+                                        class="ml-2">X anc C Building
+                                        Construction</a></li>
+                                <li><i class="fa-solid fa-envelope mr-2"></i>jakedoydora@rocketmail.com</li>
+                                <li><i class="fa-solid fa-phone-flip mr-2"></i>+63 917-7700-019</li>
                             </ul>
                         </div><!-- Col end -->
                     </div><!-- Row end -->
