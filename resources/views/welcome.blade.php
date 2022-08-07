@@ -66,8 +66,8 @@
                                     <li>
                                         <div class="info-box">
                                             <div class="info-box-content">
-                                                <p class="info-box-title">Call Us</p>
-                                                <p class="info-box-subtitle">(+9) 847-291-4353</p>
+                                                <p class="info-box-title">Contact Us</p>
+                                                <p class="info-box-subtitle">+63 917-7700-019</p>
                                             </div>
                                         </div>
                                     </li>
@@ -75,15 +75,7 @@
                                         <div class="info-box">
                                             <div class="info-box-content">
                                                 <p class="info-box-title">Email Us</p>
-                                                <p class="info-box-subtitle">office@Constra.com</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="last">
-                                        <div class="info-box last">
-                                            <div class="info-box-content">
-                                                <p class="info-box-title">Global Certificate</p>
-                                                <p class="info-box-subtitle">ISO 9001:2017</p>
+                                                <p class="info-box-subtitle">jakedoydora@rocketmail.com</p>
                                             </div>
                                         </div>
                                     </li>
@@ -98,19 +90,17 @@
         </header>
         <!--/ Header end -->
 
+
         <div class="banner-carousel banner-carousel-1 mb-0">
             <div class="banner-carousel-item"
-                style="background-image:url({{ asset('construction/images/slider-main/bg1.jpg') }})">
-                <div class="slider-content">
+                style="background-image:url({{ asset('construction/images/slider-main/bg3xyconstruction.jpg') }})">
+                <div class="slider-content" style="background-color: #000000ab;">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-md-12 text-center">
-                                <h2 class="slide-title" data-animation-in="slideInLeft">17 Years of excellence in</h2>
-                                <h3 class="slide-sub-title" data-animation-in="slideInRight">Construction Industry</h3>
-                                <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                                    <a href="services.html" class="slider btn btn-primary">Our Services</a>
-                                    <a href="contact.html" class="slider btn btn-primary border">Contact Now</a>
-                                </p>
+                                <h3 class="slide-sub-title" data-animation-in="slideInRight">X and C Building
+                                    Construction</h3>
+
                             </div>
                         </div>
                     </div>
@@ -118,17 +108,14 @@
             </div>
 
             <div class="banner-carousel-item"
-                style="background-image:url({{ asset('construction/images/slider-main/bg2.jpg') }})">
-                <div class="slider-content text-left">
+                style="background-image:url({{ asset('construction/images/slider-main/bg3xyconstruction.jpg') }})">
+                <div class="slider-content" style="background-color: #000000ab;">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
-                            <div class="col-md-12">
-                                <h2 class="slide-title-box" data-animation-in="slideInDown">World Class Service</h2>
-                                <h3 class="slide-title" data-animation-in="fadeIn">When Service Matters</h3>
-                                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Your Choice is Simple</h3>
-                                <p data-animation-in="slideInRight">
-                                    <a href="services.html" class="slider btn btn-primary border">Our Services</a>
-                                </p>
+                            <div class="col-md-12 text-center">
+                                <h3 class="slide-sub-title" data-animation-in="slideInRight">X and C Building
+                                    Construction</h3>
+
                             </div>
                         </div>
                     </div>
@@ -136,21 +123,14 @@
             </div>
 
             <div class="banner-carousel-item"
-                style="background-image:url({{ asset('construction/images/slider-main/bg3.jpg') }})">
-                <div class="slider-content text-right">
+                style="background-image:url({{ asset('construction/images/slider-main/bg3xyconstruction.jpg') }})">
+                <div class="slider-content" style="background-color: #000000ab;">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
-                            <div class="col-md-12">
-                                <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Engineers</h2>
-                                <h3 class="slide-sub-title" data-animation-in="fadeIn">We believe sustainability</h3>
-                                <p class="slider-description lead" data-animation-in="slideInRight">We will deal with
-                                    your failure that determines how you achieve success.</p>
-                                <div data-animation-in="slideInLeft">
-                                    <a href="contact.html" class="slider btn btn-primary"
-                                        aria-label="contact-with-us">Get Free Quote</a>
-                                    <a href="about.html" class="slider btn btn-primary border"
-                                        aria-label="learn-more-about-us">Learn more</a>
-                                </div>
+                            <div class="col-md-12 text-center">
+                                <h3 class="slide-sub-title" data-animation-in="slideInRight">X and C Building
+                                    Construction</h3>
+
                             </div>
                         </div>
                     </div>
@@ -168,70 +148,44 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="ts-intro">
-                            <h2 class="into-title">About Us</h2>
-                            <h3 class="into-sub-title">We deliver landmark projects</h3>
-                            <p>We are rethoric question ran over her cheek When she reached the first hills of the
-                                Italic Mountains,
-                                she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of
-                                Alphabet Village
-                                and the subline of her own road, the Line Lane.</p>
+                            <h3 class="into-sub-title">Company Mission</h3>
+                            <p>To be a leading construction company in the global market. To become the customers most
+                                preferred choice by attaining excellence in quality and timely completed value added
+                                projects. To
+                                provide the highest level of services in the constructions industry while offering
+                                superior craftsmanship
+                                to every project, we handle. To continually innovative, develop and adopt state of the
+                                art technology in
+                                methods and materials to enhance productivity and cost effectiveness. To continually
+                                improve the
+                                competence of our team and employ diverse, Innovative and results oriented personals,
+                                motivated to
+                                deliver excellence. To build a safety culture aimed at continually reducing the
+                                frequency severity rate
+                                towards achieving zero accidents. To identify and mitigate all the environmental impacts
+                                arising from
+                                our activities, and comply with applicable environment norms.</p>
                         </div><!-- Intro box end -->
 
-                        <div class="gap-20"></div>
+                        <div class="ts-intro">
+                            <h3 class="into-sub-title">Company Vision</h3>
+                            <p>To Become the Leading Construction company, while delivering Projects that consistently
+                                exceed international standards and provide exceptional customer satisfaction. To deliver
+                                excellent value
+                                and innovative construction solutions to meet our client’s requirements. Using Modern
+                                principles and
+                                sophisticated technologies, X and C Building Construction envisions being the primary
+                                preferences at all
+                                times both nationally and globally, for their renowned excellence, quality, performance
+                                and reliability in
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="ts-service-box">
-                                    <span class="ts-service-icon">
-                                        <i class="fas fa-trophy"></i>
-                                    </span>
-                                    <div class="ts-service-box-content">
-                                        <h3 class="service-box-title">We've Repution for Excellence</h3>
-                                    </div>
-                                </div><!-- Service 1 end -->
-                            </div><!-- col end -->
+                                all types of constructions.</p>
+                        </div><!-- Intro box end -->
 
-                            <div class="col-md-6">
-                                <div class="ts-service-box">
-                                    <span class="ts-service-icon">
-                                        <i class="fas fa-sliders-h"></i>
-                                    </span>
-                                    <div class="ts-service-box-content">
-                                        <h3 class="service-box-title">We Build Partnerships</h3>
-                                    </div>
-                                </div><!-- Service 2 end -->
-                            </div><!-- col end -->
-                        </div><!-- Content row 1 end -->
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="ts-service-box">
-                                    <span class="ts-service-icon">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span>
-                                    <div class="ts-service-box-content">
-                                        <h3 class="service-box-title">Guided by Commitment</h3>
-                                    </div>
-                                </div><!-- Service 1 end -->
-                            </div><!-- col end -->
-
-                            <div class="col-md-6">
-                                <div class="ts-service-box">
-                                    <span class="ts-service-icon">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                    <div class="ts-service-box-content">
-                                        <h3 class="service-box-title">A Team of Professionals</h3>
-                                    </div>
-                                </div><!-- Service 2 end -->
-                            </div><!-- col end -->
-                        </div><!-- Content row 1 end -->
                     </div><!-- Col end -->
 
                     <div class="col-lg-6 mt-4 mt-lg-0">
-                        <h3 class="into-sub-title">Our Values</h3>
-                        <p>Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat
-                            taxidermy street art, tattooed beard literally.</p>
+                        <h3 class="into-sub-title">Company Goals</h3>
 
                         <div class="accordion accordion-group" id="our-values-accordion">
                             <div class="card">
@@ -248,8 +202,12 @@
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                     data-parent="#our-values-accordion">
                                     <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                        1.) Set safety standards for each projects set before beginning any project, you
+                                        should create a
+                                        plan that identifies potential risk and how to prevent them. Communicating that
+                                        plan
+                                        regularly with your team members will ensure safety is on forefront of their
+                                        eyes.
                                     </div>
                                 </div>
                             </div>
@@ -259,15 +217,22 @@
                                         <button class="btn btn-block text-left collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                                             aria-controls="collapseTwo">
-                                            Customer Service
+                                            Communication and Teamwork
                                         </button>
                                     </h2>
                                 </div>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                     data-parent="#our-values-accordion">
                                     <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                        2.) Evaluate the company’s communication and teamwork. It takes everyone in a
+                                        company to
+                                        meet the goals not just leadership. It’s important that all levels team
+                                        communicate and work
+                                        together. In addition to the usual preconstruction and project hand off
+                                        meetings, teams
+                                        should also have a thorough meeting after project completion to discuss what
+                                        went well and
+                                        what can improve.
                                     </div>
                                 </div>
                             </div>
@@ -277,15 +242,57 @@
                                         <button class="btn btn-block text-left collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                             aria-controls="collapseThree">
-                                            Integrity
+                                            Strategic Plan
                                         </button>
                                     </h2>
                                 </div>
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                     data-parent="#our-values-accordion">
                                     <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                        3.) Create and follow a strategic Plan. The first step in strategic plan is to
+                                        identify the visions.
+                                        Once you identify your vision you can create a roadmap for how to get there.
+                                        Having good
+                                        metrics and way to easily access data is essential to setting goals and staying
+                                        on track.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header p-0 bg-transparent" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Succession Plan
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#our-values-accordion">
+                                    <div class="card-body">
+                                        4.) Make and communicate a succession plan. Plans should be written and
+                                        communicated with
+                                        appropriate people throughout your company and employee should be cross-trained.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header p-0 bg-transparent" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Consider Cybersecurity
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#our-values-accordion">
+                                    <div class="card-body">
+                                        5.) Consider Cybersecurity. It’s important to ensure your construction company
                                     </div>
                                 </div>
                             </div>
