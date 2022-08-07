@@ -352,7 +352,7 @@
                 <!--/ Title row end -->
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 pt-5">
                         <div class="ts-service-box d-flex">
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
@@ -394,7 +394,7 @@
                             alt="service-avater-image">
                     </div><!-- Col end -->
 
-                    <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+                    <div class="col-lg-4 pt-5 mt-5 mt-lg-0 mb-4 mb-lg-0">
                         <div class="ts-service-box d-flex">
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
