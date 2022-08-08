@@ -2513,8 +2513,8 @@ img.testimonial-thumb {
   color: #747474;
 }
 
-.footer-widget ul.list-arrow li:hover a,
-.footer-widget ul.list-arrow li:hover {
+.footer-widget ul li:hover a,
+.footer-widget ul li:hover {
   color: #ffb600;
 }
 

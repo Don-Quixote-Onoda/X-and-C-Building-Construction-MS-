@@ -436,12 +436,336 @@
             <!--/ Container end -->
         </section><!-- Service end -->
 
-        <section id="project-area" class="project-area solid-bg">
+        <section id="projects">
             <div class="container">
                 <div class="row text-center">
                     <div class="col-lg-12">
                         <h2 class="section-title">Work of Excellence</h2>
                         <h3 class="section-sub-title">Company Projects</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of Gate and Fence at Balay
+                                        Paglaum
+                                        Located at Capitol Compound, Malaybalay City, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,324,929.57 </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of One(1) Storey Three(3)
+                                        Classroom School Building Located at Bulonay, Impasug-ong, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 3,957,610.97 </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of One(1) Storey Three(3)
+                                        Classroom School Building Located at Licoan, Sumilao, Bukidnon
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 3,950,351.15</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Road Concreting</h5>
+                                    <p class="card-text font-weight-bold">22KA0050-Construction of Drainage along Jct
+                                        SH Aglayan-Zamboanguita Road, K1518+(-160)-K1518+350 Aglayan, Malaybalay City,
+                                        Bukidnon
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 19,365,619.47</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Road Concreting</h5>
+                                    <p class="card-text font-weight-bold">22KA0054-Construction of Road, Barangay
+                                        Aglayan, Malaybalay City, Bukidnon
+
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 19,586,443.09
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Rehabilitation of 40 Barangays at Malaybalay
+                                        Area 2022 Located at Malaybalay City, Bukidnon
+
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 13,144,402.05
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of Perimeter Fence @ BPH-San
+                                        Fernando Phase I Located at San Fernando, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,335,203.94
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of 1Unit 2Classroom at Basac IS,
+                                        Lantapan, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,671,816.04
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of 1Unit 2Classroom at Songco
+                                        IS, Lantapan, Bukidnon
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,671,816.04
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">Construction of 1Unit 2Classroom @ Guilang
+                                        Guilang Integrated School (I/S) Located at Manolo Fortich, Bukidnon
+
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,992,545.10
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">General Building</h5>
+                                    <p class="card-text font-weight-bold">21KA0069-Construction (Completion) of
+                                        Multi-Purpose Building (Admin Building), Barangay Bugcaon, Lantapan, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,956,448.02
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon3.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Water Supply</h5>
+                                    <p class="card-text font-weight-bold">21KA0047-Construction of Water System,
+                                        Barangay Cabulohan, Cabanglasan, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,948,310.61
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon3.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Water Supply</h5>
+                                    <p class="card-text font-weight-bold">21KA0050-Construction of Water System, Sitio
+                                        Omalao, Barangay Freedom, Cabanglasan, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,936,130.55
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon3.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Water Supply</h5>
+                                    <p class="card-text font-weight-bold">21KA0051-Construction of Water System,
+                                        Barangay Sto. Domingo, San Fernando, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 1,948,122.53
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Road Concreting</h5>
+                                    <p class="card-text font-weight-bold">21KA0109-Concreting of Local Road, Brgy. 11,
+                                        Malaybalay City, BUkidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 2,395,727.88
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Road Concreting</h5>
+                                    <p class="card-text font-weight-bold">22KA0002-Construction of Road, Barangay
+                                        Laguitas, Malaybalay City, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 4,918,852.36
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 mx-2" style="max-width: 540px; background-color: #00000015;">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-normal">Road Concreting</h5>
+                                    <p class="card-text font-weight-bold">22KA0020-Construction of Road, Barangay
+                                        Kalasungay, Malaybalay City, Bukidnon
+                                    </p>
+                                    <p class="card-text"><small class="text-dark">PHP 4,890,160.57
+                                        </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-area" class="project-area solid-bg">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <h3 class="section-sub-title">Company Gallery</h3>
                     </div>
                 </div>
                 <!--/ Title row end -->
@@ -461,9 +785,9 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/00.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
+                                    {{-- <div class="project-item-info"
                                         style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
                                         <div class="project-item-info-content">
                                             <h3 class="project-item-title">
@@ -472,7 +796,7 @@
                                             </h3>
                                             <p class="project-cat">General Building </p>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
                             <div class="col-lg-4 col-md-6 shuffle-item"
@@ -484,9 +808,9 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/01.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
+                                    {{-- <div class="project-item-info"
                                         style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
                                         <div class="project-item-info-content">
                                             <h3 class="project-item-title">
@@ -494,22 +818,21 @@
                                                     School Building Located at Bulonay, Impasug-ong, Bukidnon</a>
                                             </h3>
                                             <p class="project-cat">General Building </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </div> --}}
+                                </div><!-- shuffle item 1 end -->
                             </div><!-- shuffle item 1 end -->
                             <div class="col-lg-4 col-md-6 shuffle-item"
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/13.jpg') }}"
+                                        href="{{ asset('construction/images/projects/02.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/13.jpg') }}"
+                                            src="{{ asset('construction/images/projects/02.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
+                                    {{-- <div class="project-item-info"
                                         style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
                                         <div class="project-item-info-content">
                                             <h3 class="project-item-title">
@@ -518,31 +841,7 @@
                                             </h3>
                                             <p class="project-cat">General Building </p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/05.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/05.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">22KA0050-Construction of Drainage along Jct SH
-                                                    Aglayan-Zamboanguita Road, K1518+(-160)-K1518+350 Aglayan,
-                                                    Malaybalay City, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">Road Concreting </p>
-                                        </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
                             <div class="col-lg-4 col-md-6 shuffle-item"
@@ -554,41 +853,65 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/03.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
+                                    {{-- <div class="project-item-info"
                                         style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
                                         <div class="project-item-info-content">
                                             <h3 class="project-item-title">
-                                                <a href="#">22KA0054-Construction of Road, Barangay Aglayan,
+                                                <a href="#">22KA0050-Construction of Drainage along Jct SH
+                                                    Aglayan-Zamboanguita Road, K1518+(-160)-K1518+350 Aglayan,
                                                     Malaybalay City, Bukidnon </a>
                                             </h3>
                                             <p class="project-cat">Road Concreting </p>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
                             <div class="col-lg-4 col-md-6 shuffle-item"
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/02.jpg') }}"
+                                        href="{{ asset('construction/images/projects/04.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/02.jpg') }}"
+                                            src="{{ asset('construction/images/projects/04.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">Rehabilitation of 40 Barangays at Malaybalay Area
-                                                    2022 Located at Malaybalay City, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">22KA0054-Construction of Road, Barangay Aglayan,
+                                                Malaybalay City, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">Road Concreting </p>
                                     </div>
+                                </div> --}}
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/05.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/05.jpg') }}"
+                                            alt="project-img">
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
+                                    </a>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">Rehabilitation of 40 Barangays at Malaybalay Area
+                                                2022 Located at Malaybalay City, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
+                                    </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
                             <div class="col-lg-4 col-md-6 shuffle-item"
@@ -600,18 +923,18 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/06.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">Construction of Perimeter Fence @ BPH-San Fernando
-                                                    Phase I Located at San Fernando, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">Construction of Perimeter Fence @ BPH-San Fernando
+                                                Phase I Located at San Fernando, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
 
@@ -619,23 +942,23 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/12.jpg') }}"
+                                        href="{{ asset('construction/images/projects/07.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/12.jpg') }}"
+                                            src="{{ asset('construction/images/projects/07.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">Construction of 1Unit 2Classroom at Songco IS,
-                                                    Lantapan, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">Construction of 1Unit 2Classroom at Songco IS,
+                                                Lantapan, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
 
@@ -643,173 +966,26 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/13.jpg') }}"
+                                        href="{{ asset('construction/images/projects/08.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/13.jpg') }}"
+                                            src="{{ asset('construction/images/projects/08.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">Construction of 1Unit 2Classroom @ Guilang Guilang
-                                                    Integrated School (I/S) Located at Manolo Fortich, Bukidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">Construction of 1Unit 2Classroom @ Guilang Guilang
+                                                Integrated School (I/S) Located at Manolo Fortich, Bukidnon
+                                            </a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/13.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/13.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">Construction of 1Unit 2Classroom @ Kalagangan
-                                                    National High School Annex Located at San Fernando, Bukidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/04.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/04.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">21KA0047-Construction of Water System, Barangay
-                                                    Cabulohan, Cabanglasan, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">Water Supply </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/04.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/04.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">21KA0050-Construction of Water System, Sitio Omalao,
-                                                    Barangay Freedom, Cabanglasan, Bukidnon </a>
-                                            </h3>
-                                            <p class="project-cat">Water Supply </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/04.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/04.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">21KA0051-Construction of Water System, Barangay Sto.
-                                                    Domingo, San Fernando, Bukidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">Water Supply </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/13.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/13.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">21KA0069-Construction (Completion) of Multi-Purpose
-                                                    Building (Admin Building), Barangay Bugcaon, Lantapan, Bukidnon</a>
-                                            </h3>
-                                            <p class="project-cat">General Building </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item"
-                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/14.jpg') }}"
-                                        aria-label="project-img">
-                                        <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/14.jpg') }}"
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">21KA0109-Concreting of Local Road, Brgy. 11,
-                                                    Malaybalay City, BUkidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">Road Concreting </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 1 end -->
-
                             <div class="col-lg-4 col-md-6 shuffle-item"
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
@@ -819,19 +995,43 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/09.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">22KA0020-Construction of Road, Barangay Kalasungay,
-                                                    Malaybalay City, Bukidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">Road Concreting </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">Construction of 1Unit 2Classroom @ Kalagangan
+                                                National High School Annex Located at San Fernando, Bukidnon
+                                            </a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
                                     </div>
+                                </div> --}}
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/10.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/10.jpg') }}"
+                                            alt="project-img">
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
+                                    </a>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">21KA0047-Construction of Water System, Barangay
+                                                Cabulohan, Cabanglasan, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">Water Supply </p>
+                                    </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
 
@@ -844,22 +1044,94 @@
                                         <img class="img-fluid"
                                             src="{{ asset('construction/images/projects/11.jpg') }}"
                                             alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
                                     </a>
-                                    <div class="project-item-info"
-                                        style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="#">22KA0002-Construction of Road, Barangay Laguitas,
-                                                    Malaybalay City, Bukidnon
-                                                </a>
-                                            </h3>
-                                            <p class="project-cat">Road Concreting </p>
-                                        </div>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">21KA0050-Construction of Water System, Sitio Omalao,
+                                                Barangay Freedom, Cabanglasan, Bukidnon </a>
+                                        </h3>
+                                        <p class="project-cat">Water Supply </p>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div><!-- shuffle item 1 end -->
 
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/12.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/12.jpg') }}"
+                                            alt="project-img">
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
+                                    </a>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">21KA0051-Construction of Water System, Barangay Sto.
+                                                Domingo, San Fernando, Bukidnon
+                                            </a>
+                                        </h3>
+                                        <p class="project-cat">Water Supply </p>
+                                    </div>
+                                </div> --}}
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/13.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/13.jpg') }}"
+                                            alt="project-img">
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
+                                    </a>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">21KA0069-Construction (Completion) of Multi-Purpose
+                                                Building (Admin Building), Barangay Bugcaon, Lantapan, Bukidnon</a>
+                                        </h3>
+                                        <p class="project-cat">General Building </p>
+                                    </div>
+                                </div> --}}
+                                </div>
+                            </div><!-- shuffle item 1 end -->
+
+                            <div class="col-lg-4 col-md-6 shuffle-item"
+                                data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                                <div class="project-img-container">
+                                    <a class="gallery-popup"
+                                        href="{{ asset('construction/images/projects/14.jpg') }}"
+                                        aria-label="project-img">
+                                        <img class="img-fluid"
+                                            src="{{ asset('construction/images/projects/14.jpg') }}"
+                                            alt="project-img">
+                                        {{-- <span class="gallery-icon"><i class="fa fa-plus"></i></span> --}}
+                                    </a>
+                                    {{-- <div class="project-item-info"
+                                    style="    background-color: #0000004d; top: 0;  padding-top: 30%;">
+                                    <div class="project-item-info-content">
+                                        <h3 class="project-item-title">
+                                            <a href="#">21KA0109-Concreting of Local Road, Brgy. 11,
+                                                Malaybalay City, BUkidnon
+                                            </a>
+                                        </h3>
+                                        <p class="project-cat">Road Concreting </p>
+                                    </div>
+                                </div> --}}
+                                </div>
+                            </div><!-- shuffle item 1 end -->
                         </div><!-- shuffle end -->
 
                     </div>
@@ -895,7 +1167,8 @@
                             <ul style="list-style-type: none">
                                 <li><i class="fa-brands fa-square-facebook"></i><a
                                         href="https://www.facebook.com/profile.php?id=100075981462185"
-                                        class="ml-2">X anc C Building
+                                        class="ml-2">X
+                                        anc C Building
                                         Construction</a></li>
                                 <li><i class="fa-solid fa-envelope mr-2"></i>jakedoydora@rocketmail.com</li>
                                 <li><i class="fa-solid fa-phone-flip mr-2"></i>+63 917-7700-019</li>
