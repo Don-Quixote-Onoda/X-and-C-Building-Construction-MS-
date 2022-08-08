@@ -500,10 +500,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/02.jpg') }}"
+                                        href="{{ asset('construction/images/projects/13.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/02.jpg') }}"
+                                            src="{{ asset('construction/images/projects/13.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -570,10 +570,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/04.jpg') }}"
+                                        href="{{ asset('construction/images/projects/02.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/04.jpg') }}"
+                                            src="{{ asset('construction/images/projects/02.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -617,10 +617,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/07.jpg') }}"
+                                        href="{{ asset('construction/images/projects/12.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/07.jpg') }}"
+                                            src="{{ asset('construction/images/projects/12.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -641,10 +641,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/08.jpg') }}"
+                                        href="{{ asset('construction/images/projects/13.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/08.jpg') }}"
+                                            src="{{ asset('construction/images/projects/13.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -665,10 +665,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/09.jpg') }}"
+                                        href="{{ asset('construction/images/projects/13.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/09.jpg') }}"
+                                            src="{{ asset('construction/images/projects/13.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -690,10 +690,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/10.jpg') }}"
+                                        href="{{ asset('construction/images/projects/04.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/10.jpg') }}"
+                                            src="{{ asset('construction/images/projects/04.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -714,10 +714,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/11.jpg') }}"
+                                        href="{{ asset('construction/images/projects/04.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/11.jpg') }}"
+                                            src="{{ asset('construction/images/projects/04.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -738,10 +738,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/12.jpg') }}"
+                                        href="{{ asset('construction/images/projects/04.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/12.jpg') }}"
+                                            src="{{ asset('construction/images/projects/04.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -812,10 +812,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/05.jpg') }}"
+                                        href="{{ asset('construction/images/projects/09.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/05.jpg') }}"
+                                            src="{{ asset('construction/images/projects/09.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
@@ -837,10 +837,10 @@
                                 data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
                                 <div class="project-img-container">
                                     <a class="gallery-popup"
-                                        href="{{ asset('construction/images/projects/03.jpg') }}"
+                                        href="{{ asset('construction/images/projects/11.jpg') }}"
                                         aria-label="project-img">
                                         <img class="img-fluid"
-                                            src="{{ asset('construction/images/projects/03.jpg') }}"
+                                            src="{{ asset('construction/images/projects/11.jpg') }}"
                                             alt="project-img">
                                         <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                                     </a>
