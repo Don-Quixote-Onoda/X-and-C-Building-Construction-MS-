@@ -157,7 +157,9 @@
                                 projects. To
                                 provide the highest level of services in the constructions industry while offering
                                 superior craftsmanship
-                                to every project, we handle. To continually innovative, develop and adopt state of the
+                                to every project, we handle.</p>
+                            <p style="text-align: justify; text-indent: 3rem;"> To continually innovative, develop and
+                                adopt state of the
                                 art technology in
                                 methods and materials to enhance productivity and cost effectiveness. To continually
                                 improve the
@@ -320,7 +322,7 @@
                             </div>
                             <div class="ts-facts-content">
                                 <h2 class="ts-facts-num"><span class="counterUp" data-count="18">0</span>+</h2>
-                                <h3 class="ts-facts-title">Total Projects</h3>
+                                <h3 class="ts-facts-title">Projects</h3>
                             </div>
                         </div><!-- Col end -->
 
@@ -331,7 +333,7 @@
                             </div>
                             <div class="ts-facts-content">
                                 <h2 class="ts-facts-num"><span class="counterUp" data-count="100">0</span>+</h2>
-                                <h3 class="ts-facts-title">Staff Members</h3>
+                                <h3 class="ts-facts-title">Employees</h3>
                             </div>
                         </div><!-- Col end -->
 
@@ -353,36 +355,36 @@
 
                 <div class="row">
                     <div class="col-lg-4 pt-5">
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
+                            <div class="ts-service-box-info my-auto">
+                                <h3 class="service-box-title">Construction</h3>
+                            </div>
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon1.png') }}"
                                     alt="service-icon">
                             </div>
-                            <div class="ts-service-box-info">
-                                <h3 class="service-box-title">Construction</h3>
-                            </div>
                         </div><!-- Service 1 end -->
 
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
+                            <div class="ts-service-box-info my-auto">
+                                <h3 class="service-box-title">Building</h3>
+                            </div>
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon2.png') }}"
                                     alt="service-icon">
                             </div>
-                            <div class="ts-service-box-info">
-                                <h3 class="service-box-title">Building</h3>
-                            </div>
                         </div><!-- Service 2 end -->
 
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
+                            <div class="ts-service-box-info my-auto">
+                                <h3 class="service-box-title">Water Supply</h3>
+                            </div>
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon3.png') }}"
                                     alt="service-icon">
-                            </div>
-                            <div class="ts-service-box-info">
-                                <h3 class="service-box-title">Water Supply</h3>
                             </div>
                         </div><!-- Service 3 end -->
 
@@ -395,35 +397,35 @@
                     </div><!-- Col end -->
 
                     <div class="col-lg-4 pt-5 mt-5 mt-lg-0 mb-4 mb-lg-0">
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon4.png') }}"
                                     alt="service-icon">
                             </div>
-                            <div class="ts-service-box-info">
+                            <div class="ts-service-box-info my-auto">
                                 <h3 class="service-box-title">Road Concreting</h3>
                             </div>
                         </div><!-- Service 4 end -->
 
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon5.png') }}"
                                     alt="service-icon">
                             </div>
-                            <div class="ts-service-box-info">
+                            <div class="ts-service-box-info my-auto">
                                 <h3 class="service-box-title">Renovation</h3>
                             </div>
                         </div><!-- Service 5 end -->
 
-                        <div class="ts-service-box d-flex">
+                        <div class="ts-service-box d-flex justify-content-around align-items-center my-5">
                             <div class="ts-service-box-img">
                                 <img loading="lazy"
                                     src="{{ asset('construction/images/icon-image/service-icon6.png') }}"
                                     alt="service-icon">
                             </div>
-                            <div class="ts-service-box-info">
+                            <div class="ts-service-box-info my-auto">
                                 <h3 class="service-box-title">Safety Management</h3>
                             </div>
                         </div><!-- Service 6 end -->
@@ -874,7 +876,7 @@
             <div class="footer-main">
                 <div class="container">
                     <div class="row justify-content-between">
-                        <div class="col-lg-4 col-md-5 footer-widget footer-about">
+                        <div class="col-lg-4 col-md-4 footer-widget footer-about">
                             <h3 class="widget-title">About Us</h3>
                             <div class="d-flex">
                                 <div class="w-50">
@@ -888,7 +890,8 @@
                             </div>
                         </div><!-- Col end -->
 
-                        <div class="col-lg-8 col-md-7 mt-5 mt-lg-0 footer-widget">
+                        <div class="col-lg-4 col-md-4 mt-5 mt-lg-0 footer-widget">
+
                             <ul style="list-style-type: none">
                                 <li><i class="fa-brands fa-square-facebook"></i><a
                                         href="https://www.facebook.com/profile.php?id=100075981462185"
@@ -896,6 +899,15 @@
                                         Construction</a></li>
                                 <li><i class="fa-solid fa-envelope mr-2"></i>jakedoydora@rocketmail.com</li>
                                 <li><i class="fa-solid fa-phone-flip mr-2"></i>+63 917-7700-019</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 mt-5 mt-lg-0 footer-widget">
+                            <ul style="list-style-type: none">
+                                <li><i class="fa-solid fa-globe"></i><a
+                                        href="https://xy-construction-ms.herokuapp.com" class="ml-2">X anc C
+                                        Building
+                                        Construction Monitoring System</a></li>
                             </ul>
                         </div><!-- Col end -->
                     </div><!-- Row end -->
