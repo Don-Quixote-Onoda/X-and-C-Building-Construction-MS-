@@ -1149,6 +1149,7 @@
                 <div class="container">
                     <div class="row justify-content-between">
                         <div class="col-lg-4 col-md-4 footer-widget footer-about">
+                            <h3 class="widget-title">About Us</h3>
                             <div class="d-flex">
                                 <div class="w-50">
                                     <img loading="lazy" src="{{ asset('assets/img/favicon.png') }}"
